@@ -32,6 +32,7 @@
 </head>
 <body class="bg-[#050505] text-white font-sans selection:bg-red-800 selection:text-white">
 
+    <!-- NAVIGATION BAR -->
     <nav class="border-b border-neutral-800 bg-[#050505]/95 sticky top-0 z-50 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="text-2xl font-black tracking-wider text-gold">GRUDEN'S TAILGATE IN A BOX</div>
@@ -48,6 +49,7 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <section id="home" class="relative bg-neutral-950 py-16 md:py-24 overflow-hidden border-b border-neutral-900">
         <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-5 space-y-6">
@@ -64,6 +66,7 @@
                 </div>
             </div>
             
+            <!-- LIVE IMAGE DISPLAY -->
             <div class="md:col-span-7 relative">
                 <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-yellow-600 rounded-xl blur opacity-20"></div>
                 <img src="PHOTO-2026-06-03-10-39-16.jpg" alt="Jon Gruden's Tailgate in a Box" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full object-cover">
@@ -71,6 +74,7 @@
         </div>
     </section>
 
+    <!-- TRUST BAR -->
     <section class="bg-neutral-900 border-b border-neutral-800 py-6 text-center">
         <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-xs font-bold uppercase tracking-widest text-neutral-400">
             <span>🇺🇸 100% American Beef</span>
@@ -80,6 +84,7 @@
         </div>
     </section>
 
+    <!-- PRODUCT LINEUP -->
     <section id="boxes" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl font-black tracking-tight uppercase">Draft Your Box</h2>
@@ -87,6 +92,7 @@
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Box 1 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300">
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold">The Rookie</h3>
@@ -96,6 +102,7 @@
                 <button onclick="transmitOrder('The Rookie Box', 259)" class="w-full mt-6 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">Add to Cooler</button>
             </div>
 
+            <!-- Box 2 -->
             <div class="bg-neutral-950 border-2 border-red-800 rounded-xl p-6 flex flex-col h-full shadow-xl shadow-red-950/20 relative transform scale-105 z-10">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500">Coach's Pick</span>
                 <div class="flex-grow">
@@ -106,6 +113,7 @@
                 <button onclick="transmitOrder('The Tailgate Box', 349)" class="w-full mt-6 crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider hover:brightness-110 transition border border-red-900">Add to Cooler</button>
             </div>
 
+            <!-- Box 3 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300">
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold">The Prime Time</h3>
@@ -115,6 +123,7 @@
                 <button onclick="transmitOrder('The Prime Time Box', 499)" class="w-full mt-6 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">Add to Cooler</button>
             </div>
 
+            <!-- Box 4 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300">
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold">The Hall of Fame</h3>
@@ -126,6 +135,7 @@
         </div>
     </section>
 
+    <!-- BULK SHARES (NEW) -->
     <section id="bulk" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl font-black tracking-tight uppercase">Big Appetites & Bulk Shares</h2>
@@ -155,6 +165,7 @@
         </div>
     </section>
 
+    <!-- THE INTEGRATION STORY -->
     <section id="story" class="bg-neutral-950 py-24 border-b border-neutral-900">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div class="bg-neutral-900 h-80 rounded-xl border border-neutral-800 flex items-center justify-center p-8 text-center text-sm text-neutral-400 uppercase tracking-widest">
@@ -173,6 +184,7 @@
         </div>
     </section>
 
+    <!-- NIL TRENCH AWARD -->
     <section id="nil" class="py-24">
         <div class="max-w-5xl mx-auto px-6 text-center space-y-8">
             <span class="text-xs font-bold tracking-widest text-red-500 uppercase">National Collegiate Integration</span>
@@ -186,27 +198,30 @@
         </div>
     </section>
 
+    <!-- FLOATING AI ASSISTANT OVERLAY -->
     <div id="ai-trigger" class="fixed bottom-6 right-6 z-50">
         <button onclick="toggleChat()" class="crimson-gradient text-white px-6 py-4 rounded-full font-black uppercase tracking-wider shadow-2xl shadow-red-900/50 hover:scale-105 transition-transform flex items-center gap-3 border border-red-700">
             <span class="relative flex h-3 w-3">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
             </span>
-            Gameday AI Support
+            Coach Gruden AI
         </button>
     </div>
 
+    <!-- THE CHAT WINDOW (Hidden by default) -->
     <div id="chat-window" class="fixed bottom-24 right-6 w-80 md:w-96 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl z-50 hidden-chat flex flex-col h-[400px]">
         <div class="bg-neutral-950 p-4 rounded-t-xl border-b border-neutral-800 flex items-center justify-between">
             <div class="flex items-center space-y-0.5">
                 <div class="w-2.5 h-2.5 rounded-full bg-green-500 mr-2 animate-pulse"></div>
-                <span class="text-sm font-bold uppercase tracking-wider text-gold">Virtual Assistant</span>
+                <span class="text-sm font-bold uppercase tracking-wider text-gold">Coach Gruden Bot</span>
             </div>
             <button onclick="toggleChat()" class="text-neutral-500 hover:text-white transition text-xl font-bold">&times;</button>
         </div>
         <div class="p-4 flex-grow overflow-y-auto text-sm space-y-4 text-neutral-300" id="chat-box">
-            <div class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%]">
-                Welcome to the roster! I am tied directly to Jason's fulfillment rules. Ask me about our boxes, bulk steer shares, or shipping timelines.
+            <div class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%] flex items-start gap-3">
+                <span class="text-gold font-bold mt-0.5">AI</span>
+                <span>Welcome to the roster! I'm Coach Gruden's AI assistant. Let's get your tailgate playbook ready. What do you need to know about our beef?</span>
             </div>
         </div>
         <div class="p-3 border-t border-neutral-800 bg-neutral-950 rounded-b-xl flex gap-2">
@@ -215,10 +230,11 @@
         </div>
     </div>
 
+    <!-- JAVASCRIPT FUNCTIONS -->
     <script>
-        // API Routing Simulation
+        // API Routing Simulation for Add to Cart
         function transmitOrder(boxName, price) {
-            console.log(`API Routing triggered for: ${boxName}. Transmitting secure payload to Iowa fulfillment line.`);
+            console.log(`API Routing triggered for: ${boxName}. Transmitting secure payload.`);
             alert(`[API Transmission Complete]\nItem: ${boxName}\nPrice: $${price}\nDestination: Jason's Iowa Facility`);
         }
 
@@ -244,15 +260,15 @@
             }
         }
 
-        // AI Chat Simulation Logic
-        function askAI() {
+        // PRODUCTION AI FETCH LOGIC (Communicates with Python Backend)
+        async function askAI() {
             const input = document.getElementById('chat-input');
             const chatBox = document.getElementById('chat-box');
             const userText = input.value.trim();
             
             if(!userText) return;
 
-            // Append User Message
+            // 1. Display User Message
             chatBox.innerHTML += `
                 <div class="bg-neutral-800 p-3 rounded-lg shadow-sm w-[90%] ml-auto text-right text-white">
                     ${userText}
@@ -260,29 +276,46 @@
             input.value = '';
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // Simulate Processing Delay & Response
-            setTimeout(() => {
-                let response = "";
-                let p_lower = userText.toLowerCase();
+            // 2. Display Loading State
+            const loadingId = 'loading-' + Date.now();
+            chatBox.innerHTML += `
+                <div id="${loadingId}" class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%] flex items-start gap-3">
+                    <span class="text-gold font-bold mt-0.5">AI</span>
+                    <span class="animate-pulse text-neutral-500">Coach Gruden is reviewing the playbook...</span>
+                </div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
 
-                // Logic routing (no citations, just clean answers)
-                if (p_lower.includes("ship") || p_lower.includes("day") || p_lower.includes("delivery")) {
-                    response = "We express ship all boxes and bulk shares from our Iowa facility using insulated containers and dry ice. Deliveries typically arrive in 1 to 3 days.";
-                } else if (p_lower.includes("bulk") || p_lower.includes("share") || p_lower.includes("steer")) {
-                    response = "We offer a 1/4 steer share (140 lbs) for $1,695, and a 1/2 steer share (280 lbs) for $3,390. Those prices include the harvest fee, packaging, and express shipping. Scroll up to the 'Bulk Shares' section to secure your deposit!";
-                } else if (p_lower.includes("weight") || p_lower.includes("lbs") || p_lower.includes("size")) {
-                    response = "Our standard DTC boxes weigh exactly 20 lbs. If you have a larger appetite, our bulk shares weigh 140 lbs (Quarter) and 280 lbs (Half).";
-                } else {
-                    response = "All of our beef is 100% American, USDA Choice, born and raised in Iowa, and vacuum-sealed for maximum freshness. Draft your roster using the top navigation bar!";
-                }
+            try {
+                // 3. Transmit Payload to Python Backend
+                // IMPORTANT: Change this URL to your Render.com backend URL once it is deployed.
+                // For now, it points to your local machine (localhost:8000) for testing.
+                const response = await fetch('http://127.0.0.1:8000/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: userText })
+                });
 
+                const data = await response.json();
+
+                // 4. Update UI with LLM Response
+                document.getElementById(loadingId).remove();
                 chatBox.innerHTML += `
                     <div class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%] flex items-start gap-3">
                         <span class="text-gold font-bold mt-0.5">AI</span>
-                        <span>${response}</span>
+                        <span>${data.reply}</span>
                     </div>`;
                 chatBox.scrollTop = chatBox.scrollHeight;
-            }, 600);
+
+            } catch (error) {
+                // Handle server disconnected state smoothly
+                document.getElementById(loadingId).remove();
+                chatBox.innerHTML += `
+                    <div class="bg-neutral-950 p-3 rounded-lg border border-red-900 shadow-sm w-[90%] flex items-start gap-3 text-red-500">
+                        <span class="text-red-500 font-bold mt-0.5">Error</span>
+                        <span>Signal lost on the headset! (Python API server is not currently running).</span>
+                    </div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
         }
     </script>
 </body>
