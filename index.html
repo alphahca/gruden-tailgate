@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruden's Tailgate in a Box | Premium Iowa Beef</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .gold-glow:hover { box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+        .crimson-gradient { background: linear-gradient(135deg, #8B0000 0%, #4A0000 100%); }
+    </style>
+</head>
+<body class="bg-black text-white font-sans selection:bg-red-800 selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="border-b border-neutral-800 bg-black/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black tracking-wider text-[#D4AF37]">GRUDEN'S TAILGATE IN A BOX</div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide text-neutral-300">
+                <a href="#boxes" class="hover:text-[#D4AF37] transition">SHOP THE ROSTER</a>
+                <a href="#story" class="hover:text-[#D4AF37] transition">THE IOWA FARM STORY</a>
+                <a href="#" class="hover:text-[#D4AF37] transition">NIL TRENCH AWARD</a>
+            </div>
+            <button class="border border-[#D4AF37] text-[#D4AF37] px-5 py-2 rounded text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-black transition">
+                My Cooler (0)
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative bg-neutral-950 py-16 md:py-24 overflow-hidden border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 space-y-6">
+                <span class="text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#D4AF37]/10 px-3 py-1.5 rounded">Official Launch Curation</span>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight uppercase">
+                    THE ULTIMATE <br>TAILGATE. <span class="text-red-600">IN A BOX.</span>
+                </h1>
+                <p class="text-neutral-400 text-base max-w-md">
+                    Premium, Iowa-raised beef delivered directly from our farm to your stadium cooler. No corporate middlemen. Just elite fuel for gameday.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="#boxes" class="crimson-gradient px-8 py-4 rounded font-bold text-center uppercase tracking-wider text-sm shadow-lg shadow-red-900/40 hover:brightness-110 transition">Claim Your Box</a>
+                    <a href="#story" class="border border-neutral-700 bg-neutral-900/50 hover:bg-neutral-900 px-8 py-4 rounded font-bold text-center uppercase tracking-wider text-sm transition">The API Supply Chain</a>
+                </div>
+            </div>
+            
+            <!-- LIVE IMAGE DISPLAY -->
+            <div class="md:col-span-7 relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-[#D4AF37] rounded-xl blur opacity-20"></div>
+                <img src="PHOTO-2026-06-03-10-39-16.jpg" alt="Jon Gruden's Tailgate in a Box" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full object-cover max-h-[500px]">
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <section class="bg-neutral-900 border-b border-neutral-800 py-6 text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-xs font-bold uppercase tracking-widest text-neutral-400">
+            <span>🇺🇸 100% American Beef</span>
+            <span>🌽 Born & Raised In Iowa</span>
+            <span>🥩 Hand-Cut USDA Choice</span>
+            <span>❄️ Express Shipped On Dry Ice</span>
+        </div>
+    </section>
+
+    <!-- PRODUCT LINEUP -->
+    <main id="boxes" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-4xl font-black tracking-tight uppercase">Draft Your Box</h2>
+            <p class="text-neutral-400 max-w-xl mx-auto">Select your curation level. Orders are instantly routed via custom API backend to Jason's Iowa processing floor for hand-cutting and dry-ice packaging.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Box 1 -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between gold-glow transition duration-300">
+                <div class="space-y-4">
+                    <div class="bg-neutral-900 h-40 rounded-lg flex items-center justify-center text-xs uppercase tracking-widest text-neutral-600 font-bold border border-neutral-800">Value Lineups</div>
+                    <div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight">The Rookie</h3>
+                        <p class="text-xs text-[#D4AF37] uppercase font-bold tracking-wider mt-1">Value Collection</p>
+                    </div>
+                    <p class="text-neutral-400 text-sm">60 third-pound premium hamburger patties. Built for high-volume stadium cookouts.</p>
+                </div>
+                <div class="pt-6 border-t border-neutral-900 mt-6 flex items-center justify-between">
+                    <span class="text-2xl font-black">$259</span>
+                    <button onclick="transmitOrder('The Rookie Box', 259)" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider transition">Add to Cooler</button>
+                </div>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="bg-neutral-950 border-2 border-red-800 rounded-xl p-6 flex flex-col justify-between shadow-xl shadow-red-950/20 relative transform scale-105 z-10">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500">Coach's Pick</span>
+                <div class="space-y-4">
+                    <div class="bg-neutral-900 h-40 rounded-lg flex items-center justify-center text-xs uppercase tracking-widest text-neutral-600 font-bold border border-neutral-800">Flagship Lineup</div>
+                    <div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight">The Tailgate</h3>
+                        <p class="text-xs text-red-500 uppercase font-bold tracking-wider mt-1">Family Assortment</p>
+                    </div>
+                    <p class="text-neutral-400 text-sm">20 lbs of brisket, chuck roasts, top sirloin, tri-tip, skirt steak, and premium ground beef.</p>
+                </div>
+                <div class="pt-6 border-t border-neutral-900 mt-6 flex items-center justify-between">
+                    <span class="text-2xl font-black text-red-500">$349</span>
+                    <button onclick="transmitOrder('The Tailgate Box', 349)" class="crimson-gradient px-4 py-2 rounded text-xs font-bold uppercase tracking-wider hover:brightness-110 transition">Add to Cooler</button>
+                </div>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between gold-glow transition duration-300">
+                <div class="space-y-4">
+                    <div class="bg-neutral-900 h-40 rounded-lg flex items-center justify-center text-xs uppercase tracking-widest text-neutral-600 font-bold border border-neutral-800">Grilling Favorites</div>
+                    <div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight">The Prime Time</h3>
+                        <p class="text-xs text-[#D4AF37] uppercase font-bold tracking-wider mt-1">Steakhouse Grilling</p>
+                    </div>
+                    <p class="text-neutral-400 text-sm">20 lbs centered on classic premium cuts: Ribeye, NY Strip, Top Sirloin, Tri-Tip, and Skirt.</p>
+                </div>
+                <div class="pt-6 border-t border-neutral-900 mt-6 flex items-center justify-between">
+                    <span class="text-2xl font-black">$499</span>
+                    <button onclick="transmitOrder('The Prime Time Box', 499)" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider transition">Add to Cooler</button>
+                </div>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between gold-glow transition duration-300">
+                <div class="space-y-4">
+                    <div class="bg-neutral-900 h-40 rounded-lg flex items-center justify-center text-xs uppercase tracking-widest text-neutral-600 font-bold border border-neutral-800">Luxury Cuts</div>
+                    <div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight">The Hall of Fame</h3>
+                        <p class="text-xs text-[#D4AF37] uppercase font-bold tracking-wider mt-1">Premium Steaks</p>
+                    </div>
+                    <p class="text-neutral-400 text-sm">20 lbs of ultra-luxury cuts. Pure Ribeye, Filet Mignon, NY Strip, and Top Sirloin. No filler.</p>
+                </div>
+                <div class="pt-6 border-t border-neutral-900 mt-6 flex items-center justify-between">
+                    <span class="text-2xl font-black">$649</span>
+                    <button onclick="transmitOrder('The Hall of Fame Box', 649)" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider transition">Add to Cooler</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FLOATING AI ASSISTANT OVERLAY -->
+    <div class="fixed bottom-6 right-6 w-80 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl z-50">
+        <div class="bg-neutral-950 p-4 rounded-t-xl border-b border-neutral-800 flex items-center justify-between">
+            <div class="flex items-center space-y-0.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500 mr-2 animate-pulse"></div>
+                <span class="text-xs font-bold uppercase tracking-wider">Gameday AI Assistant</span>
+            </div>
+        </div>
+        <div class="p-4 h-40 overflow-y-auto text-xs space-y-3 text-neutral-300" id="chat-box">
+            <p class="bg-neutral-950 p-2.5 rounded border border-neutral-800">Welcome to the roster! Ask me any questions about our 20 lb boxes, shipping protocols, or how our Iowa farm API handles your order.</p>
+        </div>
+        <div class="p-3 border-t border-neutral-800 bg-neutral-950 rounded-b-xl flex gap-2">
+            <input type="text" id="chat-input" placeholder="Ask about shipping, cuts, or pricing..." class="bg-neutral-900 border border-neutral-800 rounded px-3 py-1.5 text-xs w-full focus:outline-none focus:border-red-800">
+            <button onclick="askAI()" class="crimson-gradient px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wider">Ask</button>
+        </div>
+    </div>
+
+    <script>
+        async function transmitOrder(boxName, price) {
+            console.log(`API Routing triggered for: ${boxName}. Transmitting secure payload to Iowa fulfillment line.`);
+            alert(`[API Transmission Complete]\nItem: ${boxName}\nPrice: $${price}\nDestination: Jason's Iowa Facility`);
+        }
+
+        function askAI() {
+            const input = document.getElementById('chat-input');
+            const chatBox = document.getElementById('chat-box');
+            if(!input.value.trim()) return;
+
+            const userText = input.value;
+            chatBox.innerHTML += `<p class="bg-neutral-800 p-2.5 rounded text-right ml-6">${userText}</p>`;
+            input.value = '';
+
+            setTimeout(() => {
+                chatBox.innerHTML += `<p class="bg-neutral-950 p-2.5 rounded border border-neutral-800 mr-6 font-semibold text-neutral-400"><span class="text-[#D4AF37]">AI:</span> Forwarding text query to backend API server models...</p>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 400);
+        }
+    </script>
+</body>
+</html>
