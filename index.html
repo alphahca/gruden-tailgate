@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruden's Tailgate in a Box | Premium Iowa Beef</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .gold-glow:hover { box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+        .crimson-gradient { background: linear-gradient(135deg, #8B0000 0%, #4A0000 100%); }
+        .text-gold { color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        .bg-gold { background-color: #D4AF37; }
+        
+        /* Floating Chat Box Transition */
+        #chat-window {
+            transition: all 0.3s ease-in-out;
+            transform-origin: bottom right;
+        }
+        .hidden-chat {
+            opacity: 0;
+            transform: scale(0.9) translateY(20px);
+            pointer-events: none;
+        }
+        .visible-chat {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-[#050505] text-white font-sans selection:bg-red-800 selection:text-white">
+
+    <nav class="border-b border-neutral-800 bg-[#050505]/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black tracking-wider text-gold">GRUDEN'S TAILGATE IN A BOX</div>
+            <div class="hidden md:flex space-x-8 text-sm font-bold tracking-wide text-neutral-400">
+                <a href="#home" class="hover:text-gold transition">HOME</a>
+                <a href="#boxes" class="hover:text-gold transition">SHOP BOXES</a>
+                <a href="#bulk" class="hover:text-gold transition">BULK SHARES</a>
+                <a href="#story" class="hover:text-gold transition">OUR STORY</a>
+                <a href="#nil" class="hover:text-gold transition">NIL AWARD</a>
+            </div>
+            <button class="border border-gold text-gold px-5 py-2 rounded text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition">
+                My Cooler (0)
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="relative bg-neutral-950 py-16 md:py-24 overflow-hidden border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 space-y-6">
+                <span class="text-xs font-bold tracking-widest text-gold uppercase bg-yellow-900/20 border border-yellow-700/30 px-3 py-1.5 rounded">Official Launch Curation</span>
+                <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-tight uppercase">
+                    THE ULTIMATE <br>TAILGATE. <span class="text-red-600">IN A BOX.</span>
+                </h1>
+                <p class="text-neutral-400 text-lg max-w-md">
+                    Premium, Iowa-raised beef delivered directly from our farm to your stadium cooler. No corporate middlemen. Just elite fuel for gameday.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="#boxes" class="crimson-gradient px-8 py-4 rounded font-bold text-center uppercase tracking-wider text-sm shadow-lg shadow-red-900/40 hover:brightness-110 transition">Claim Your Box</a>
+                    <a href="#story" class="border border-neutral-700 bg-neutral-900/50 hover:bg-neutral-800 px-8 py-4 rounded font-bold text-center uppercase tracking-wider text-sm transition">The API Supply Chain</a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-7 relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-yellow-600 rounded-xl blur opacity-20"></div>
+                <img src="PHOTO-2026-06-03-10-39-16.jpg" alt="Jon Gruden's Tailgate in a Box" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-neutral-900 border-b border-neutral-800 py-6 text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-xs font-bold uppercase tracking-widest text-neutral-400">
+            <span>🇺🇸 100% American Beef</span>
+            <span>🌽 Born & Raised In Iowa</span>
+            <span>🥩 Hand-Cut USDA Choice</span>
+            <span>❄️ Express Shipped On Dry Ice</span>
+        </div>
+    </section>
+
+    <section id="boxes" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-4xl font-black tracking-tight uppercase">Draft Your Box</h2>
+            <p class="text-neutral-400 max-w-xl mx-auto">Select your curation level. Orders are instantly routed via custom API backend to Jason's Iowa processing floor for hand-cutting and dry-ice packaging.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold">The Rookie</h3>
+                    <div class="text-3xl font-black my-4">$259</div>
+                    <p class="text-neutral-400 text-sm">60 third-pound premium hamburger patties. Built for high-volume stadium cookouts.</p>
+                </div>
+                <button onclick="transmitOrder('The Rookie Box', 259)" class="w-full mt-6 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">Add to Cooler</button>
+            </div>
+
+            <div class="bg-neutral-950 border-2 border-red-800 rounded-xl p-6 flex flex-col h-full shadow-xl shadow-red-950/20 relative transform scale-105 z-10">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500">Coach's Pick</span>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-red-500">The Tailgate</h3>
+                    <div class="text-3xl font-black text-red-500 my-4">$349</div>
+                    <p class="text-neutral-400 text-sm">20 lbs of brisket, chuck roasts, top sirloin, tri-tip, skirt steak, and premium ground beef.</p>
+                </div>
+                <button onclick="transmitOrder('The Tailgate Box', 349)" class="w-full mt-6 crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider hover:brightness-110 transition border border-red-900">Add to Cooler</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold">The Prime Time</h3>
+                    <div class="text-3xl font-black my-4">$499</div>
+                    <p class="text-neutral-400 text-sm">20 lbs centered on classic premium cuts: Ribeye, NY Strip, Top Sirloin, Tri-Tip, and Skirt.</p>
+                </div>
+                <button onclick="transmitOrder('The Prime Time Box', 499)" class="w-full mt-6 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">Add to Cooler</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold">The Hall of Fame</h3>
+                    <div class="text-3xl font-black my-4">$649</div>
+                    <p class="text-neutral-400 text-sm">20 lbs of ultra-luxury cuts. Pure Ribeye, Filet Mignon, NY Strip, and Top Sirloin. No filler.</p>
+                </div>
+                <button onclick="transmitOrder('The Hall of Fame Box', 649)" class="w-full mt-6 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">Add to Cooler</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="bulk" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-4xl font-black tracking-tight uppercase">Big Appetites & Bulk Shares</h2>
+            <p class="text-neutral-400 max-w-2xl mx-auto">For serious families, deep-freezer owners, and legendary tailgaters. Skip the 20 lb boxes and buy a massive, pre-sold share of a full Iowa steer. We harvest, process, cryovac, and express ship it directly to you.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-black uppercase text-gold">1/4 Steer (Quarter Share)</h3>
+                    <div class="text-4xl font-black my-4">$1,695</div>
+                    <p class="text-white font-bold mb-2">140 lbs of perfectly packaged premium beef.</p>
+                    <p class="text-neutral-400 text-sm">Ideal for a standard deep freezer. Keeps an active family grilling all season long. Price includes the harvest processing fee, heavy-duty insulated boxing, and 1-3 day express shipping straight from Iowa.</p>
+                </div>
+                <button onclick="transmitOrder('Quarter Share Deposit', 169.50)" class="w-full mt-8 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">Secure 1/4 Share (10% Deposit)</button>
+            </div>
+
+            <div class="bg-neutral-950 border-2 border-red-900 rounded-xl p-8 flex flex-col justify-between shadow-lg shadow-red-900/10">
+                <div>
+                    <h3 class="text-2xl font-black uppercase text-red-500">1/2 Steer (Half Share)</h3>
+                    <div class="text-4xl font-black text-red-500 my-4">$3,390</div>
+                    <p class="text-white font-bold mb-2">280 lbs of our absolute best yields.</p>
+                    <p class="text-neutral-400 text-sm">The ultimate investment in your family's protein. A massive yield of steaks, roasts, and ground beef. Price is all-inclusive for harvest, processing, and multi-box dry ice express delivery.</p>
+                </div>
+                <button onclick="transmitOrder('Half Share Deposit', 339.00)" class="w-full mt-8 crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider border border-red-900 hover:brightness-110 transition">Secure 1/2 Share (10% Deposit)</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="bg-neutral-950 py-24 border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="bg-neutral-900 h-80 rounded-xl border border-neutral-800 flex items-center justify-center p-8 text-center text-sm text-neutral-400 uppercase tracking-widest">
+                [Visual: API Diagram]<br><br>Direct Routing from Frontend Store to Jason Birt's Iowa Processing Floor
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-4xl font-black uppercase tracking-tight">We Killed The Middleman</h2>
+                <p class="text-neutral-400 leading-relaxed text-lg">
+                    Traditional online meat brands acquire customers through massive advertising spending, source from processing brokers, and utilize external logistics centers. Every step cuts margin and delays delivery.
+                </p>
+                <div class="border-l-2 border-gold pl-6 space-y-2">
+                    <p class="font-bold text-white text-xl">The Zero-Latency Front End</p>
+                    <p class="text-neutral-400">When you click order, our custom API payload skips the corporate bureaucracy and transmits directly to Jason's fulfillment floor in Iowa. He cuts it, packs it in dry ice, and ships it. Better margins for us. Better beef for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nil" class="py-24">
+        <div class="max-w-5xl mx-auto px-6 text-center space-y-8">
+            <span class="text-xs font-bold tracking-widest text-red-500 uppercase">National Collegiate Integration</span>
+            <h2 class="text-4xl font-black uppercase tracking-tight">Dominating The Trenches</h2>
+            <p class="text-neutral-400 text-lg leading-relaxed">
+                Football games are won and lost on the line of scrimmage. To honor the hardest workers on the field, Coach Jon Gruden personally presents the weekly <strong class="text-white">National Trench Award</strong>.
+            </p>
+            <p class="text-neutral-400 text-lg leading-relaxed">
+                Every week during the college football season, the most dominant Offensive Line and Defensive Line units in the country are awarded premium American Quality Protein beef, shipped directly to their locker rooms and training tables. Supporting the athletes who bring the heat, every single Saturday.
+            </p>
+        </div>
+    </section>
+
+    <div id="ai-trigger" class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleChat()" class="crimson-gradient text-white px-6 py-4 rounded-full font-black uppercase tracking-wider shadow-2xl shadow-red-900/50 hover:scale-105 transition-transform flex items-center gap-3 border border-red-700">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+            Gameday AI Support
+        </button>
+    </div>
+
+    <div id="chat-window" class="fixed bottom-24 right-6 w-80 md:w-96 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl z-50 hidden-chat flex flex-col h-[400px]">
+        <div class="bg-neutral-950 p-4 rounded-t-xl border-b border-neutral-800 flex items-center justify-between">
+            <div class="flex items-center space-y-0.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500 mr-2 animate-pulse"></div>
+                <span class="text-sm font-bold uppercase tracking-wider text-gold">Virtual Assistant</span>
+            </div>
+            <button onclick="toggleChat()" class="text-neutral-500 hover:text-white transition text-xl font-bold">&times;</button>
+        </div>
+        <div class="p-4 flex-grow overflow-y-auto text-sm space-y-4 text-neutral-300" id="chat-box">
+            <div class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%]">
+                Welcome to the roster! I am tied directly to Jason's fulfillment rules. Ask me about our boxes, bulk steer shares, or shipping timelines.
+            </div>
+        </div>
+        <div class="p-3 border-t border-neutral-800 bg-neutral-950 rounded-b-xl flex gap-2">
+            <input type="text" id="chat-input" placeholder="Type a question..." class="bg-neutral-900 border border-neutral-800 rounded-lg px-3 py-2 text-sm w-full focus:outline-none focus:border-red-800 text-white placeholder-neutral-600" onkeypress="handleKeyPress(event)">
+            <button onclick="askAI()" class="crimson-gradient px-4 py-2 rounded-lg text-sm font-bold uppercase tracking-wider hover:brightness-110 transition border border-red-900">Ask</button>
+        </div>
+    </div>
+
+    <script>
+        // API Routing Simulation
+        function transmitOrder(boxName, price) {
+            console.log(`API Routing triggered for: ${boxName}. Transmitting secure payload to Iowa fulfillment line.`);
+            alert(`[API Transmission Complete]\nItem: ${boxName}\nPrice: $${price}\nDestination: Jason's Iowa Facility`);
+        }
+
+        // Chat Toggle Logic
+        let chatOpen = false;
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            if (chatOpen) {
+                chatWindow.classList.remove('visible-chat');
+                chatWindow.classList.add('hidden-chat');
+            } else {
+                chatWindow.classList.remove('hidden-chat');
+                chatWindow.classList.add('visible-chat');
+                document.getElementById('chat-input').focus();
+            }
+            chatOpen = !chatOpen;
+        }
+
+        // Handle Enter Key in Chat
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') {
+                askAI();
+            }
+        }
+
+        // AI Chat Simulation Logic
+        function askAI() {
+            const input = document.getElementById('chat-input');
+            const chatBox = document.getElementById('chat-box');
+            const userText = input.value.trim();
+            
+            if(!userText) return;
+
+            // Append User Message
+            chatBox.innerHTML += `
+                <div class="bg-neutral-800 p-3 rounded-lg shadow-sm w-[90%] ml-auto text-right text-white">
+                    ${userText}
+                </div>`;
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Simulate Processing Delay & Response
+            setTimeout(() => {
+                let response = "";
+                let p_lower = userText.toLowerCase();
+
+                // Logic routing (no citations, just clean answers)
+                if (p_lower.includes("ship") || p_lower.includes("day") || p_lower.includes("delivery")) {
+                    response = "We express ship all boxes and bulk shares from our Iowa facility using insulated containers and dry ice. Deliveries typically arrive in 1 to 3 days.";
+                } else if (p_lower.includes("bulk") || p_lower.includes("share") || p_lower.includes("steer")) {
+                    response = "We offer a 1/4 steer share (140 lbs) for $1,695, and a 1/2 steer share (280 lbs) for $3,390. Those prices include the harvest fee, packaging, and express shipping. Scroll up to the 'Bulk Shares' section to secure your deposit!";
+                } else if (p_lower.includes("weight") || p_lower.includes("lbs") || p_lower.includes("size")) {
+                    response = "Our standard DTC boxes weigh exactly 20 lbs. If you have a larger appetite, our bulk shares weigh 140 lbs (Quarter) and 280 lbs (Half).";
+                } else {
+                    response = "All of our beef is 100% American, USDA Choice, born and raised in Iowa, and vacuum-sealed for maximum freshness. Draft your roster using the top navigation bar!";
+                }
+
+                chatBox.innerHTML += `
+                    <div class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%] flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5">AI</span>
+                        <span>${response}</span>
+                    </div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 600);
+        }
+    </script>
+</body>
+</html>
