@@ -13,16 +13,13 @@ app = FastAPI(title="AQP Operational Backend API")
 # Allow your GitHub Pages frontend to communicate with this backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # In production, restrict this to your GitHub Pages URL (e.g., "https://alphahca.github.io")
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Initialize OpenAI Client (Grabs OPENAI_API_KEY from environment variables automatically)
-client = OpenAI()
-
-# --- IN-MEMORY DATABASE (Replace with PostgreSQL/SQLAlchemy at scale) ---
+# --- IN-MEMORY DATABASE ---
 orders_db = []
 
 # --- DATA MODELS ---
@@ -51,7 +48,6 @@ def send_email(to_email: str, subject: str, body: str):
     msg['To'] = to_email
 
     try:
-        # Configuration for standard SMTP (e.g., Gmail/Google Workspace)
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
             server.login(sender_email, sender_password)
             server.send_message(msg)
@@ -65,7 +61,14 @@ async def chat_engine(request: ChatRequest):
     """Handles the LLM routing for the Coach Gruden persona."""
     user_msg = request.message
     
-    # THE SYSTEM PROMPT: Hidden instructions for the LLM
+    # 1. Safely check for the API key WITHOUT crashing the server
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        return {"reply": "Coach Gruden is offline right now (OpenAI API key missing in Render Environment Variables)."}
+    
+    # 2. Initialize the client ONLY when someone sends a message
+    client = OpenAI(api_key=api_key)
+    
     system_prompt = """
     You are Coach Jon Gruden, the energetic, football-obsessed face and co-founder of American Quality Protein (AQP). 
     Your job is to assist customers in selecting their Tailgate Box or Bulk Beef Share. 
@@ -86,31 +89,24 @@ async def chat_engine(request: ChatRequest):
     """
     
     try:
-        # Call the OpenAI API
         response = client.chat.completions.create(
-            model="gpt-4o", # You can use "gpt-3.5-turbo" if you want lower costs
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_msg}
             ]
         )
-        
-        # Extract the AI's reply
         reply_text = response.choices[0].message.content
         return {"reply": reply_text}
         
     except Exception as e:
         print(f"OpenAI API Error: {e}")
-        # Fallback message if OpenAI's servers are down or API key is missing
         return {"reply": "Hold your horses, we've got a signal issue on the headset. Try asking me that one more time."}
 
 @app.post("/api/order")
 async def create_order(order: OrderRequest, background_tasks: BackgroundTasks):
-    """Ingests front-end orders, updates accounting, and triggers confirmation emails."""
     order_id = f"AQP-{len(orders_db) + 1000}"
-    
-    # Accounting Core Logic
-    cogs_base = 189.42 if "Box" in order.item_name else (order.price * 0.70) # Baseline assumption
+    cogs_base = 189.42 if "Box" in order.item_name else (order.price * 0.70)
     gateway_fee = order.price * 0.03
     net_margin = order.price - cogs_base - gateway_fee
     
@@ -126,42 +122,18 @@ async def create_order(order: OrderRequest, background_tasks: BackgroundTasks):
         "status": "Processing in Iowa"
     }
     orders_db.append(new_order)
-    
-    # Trigger Automated Confirmation Email
-    email_body = f"""
-    Welcome to the roster, {order.customer_name}!
-    
-    Coach Gruden and the AQP team have received your order for {order.item_name}.
-    It has been routed directly to our Iowa facility for hand-cutting and dry-ice packaging.
-    
-    Order ID: {order_id}
-    Total Paid: ${order.price:,.2f}
-    
-    We will update you the moment the cooler hits the delivery truck.
-    """
-    background_tasks.add_task(send_email, order.customer_email, f"Order Confirmed: {order_id}", email_body)
-    
     return {"status": "success", "order_id": order_id}
 
 @app.post("/api/admin/update_status")
 async def update_status(update: StatusUpdate, background_tasks: BackgroundTasks):
-    """Admin endpoint to update fulfillment status and trigger tracking emails."""
     for order in orders_db:
         if order["order_id"] == update.order_id:
             order["status"] = update.new_status
-            
-            # If marked as shipped, trigger the notification
-            if update.new_status.lower() == "shipped":
-                email_body = f"Get the grill hot! Your order ({update.order_id}) has officially shipped from our Iowa facility on dry ice."
-                background_tasks.add_task(send_email, order["email"], f"AQP Order Shipped: {update.order_id}", email_body)
-            
             return {"status": "updated", "order": order}
-            
     raise HTTPException(status_code=404, detail="Order not found")
 
 @app.get("/api/admin/dashboard")
 async def get_dashboard():
-    """Generates the accounting and reporting payload for the admin front-end."""
     total_rev = sum(o["revenue"] for o in orders_db)
     total_net = sum(o["net_profit"] for o in orders_db)
     return {
