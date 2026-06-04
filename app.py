@@ -1,142 +1,203 @@
 import streamlit as st
 import time
 
-# --- PAGE CONFIGURATION ---
+# --- 1. SET GLOBAL PAGE CONFIGURATION ---
 st.set_page_config(
-    page_title="Gruden's Tailgate Box",
+    page_title="Gruden's Tailgate in a Box",
     page_icon="🥩",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# --- BRANDING & CSS ---
+# --- 2. PREMIUM BLACK, CRIMSON & GOLD THEME INJECTION ---
 st.markdown("""
     <style>
-    .stApp { background-color: #0a0a0a; color: #ffffff; }
-    .gold-text { color: #D4AF37 !important; font-weight: 800; }
-    .red-text { color: #cc0000 !important; font-weight: 900; }
+    /* Global Background and Typography */
+    .stApp {
+        background-color: #050505;
+        color: #ffffff;
+    }
+    
+    /* Hide default generic streamlit headers */
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    
+    /* Branding Classes */
+    .gold-header {
+        color: #D4AF37 !important;
+        font-family: 'Impact', 'Arial Black', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+    .crimson-brand {
+        color: #cc0000 !important;
+        font-weight: 900;
+    }
+    
+    /* Custom Luxury Product Cards */
     .product-card {
-        background-color: #161616;
+        background: linear-gradient(135deg, #111111 0%, #161616 100%);
         padding: 24px;
         border-radius: 12px;
-        border: 1px solid #262626;
+        border: 1px solid #222222;
         text-align: center;
-        height: 100%;
+        margin-bottom: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
+    .card-title-gold { color: #D4AF37; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; }
+    .card-title-crimson { color: #ff3333; font-size: 1.5rem; font-weight: 900; text-transform: uppercase; }
+    .price-tag { font-size: 2rem; font-weight: 900; color: #ffffff; margin: 10px 0; }
+    
+    /* Button Customization */
     .stButton>button {
         width: 100%;
-        background-color: #1a1a1a;
-        color: #ffffff;
-        border: 1px solid #D4AF37;
-        text-transform: uppercase;
-        font-weight: bold;
-        transition: all 0.3s ease;
+        background-color: #1a1a1a !important;
+        color: #ffffff !important;
+        border: 1px solid #D4AF37 !important;
+        text-transform: uppercase !important;
+        font-weight: bold !important;
+        border-radius: 6px !important;
+        padding: 10px 0 !important;
+        transition: all 0.3s ease !important;
     }
     .stButton>button:hover {
-        background-color: #cc0000;
-        border-color: #cc0000;
-        color: #ffffff;
+        background-color: #cc0000 !important;
+        border-color: #cc0000 !important;
+        box-shadow: 0 0 10px rgba(204,0,0,0.5) !important;
+    }
+    
+    /* Clean up the Sidebar Styling */
+    section[data-testid="stSidebar"] {
+        background-color: #0b0b0b !important;
+        border-right: 1px solid #1a1a1a;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# --- SIDEBAR NAVIGATION & AI ---
-st.sidebar.markdown("<h2 class='gold-text'>NAVIGATION</h2>", unsafe_allow_html=True)
-page = st.sidebar.radio("", [
-    "🏟️ Home - The Ultimate Tailgate", 
-    "🥩 Shop The Roster", 
-    "🚜 The Iowa Farm Story", 
-    "🏈 NIL Trench Award"
-])
-
-st.sidebar.markdown("---")
-st.sidebar.markdown("### 🤖 Gameday AI Support")
-st.sidebar.caption("Ask me about shipping, cuts, or prep!")
-
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = [{"role": "assistant", "content": "Welcome! I'm here to help you draft your perfect tailgate box."}]
-
-for msg in st.session_state.chat_history:
-    with st.sidebar.chat_message(msg["role"]):
-        st.write(msg["content"])
-
-if ai_prompt := st.sidebar.chat_input("Ask a question..."):
-    st.session_state.chat_history.append({"role": "user", "content": ai_prompt})
-    with st.sidebar.chat_message("user"):
-        st.write(ai_prompt)
+# --- 3. SIDEBAR: CO-FOUNDER OVERVIEW & CLEAN AI CONVERSATION ---
+with st.sidebar:
+    st.markdown("<h2 class='gold-header' style='text-align:left; font-size:1.5rem;'>AQP PLATFORM</h2>", unsafe_allow_html=True)
+    st.caption("⚡ Technology & Operations Console")
+    st.markdown("---")
     
-    with st.sidebar.chat_message("assistant"):
-        with st.spinner("Thinking..."):
-            time.sleep(1)
-            # AI Logic mimicking Jason's fulfillment rules
-            response = "All of our boxes are a full 20 lbs of USDA Choice beef[cite: 1]. We process it in Iowa, vacuum-seal it, and ship it express on dry ice straight to your door[cite: 1, 3]!"
-            st.write(response)
-    st.session_state.chat_history.append({"role": "assistant", "content": response})
+    st.markdown("### 🤖 Gameday Assistant")
+    st.write("Have questions about cuts, shipping grids, or grilling prep? Ask below:")
+    
+    # Simple, non-citation clean chat architecture
+    if "messages" not in st.session_state:
+        st.session_state.messages = [{"role": "assistant", "content": "Ready for kickoff! How can I help you frame up your tailgate box details today?"}]
+        
+    for msg in st.session_state.messages:
+        with st.chat_message(msg["role"]):
+            st.write(msg["content"])
+            
+    if ai_input := st.chat_input("Ask a question..."):
+        st.session_state.messages.append({"role": "user", "content": ai_input})
+        with st.chat_message("user"):
+            st.write(ai_input)
+            
+        with st.chat_message("assistant"):
+            with st.spinner("Analyzing rules..."):
+                time.sleep(0.8)
+                # Hardcoded response strings matching business parameters perfectly without displaying citations
+                lower_input = ai_input.lower()
+                if "shipping" in lower_input or "delivery" in lower_input or "days" in lower_input:
+                    response = "We process every order on our Iowa facility floor. Your box is packed securely in an insulated container with dry ice and shipped express to arrive at your door within 1 to 3 days."
+                elif "price" in lower_input or "cost" in lower_input or "how much" in lower_input:
+                    response = "Our boxes start at $259 for the all-patty Rookie Box, up to $349 for our signature Tailgate Box, and top out at $649 for the ultra-premium Hall of Fame luxury steak selection."
+                elif "weight" in lower_input or "size" in lower_input or "lbs" in lower_input:
+                    response = "Every single box rostered on our site maintains a standardized weight of exactly 20 pounds of premium, hand-cut USDA Choice beef."
+                else:
+                    response = "All cuts are 100% American beef, born and raised in Iowa, hand-selected, vacuum-sealed, and flash-frozen at the source to ensure absolute steakhouse quality when you ignite your grill."
+                st.write(response)
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
-# --- PAGE: HOME ---
-if page == "🏟️ Home - The Ultimate Tailgate":
-    st.markdown("<h3 style='text-align: center; color: #D4AF37; letter-spacing: 3px;'>AMERICAN QUALITY PROTEIN PRESENTS</h3>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: center; font-size: 4rem; font-weight: 900;'>GRUDEN'S TAILGATE IN A BOX</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: #a3a3a3; font-size: 1.2rem; margin-bottom: 2rem;'>Premium, Iowa-Raised Beef Delivered Directly From Our Farm to Your Stadium Cooler.</p>", unsafe_allow_html=True)
-    
-    col1, col2, col3 = st.columns([1, 3, 1])
-    with col2:
-        try:
-            st.image("PHOTO-2026-06-03-10-39-16.jpg", use_column_width=True)
-        except:
-            st.error("Please ensure 'PHOTO-2026-06-03-10-39-16.jpg' is uploaded.")
+# --- 4. MAIN STOREFRONT HERO BANNER ---
+st.markdown("<h3 class='gold-header'>AMERICAN QUALITY PROTEIN</h3>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; font-size: 3.8rem; font-weight: 900; margin-bottom: 5px; line-height:1.1;'>GRUDEN'S TAILGATE IN A BOX</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #a3a3a3; font-size: 1.2rem; margin-bottom: 25px;'>Premium, Iowa-Raised Beef Delivered Directly From Our Farm to Your Stadium Cooler.</p>", unsafe_allow_html=True)
 
-    st.markdown("<br><div style='text-align: center; font-weight: bold; color: #888; word-spacing: 15px;'>🇺🇸 100%_AMERICAN_BEEF 🌽 BORN_&_RAISED_IN_IOWA 🥩 HAND-CUT ❄️ EXPRESS_SHIPPED_ON_DRY_ICE</div>", unsafe_allow_html=True)
+# Main Hero Image Display
+col_img_l, col_img_m, col_img_r = st.columns([1, 4, 1])
+with col_img_m:
+    try:
+        st.image("PHOTO-2026-06-03-10-39-16.jpg", use_column_width=True)
+    except:
+        st.warning("Visual Asset Note: Place 'PHOTO-2026-06-03-10-39-16.jpg' in the root directory to display.")
 
-# --- PAGE: SHOP THE ROSTER ---
-elif page == "🥩 Shop The Roster":
-    st.markdown("<h1 style='text-align: center; font-weight: 900; text-transform: uppercase;'>Draft Your Box</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: #888888; margin-bottom: 3rem;'>Select your curation. Orders are routed instantly to our Iowa floor for hand-cutting and dry-ice packaging.</p>", unsafe_allow_html=True)
-    
-    col1, col2, col3, col4 = st.columns(4)
-    
-    boxes = [
-        {"col": col1, "name": "The Rookie", "price": "259", "color": "gold-text", "desc": "60 third-pound premium hamburger patties. Built for high-volume cookouts[cite: 1]."},
-        {"col": col2, "name": "The Tailgate (Coach's Pick)", "price": "349", "color": "red-text", "desc": "20 lbs of brisket, chuck roasts, top sirloin, tri-tip, skirt, and premium ground beef[cite: 1]."},
-        {"col": col3, "name": "The Prime Time", "price": "499", "color": "gold-text", "desc": "20 lbs of classic premium grilling steaks: Ribeyes, NY Strips, and Top Sirloin[cite: 1]."},
-        {"col": col4, "name": "The Hall of Fame", "price": "649", "color": "gold-text", "desc": "20 lbs of pure luxury steaks. Ribeyes, Filet Mignons, and NY Strips. No fillers[cite: 1]."}
-    ]
-    
-    for i, box in enumerate(boxes):
-        with box["col"]:
-            st.markdown(f"""
-            <div class='product-card'>
-                <h3 class='{box["color"]}'>{box["name"]}</h3>
-                <h2 style='margin: 15px 0;'>${box["price"]}</h2>
-                <p style='color: #a3a3a3; font-size: 0.9rem; min-height: 80px;'>{box["desc"]}</p>
-            </div>
-            <br>
-            """, unsafe_allow_html=True)
-            if st.button("Add to Cooler", key=f"btn_{i}"):
-                with st.spinner("Processing API transmission..."):
-                    time.sleep(1.2)
-                st.success("API Payload Sent! Order routed to Jason's Iowa facility[cite: 3].")
+st.markdown("<br><div style='text-align: center; font-weight: bold; color: #666; letter-spacing: 4px; font-size:0.85rem; margin-bottom:40px;'>🇺🇸 100% AMERICAN BEEF • 🌽 BORN & RAISED IN IOWA • 🥩 HAND-CUT USDA CHOICE • ❄️ EXPRESS SHIPPED ON DRY ICE</div>", unsafe_allow_html=True)
 
-# --- PAGE: THE IOWA FARM STORY ---
-elif page == "🚜 The Iowa Farm Story":
-    st.markdown("<h1 style='font-weight: 900; text-transform: uppercase;'>We Killed The Middleman</h1>", unsafe_allow_html=True)
-    st.write("""
-    Traditional online meat brands acquire customers through massive advertising spending, source from processing brokers, and utilize external logistics centers. Every step cuts margin and delays delivery.
-    
-    **The Zero-Latency Front End**
-    We changed the game. When you click order, our custom API payload skips the corporate bureaucracy and transmits directly to Jason Birt's fulfillment floor in Iowa for immediate processing[cite: 2, 3]. 
-    
-    He cuts it, packs it in an insulated 14x14x14 container with compostable foam and dry ice, and ships it express to your door[cite: 1, 3]. Better margins for us. Better beef for you.
+# --- 5. THE PRODUCT CARD ROSTER (FRONT & CENTER) ---
+st.markdown("<h2 style='text-align: center; font-weight: 900; letter-spacing:1px; margin-bottom:5px;'>DRAFT YOUR ROSTER</h2>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #888888; margin-bottom: 35px;'>Select your curation level. Front-end orders route instantly via backend API payloads directly to the processing floor.</p>", unsafe_allow_html=True)
+
+card_cols = st.columns(4)
+
+# Box 1
+with card_cols[0]:
+    st.markdown("""
+    <div class='product-card'>
+        <div class='card-title-gold'>The Rookie</div>
+        <div class='price-tag'>$259</div>
+        <p style='color: #a3a3a3; font-size: 0.85rem; min-height: 70px;'>60 third-pound premium hamburger patties. Built for maximum volume tailgates.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    if st.button("Add to Cooler", key="btn_rookie"):
+        st.success("API Payload routed securely to Iowa queues!")
+
+# Box 2
+with card_cols[1]:
+    st.markdown("""
+    <div class='product-card' style='border-color: #cc0000;'>
+        <div class='card-title-crimson'>The Tailgate</div>
+        <div class='price-tag' style='color:#ff3333;'>$349</div>
+        <p style='color: #a3a3a3; font-size: 0.85rem; min-height: 70px;'>20 lbs: Prime Brisket, Chuck Roasts, Sirloin, Tri-Tip, Skirt, and Premium Ground Beef.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    if st.button("Add to Cooler", key="btn_tailgate"):
+        st.success("API Payload routed securely to Iowa queues!")
+
+# Box 3
+with card_cols[2]:
+    st.markdown("""
+    <div class='product-card'>
+        <div class='card-title-gold'>The Prime Time</div>
+        <div class='price-tag'>$499</div>
+        <p style='color: #a3a3a3; font-size: 0.85rem; min-height: 70px;'>20 lbs centered on high-end grilling cuts: Ribeyes, NY Strips, and Top Sirloin favorites.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    if st.button("Add to Cooler", key="btn_primetime"):
+        st.success("API Payload routed securely to Iowa queues!")
+
+# Box 4
+with card_cols[3]:
+    st.markdown("""
+    <div class='product-card'>
+        <div class='card-title-gold'>Hall of Fame</div>
+        <div class='price-tag'>$649</div>
+        <p style='color: #a3a3a3; font-size: 0.85rem; min-height: 70px;'>20 lbs pure luxury steakhouse portfolio. Thick Ribeyes, Filet Mignons, and NY Strips.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    if st.button("Add to Cooler", key="btn_hof"):
+        st.success("API Payload routed securely to Iowa queues!")
+
+st.markdown("<br><br><hr style='border-color:#1a1a1a;'>", unsafe_allow_html=True)
+
+# --- 6. INTEGRATED STRATEGIC FOOTER ---
+foot_l, foot_r = st.columns(2)
+with foot_l:
+    st.markdown("<h3 class='gold-text' style='font-size:1.3rem; margin-bottom:5px;'>WE BYPASSED THE DTC MIDDLEMAN</h3>", unsafe_allow_html=True)
+    st.markdown("""
+    Traditional operations waste massive capital on web brokers, physical distribution centers, and marketing agencies. 
+    AQP uses clean automation to connect the consumer directly to production. When a customer executes an order, our custom API 
+    payload skips traditional intermediaries and alerts Jason's Iowa floor instantly, ensuring premium margins and perfect freshness.
     """)
 
-# --- PAGE: NIL TRENCH AWARD ---
-elif page == "🏈 NIL Trench Award":
-    st.markdown("<h1 style='font-weight: 900; text-transform: uppercase;'>Dominating The Trenches</h1>", unsafe_allow_html=True)
-    st.write("""
-    ### The Ultimate Trophy for the Big Guys
-    Football games are won and lost on the line of scrimmage. To honor the hardest workers on the field, Coach Jon Gruden personally presents the weekly **National Trench Award**[cite: 2].
-    
-    Every week during the college football season, the most dominant Offensive Line and Defensive Line units in the country are awarded premium American Quality Protein beef, shipped directly to their training tables[cite: 2].
-    
-    *Supporting the athletes who bring the heat, every single Saturday.*
+with foot_r:
+    st.markdown("<h3 class='gold-text' style='font-size:1.3rem; margin-bottom:5px;'>THE NATIONAL TRENCH AWARD</h3>", unsafe_allow_html=True)
+    st.markdown("""
+    To anchor our presence in gridiron culture, Coach Jon Gruden personally hosts the weekly National Trench Award. 
+    Every single week of the competitive season, the most dominant line units are awarded premium AQP box arrays shipped 
+    straight to their locker rooms and collegiate training tables, driving powerful organic awareness across major athletic networks.
     """)
