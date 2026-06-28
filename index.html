@@ -6,6 +6,7 @@
     <title>Gruden's Tailgate in a Box | Premium Midwest Beef</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- FOXY LOADER SCRIPT -->
     <script data-cfasync="false" src="https://cdn.foxycart.com/gridiron-beef/loader.js" async defer></script>
     
     <style>
@@ -33,6 +34,7 @@
 </head>
 <body class="bg-[#050505] text-white font-sans selection:bg-red-800 selection:text-white">
 
+    <!-- NAVIGATION BAR -->
     <nav class="border-b border-neutral-800 bg-[#050505]/95 sticky top-0 z-50 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="text-2xl font-black tracking-wider text-gold">GRUDEN'S TAILGATE IN A BOX</div>
@@ -50,6 +52,7 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <section id="home" class="relative bg-neutral-950 py-16 md:py-24 overflow-hidden border-b border-neutral-900">
         <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-5 space-y-6">
@@ -67,11 +70,12 @@
             
             <div class="md:col-span-7 relative">
                 <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-yellow-600 rounded-xl blur opacity-20"></div>
-                <img src="PHOTO-2026-06-03-10-39-16.jpg" alt="Jon Gruden's Tailgate in a Box" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full object-cover">
+                <img src="PHOTO-2026-06-03-10-39-16.png" alt="Jon Gruden's Tailgate in a Box" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full object-cover">
             </div>
         </div>
     </section>
 
+    <!-- TRUST BAR -->
     <section class="bg-neutral-900 border-b border-neutral-800 py-6 text-center">
         <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-xs font-bold uppercase tracking-widest text-neutral-400">
             <span>🇺🇸 100% American Beef</span>
@@ -81,6 +85,7 @@
         </div>
     </section>
 
+    <!-- 1. BEEF BOX LINEUP -->
     <section id="boxes" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl font-black tracking-tight uppercase">Draft Your Roster</h2>
@@ -90,7 +95,7 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('rookie')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-rookie.jpg" alt="Fresh Hamburger Patties" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-rookie.png" alt="Fresh Hamburger Patties" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Rookie Box</h3>
@@ -102,7 +107,7 @@
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('audible')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-audible.jpg" alt="Raw Beef Skewers" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-audible.png" alt="Raw Beef Skewers" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Audible Box</h3>
@@ -115,7 +120,7 @@
             <div class="bg-neutral-950 border-2 border-red-800 rounded-xl p-6 flex flex-col h-full shadow-xl shadow-red-950/20 transform scale-105 z-10 cursor-pointer group relative" onclick="openProductModal('tailgate')">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500 z-10">Coach's Pick</span>
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-red-900/50">
-                    <img src="box-tailgate.jpg" alt="Premium Filet Mignon" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-tailgate.png" alt="Premium Filet Mignon" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-red-500 group-hover:text-red-400 transition">The Tailgate Box</h3>
@@ -127,7 +132,7 @@
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('gridiron')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-gridiron.jpg" alt="Bulk Hamburger Patties" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-gridiron.png" alt="Bulk Hamburger Patties" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Gridiron Bulk</h3>
@@ -139,7 +144,7 @@
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('primetime')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-primetime.jpg" alt="Premium Beef Skewers" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-primetime.png" alt="Premium Beef Skewers" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Prime Time</h3>
@@ -151,7 +156,7 @@
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('halloffame')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-halloffame.jpg" alt="Multiple Filets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-halloffame.png" alt="Multiple Filets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Hall of Fame</h3>
@@ -163,6 +168,7 @@
         </div>
     </section>
 
+    <!-- 2. BRAT-ONLY BOXES -->
     <section id="brats" class="max-w-7xl mx-auto px-6 py-16 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-12">
             <h2 class="text-4xl font-black tracking-tight uppercase">Specialty Brat Boxes</h2>
@@ -171,21 +177,21 @@
 
         <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('redzone')">
-                <img src="brats-redzone.jpg" alt="Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <img src="brats-redzone.png" alt="Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
                 <h3 class="text-xl font-black uppercase text-gold">The Redzone Brats</h3>
                 <div class="text-3xl font-black my-2">$75 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
             </div>
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('trench')">
-                <img src="brats-trench.jpg" alt="Thick Craft Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <img src="brats-trench.png" alt="Thick Craft Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
                 <h3 class="text-xl font-black uppercase text-gold">The Trench Battalion</h3>
                 <div class="text-3xl font-black my-2">$150 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
             </div>
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('warchest')">
-                <img src="brats-warchest.jpg" alt="Pile of Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <img src="brats-warchest.png" alt="Pile of Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
                 <h3 class="text-xl font-black uppercase text-gold">The Playbook War Chest</h3>
                 <div class="text-3xl font-black my-2">$300 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
@@ -193,6 +199,7 @@
         </div>
     </section>
 
+    <!-- 3. ZK RANCHES MODEL: BULK SHARES -->
     <section id="bulk" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl font-black tracking-tight uppercase">Bulk Beef Shares (Farm-to-Freezer)</h2>
@@ -203,7 +210,7 @@
             
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulk18')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="share-eighth.jpg" alt="1/8 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="share-eighth.png" alt="1/8 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">1/8 Steer Share</h3>
@@ -216,7 +223,7 @@
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between shadow-lg cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulk14')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="share-quarter.jpg" alt="1/4 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="share-quarter.png" alt="1/4 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">1/4 Steer Share</h3>
@@ -230,7 +237,7 @@
             <div class="bg-neutral-950 border-2 border-red-900 rounded-xl p-6 flex flex-col justify-between shadow-xl shadow-red-900/10 transform lg:-translate-y-2 relative cursor-pointer group transition hover:border-red-500" onclick="openProductModal('bulk12')">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500 z-10">Fully Custom Cuts</span>
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-red-900/50">
-                    <img src="share-half.jpg" alt="1/2 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="share-half.png" alt="1/2 Steer Hanging Beef" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-red-500 group-hover:text-red-400 transition">1/2 Steer Share</h3>
@@ -243,7 +250,7 @@
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulkwhole')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="share-whole.jpg" alt="Whole Steer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="share-whole.png" alt="Whole Steer Hanging Beef" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">Whole Steer</h3>
@@ -256,6 +263,7 @@
         </div>
     </section>
 
+    <!-- NEW SECTION: OUR STORY -->
     <section id="story" class="bg-neutral-950 py-24 border-b border-neutral-900">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div class="bg-neutral-900 h-[400px] rounded-xl border border-neutral-800 flex items-center justify-center p-8 text-center text-sm text-neutral-400 uppercase tracking-widest relative overflow-hidden shadow-2xl">
@@ -283,6 +291,7 @@
         </div>
     </section>
 
+    <!-- NEW SECTION: MASTER BEEF CHART TRIGGER -->
     <section class="max-w-7xl mx-auto px-6 py-20 text-center">
         <h2 class="text-3xl font-black tracking-tight uppercase mb-4">Know Your Playbook</h2>
         <p class="text-neutral-400 mb-8 max-w-2xl mx-auto text-lg">Not sure where the Tri-Tip or Skirt Steak comes from on the steer? Review our Master Beef Cut Chart to understand exactly what you are drafting for your cooler.</p>
@@ -291,17 +300,20 @@
         </button>
     </section>
 
+    <!-- PRODUCT DETAIL MODAL (Hidden by default) -->
     <div id="modal-overlay" class="fixed inset-0 bg-black/80 z-[9000] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4" onclick="closeProductModal(event)">
         <div id="product-modal" class="bg-neutral-950 border border-neutral-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto hidden-el flex flex-col md:flex-row relative">
             
             <button onclick="forceCloseModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-white transition text-3xl font-black z-10">&times;</button>
             
+            <!-- Modal Images Column -->
             <div class="w-full md:w-1/2 bg-black p-6 border-b md:border-b-0 md:border-r border-neutral-800">
                 <div class="aspect-square bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 mb-4" id="modal-main-img">
                     <img src="" id="active-image" class="w-full h-full object-cover">
                 </div>
             </div>
             
+            <!-- Modal Details Column -->
             <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
                 <span id="modal-tag" class="text-xs font-bold tracking-widest text-red-500 uppercase mb-2 block"></span>
                 <h2 id="modal-title" class="text-4xl font-black uppercase mb-2"></h2>
@@ -313,6 +325,7 @@
         </div>
     </div>
 
+    <!-- NEW CHART MODAL (Hidden by default) -->
     <div id="chart-overlay" class="fixed inset-0 bg-black/90 z-[9500] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeChartModal(event)">
         <div id="chart-modal" class="bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto hidden-el relative p-4 flex flex-col items-center">
             <button onclick="forceCloseChartModal()" class="absolute top-4 right-4 text-white transition text-4xl font-black z-10 bg-black/60 hover:bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">&times;</button>
@@ -321,6 +334,7 @@
         </div>
     </div>
 
+    <!-- FLOATING AI ASSISTANT OVERLAY -->
     <div id="ai-trigger" class="fixed bottom-6 right-6 z-[9999]">
         <button onclick="toggleChat()" class="crimson-gradient text-white px-6 py-4 rounded-full font-black uppercase tracking-wider shadow-2xl shadow-red-900/50 hover:scale-105 transition-transform flex items-center gap-3 border border-red-700">
             <span class="relative flex h-3 w-3">
@@ -331,6 +345,7 @@
         </button>
     </div>
 
+    <!-- THE CHAT WINDOW -->
     <div id="chat-window" class="fixed bottom-24 right-6 w-80 md:w-96 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl z-[9999] hidden-chat flex flex-col h-[400px]">
         <div class="bg-neutral-950 p-4 rounded-t-xl border-b border-neutral-800 flex items-center justify-between">
             <div class="flex items-center space-y-0.5">
@@ -351,6 +366,7 @@
         </div>
     </div>
 
+    <!-- JAVASCRIPT FUNCTIONS -->
     <script>
         // --- COMPLETE PRODUCT ROSTER DATA ---
         const productData = {
@@ -361,7 +377,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Rookie+Box&price=196.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10 lb Ground beef (80/20)</li><li>6 lb Chuck roast</li><li>4 lb Short ribs or round flats</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-3 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Pork Polish</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
-                image: 'box-rookie.jpg'
+                image: 'box-rookie.png'
             },
             'audible': {
                 title: 'The Audible Box',
@@ -370,7 +386,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Audible+Box&price=250.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ground Beef</li><li>6 lb Tri‑Tip / Sirloin flap</li><li>4 lb Skirt/Flank</li><li>Chuck roll portions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Polish</li><li>Beef Hot Italian</li><li>Pork Italian</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
-                image: 'box-audible.jpg'
+                image: 'box-audible.png'
             },
             'tailgate': {
                 title: 'The Tailgate Box',
@@ -379,7 +395,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Tailgate+Box&price=344.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ribeye/Strip mix</li><li>6 lb Top Sirloin / Tenderloin tips</li><li>Premium medallions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Cheddar</li><li>Beef Mango & Habanero</li><li>Beef Reuben</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
-                image: 'box-tailgate.jpg'
+                image: 'box-tailgate.png'
             },
             'gridiron': {
                 title: 'The Gridiron Bulk',
@@ -388,7 +404,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Gridiron+Bulk&price=391.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>20–24 lb Ground Beef</li><li>8–10 lb Chuck roasts</li><li>6–8 lb Short ribs</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Hot Italian</li><li>Pork Breakfast</li><li>Pork Beer</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
-                image: 'box-gridiron.jpg'
+                image: 'box-gridiron.png'
             },
             'primetime': {
                 title: 'The Prime Time',
@@ -397,7 +413,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Prime+Time&price=500.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10–12 lb Ground Beef</li><li>8–10 lb Tri‑Tip</li><li>8 lb Skirt/Flat Iron</li><li>6–8 lb Chuck roll steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Beer</li><li>Beef Italian</li><li>Beef Cheddar</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
-                image: 'box-primetime.jpg'
+                image: 'box-primetime.png'
             },
             'halloffame': {
                 title: 'The Hall of Fame',
@@ -406,7 +422,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Hall+of+Fame&price=688.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs / No Roasts / No Ground):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>12–14 lb Ribeye & NY Strip</li><li>8–10 lb Tenderloin & Top Sirloin</li><li>8–10 lb Tri‑Tip & Flank Steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben</li><li>Beef Pineapple</li><li>Beef Mango & Habanero</li><li>Queso Brat</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
-                image: 'box-halloffame.jpg'
+                image: 'box-halloffame.png'
             },
             'redzone': {
                 title: 'The Redzone Brats',
@@ -415,7 +431,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Redzone+Brats&price=75.00&weight=10',
                 btnText: 'Add to Cooler',
                 desc: '<p class="text-neutral-400 mb-4">10 full pounds of our legendary Midwest craft sausages. Includes 2-3 standard varieties plus 1 highly sought-after specialty item.</p><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Possible Variations:</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Beef Hot Italian</li><li>German Potato Sausage (Specialty)</li><li>Queso Brat (Specialty)</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
-                image: 'brats-redzone.jpg'
+                image: 'brats-redzone.png'
             },
             'trench': {
                 title: 'The Trench Battalion',
@@ -424,7 +440,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Trench+Battalion&price=150.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="text-neutral-400 mb-4">A massive 20-pound shipment designed for a serious cookout. Includes 3-5 distinct varieties across both our Pork and Premium Beef lineups.</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Apple & Pork Hawaiian</li><li>Beef Polish & Beef Cheddar</li><li>Beef Mango & Habanero</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
-                image: 'brats-trench.jpg'
+                image: 'brats-trench.png'
             },
             'warchest': {
                 title: 'The Playbook War Chest',
@@ -433,7 +449,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Playbook+War+Chest&price=300.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="text-neutral-400 mb-4">For the ultimate tailgate king. A 40-pound arsenal featuring our complete assortment of craft sausages, breakfast meats, and exclusive specialty items.</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben & Beef Pineapple</li><li>Pork Beer Cheddar & Pork Hatch Green Pepper</li><li>Maple Blueberry Pork Breakfast</li><li>Beef Chorizo & Beef Andouille</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
-                image: 'brats-warchest.jpg'
+                image: 'brats-warchest.png'
             },
             'bulk18': {
                 title: '1/8 Steer Share',
@@ -442,7 +458,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/8+Steer+Deposit&price=150.00',
                 btnText: 'Secure Deposit',
                 desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Exact quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">40 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 2</li><li>Boneless Chuck Roast - 2</li><li>Sirloin Tip Roast - 1</li><li>Sirloin Steak - 2</li><li>NY Strip - 4</li><li>Filet - 2</li><li>Ground Beef - 25 lbs</li></ul>',
-                image: 'share-eighth.jpg'
+                image: 'share-eighth.png'
             },
             'bulk14': {
                 title: '1/4 Steer Share',
@@ -451,7 +467,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/4+Steer+Deposit&price=300.00',
                 btnText: 'Secure Deposit',
                 desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Exact quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">80 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 4</li><li>Boneless Chuck Roast - 4</li><li>Sirloin Tip Roast - 2</li><li>Sirloin Steak - 4</li><li>NY Strip - 8</li><li>Filet - 4</li><li>Brisket - 1 quarter</li><li>Ground Beef - 50 lbs</li></ul>',
-                image: 'share-quarter.jpg'
+                image: 'share-quarter.png'
             },
             'bulk12': {
                 title: '1/2 Steer Share',
@@ -460,7 +476,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/2+Steer+Deposit&price=500.00',
                 btnText: 'Secure Deposit',
                 desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Exact quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">160 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 8</li><li>Boneless Chuck Roast - 6</li><li>Sirloin Tip Roast - 3</li><li>Sirloin Steak - 5</li><li>NY Strip - 12</li><li>Filet - 6</li><li>Brisket - 2 quarters or 1 half</li><li>Ground Beef - 110 lbs</li></ul>',
-                image: 'share-half.jpg'
+                image: 'share-half.png'
             },
             'bulkwhole': {
                 title: 'Whole Steer',
@@ -469,7 +485,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=Whole+Steer+Deposit&price=1000.00',
                 btnText: 'Secure Deposit',
                 desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Exact quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">320 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 16</li><li>Boneless Chuck Roast - 12</li><li>Sirloin Tip Roast - 6</li><li>Sirloin Steak - 10</li><li>NY Strip - 24</li><li>Filet - 12</li><li>Brisket - 4 quarters or 2 halves</li><li>Ground Beef - 220 lbs</li></ul>',
-                image: 'share-whole.jpg'
+                image: 'share-whole.png'
             }
         };
 
@@ -489,6 +505,7 @@
             foxyLink.href = data.foxy;
             foxyLink.innerText = data.btnText || 'Add to Cooler';
             
+            // Set single image for Modal
             document.getElementById('active-image').src = data.image;
 
             overlay.classList.remove('opacity-0', 'pointer-events-none');
