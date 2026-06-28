@@ -64,8 +64,8 @@
             
             <div class="md:col-span-7 relative">
                 <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-yellow-600 rounded-xl blur opacity-20"></div>
-                <!-- RESTORED ORIGINAL GRUDEN IMAGE -->
-                <img src="PHOTO-2026-06-03-10-39-16.jpg" alt="Grilling Premium Tailgate Beef" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full h-[400px] object-cover cursor-pointer hover:opacity-90 transition">
+                <!-- RESTORED EXACT ORIGINAL IMAGE CODE (No forced height) -->
+                <img src="PHOTO-2026-06-03-10-39-16.jpg" alt="Jon Gruden's Tailgate in a Box" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full object-cover">
             </div>
         </div>
     </section>
@@ -89,81 +89,82 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Box 1: Tailgate Value -->
-            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('val20')">
+            <!-- Box 1: The Rookie Box -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('rookie')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800" alt="Ground Beef and Chuck Roast" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
-                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">20 lb Tailgate Value</h3>
-                    <div class="text-3xl font-black my-2">$196</div>
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Rookie Box</h3>
+                    <div class="text-3xl font-black my-2">$196 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
                     <p class="text-neutral-400 text-sm line-clamp-3">A rock-solid 20 lb foundation. Features premium 80/20 ground beef, slow-cooking chuck roasts, savory short ribs, and craft pork brats.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 2: Tailgate Classic -->
-            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('classic20')">
+            <!-- Box 2: The Audible Box -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('audible')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="https://images.unsplash.com/photo-1607623814075-e51df1bd6b51?auto=format&fit=crop&q=80&w=800" alt="Raw Tri-Tip and Skirt Steak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
-                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">20 lb Tailgate Classic</h3>
-                    <div class="text-3xl font-black my-2">$250</div>
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Audible Box</h3>
+                    <div class="text-3xl font-black my-2">$250 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
                     <p class="text-neutral-400 text-sm line-clamp-3">The parking lot champion. Steps up to premium grilling cuts like Tri-Tip, Skirt Steak, and Chuck Roll steaks, paired with beef and pork polish brats.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 3: Tailgate Prime -->
-            <div class="bg-neutral-950 border-2 border-red-800 rounded-xl p-6 flex flex-col h-full shadow-xl shadow-red-950/20 transform scale-105 z-10 cursor-pointer group relative" onclick="openProductModal('prime20')">
+            <!-- Box 3: The Tailgate (Coach's Pick) -->
+            <div class="bg-neutral-950 border-2 border-red-800 rounded-xl p-6 flex flex-col h-full shadow-xl shadow-red-950/20 transform scale-105 z-10 cursor-pointer group relative" onclick="openProductModal('tailgate')">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500">Coach's Pick</span>
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-red-900/50">
-                    <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&q=80&w=800" alt="Premium Raw Ribeye and Strip Steaks" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <!-- Updated to clear Steak image instead of Calamari -->
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&q=80&w=800" alt="Premium Raw Ribeye and Strip Steaks" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
-                    <h3 class="text-xl font-black uppercase text-red-500 group-hover:text-red-400 transition">20 lb Tailgate Prime</h3>
-                    <div class="text-3xl font-black text-red-500 my-2">$344</div>
+                    <h3 class="text-xl font-black uppercase text-red-500 group-hover:text-red-400 transition">The Tailgate Box</h3>
+                    <div class="text-3xl font-black text-red-500 my-2">$344 <span class="text-sm font-normal text-neutral-400">20 lbs</span></div>
                     <p class="text-neutral-400 text-sm line-clamp-3">True steakhouse experience. Built around a massive core of highly marbled Ribeye, NY Strip, and Tenderloin tips. Includes specialty beef brats.</p>
                 </div>
                 <button class="w-full mt-6 crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider hover:brightness-110 transition border border-red-900 text-white">View Details</button>
             </div>
 
-            <!-- Box 4: Locker Fill -->
-            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('locker40')">
+            <!-- Box 4: The Gridiron Bulk -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('gridiron')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?auto=format&fit=crop&q=80&w=800" alt="Chest Freezer of Beef" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
-                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">40 lb Locker Fill</h3>
-                    <div class="text-3xl font-black my-2">$391</div>
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Gridiron Bulk</h3>
+                    <div class="text-3xl font-black my-2">$391 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
                     <p class="text-neutral-400 text-sm line-clamp-3">A heavy-duty 40 lb volume play to stock the chest freezer. Features 20+ lbs of ground beef, massive chuck roasts, short ribs, and breakfast/beer brats.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 5: Tailgate Pro -->
-            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('pro40')">
+            <!-- Box 5: The Prime Time -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('primetime')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="https://images.unsplash.com/photo-1628268909376-e8c44bb3153f?auto=format&fit=crop&q=80&w=800" alt="Raw Steaks and Filets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
-                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">40 lb Tailgate Pro</h3>
-                    <div class="text-3xl font-black my-2">$500</div>
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Prime Time</h3>
+                    <div class="text-3xl font-black my-2">$500 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
                     <p class="text-neutral-400 text-sm line-clamp-3">The master griller's arsenal. 40 lbs loaded with Tri-Tip, Skirt Steaks, Chuck Roll steaks, and premium Ground. Features exclusively Beef Brats.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 6: Prime Whole-Steer -->
-            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('prime40')">
+            <!-- Box 6: The Hall of Fame -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('halloffame')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800" alt="Steaks and Sausages on Cutting Board" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800" alt="Steaks on Cutting Board" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
-                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">40 lb Prime Whole-Steer</h3>
-                    <div class="text-3xl font-black my-2">$688</div>
-                    <p class="text-neutral-400 text-sm line-clamp-3">The pinnacle box. A massive 40 lb collection built exclusively from Ribeye, NY Strip, Tenderloin, and Tri-Tip. No roasts. No ground beef. Just steaks and elite specialty brats.</p>
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Hall of Fame</h3>
+                    <div class="text-3xl font-black my-2">$688 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">The pinnacle box. A massive 40 lb collection built exclusively from Ribeye, NY Strip, Tenderloin, and Tri-Tip. No roasts. No ground beef. Just steaks and elite brats.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
@@ -178,27 +179,28 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
-            <!-- 10 lb Brat Blitz -->
-            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('brat10')">
-                <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&q=80&w=800" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
-                <h3 class="text-xl font-black uppercase text-gold">10 lb Brat Blitz</h3>
-                <div class="text-3xl font-black my-2">$75</div>
+            <!-- 10 lb Redzone Brats -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('redzone')">
+                <!-- Updated to Sausage Image -->
+                <img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&q=80&w=800" alt="Craft Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <h3 class="text-xl font-black uppercase text-gold">The Redzone Brats</h3>
+                <div class="text-3xl font-black my-2">$75 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
             </div>
 
-            <!-- 20 lb Brat Battalion -->
-            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('brat20')">
-                <img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
-                <h3 class="text-xl font-black uppercase text-gold">20 lb Brat Battalion</h3>
-                <div class="text-3xl font-black my-2">$150</div>
+            <!-- 20 lb Trench Battalion -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('trench')">
+                <img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800" alt="Grilled Sausages" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <h3 class="text-xl font-black uppercase text-gold">The Trench Battalion</h3>
+                <div class="text-3xl font-black my-2">$150 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
             </div>
 
-            <!-- 40 lb Brat War Chest -->
-            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('brat40')">
-                <img src="https://images.unsplash.com/photo-1625938146369-adc83368bda7?auto=format&fit=crop&q=80&w=800" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
-                <h3 class="text-xl font-black uppercase text-gold">40 lb Brat War Chest</h3>
-                <div class="text-3xl font-black my-2">$300</div>
+            <!-- 40 lb Playbook War Chest -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('warchest')">
+                <img src="https://images.unsplash.com/photo-1625938146369-adc83368bda7?auto=format&fit=crop&q=80&w=800" alt="Bulk Sausages" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <h3 class="text-xl font-black uppercase text-gold">The Playbook War Chest</h3>
+                <div class="text-3xl font-black my-2">$300 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
             </div>
         </div>
@@ -316,77 +318,77 @@
 
     <!-- JAVASCRIPT FUNCTIONS -->
     <script>
-        // --- COMPLETE PRODUCT ROSTER DATA FOR MODALS WITH LIVE STOCK URLS ---
+        // --- COMPLETE PRODUCT ROSTER DATA FOR MODALS WITH CREATIVE NAMES ---
         const productData = {
-            'val20': {
-                title: '20 lb Tailgate Value',
+            'rookie': {
+                title: 'The Rookie Box',
                 price: '$196',
                 tag: 'High-Volume Essentials',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=20+lb+Tailgate+Value&price=196.00&weight=20',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside:</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10 lb Ground beef (80/20)</li><li>6 lb Chuck roast</li><li>4 lb Short ribs or round flats</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-3 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Pork Polish</li></ul>',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Rookie+Box&price=196.00&weight=20',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10 lb Ground beef (80/20)</li><li>6 lb Chuck roast</li><li>4 lb Short ribs or round flats</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-3 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Pork Polish</li></ul>',
                 images: ['https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1628268909376-e8c44bb3153f?auto=format&fit=crop&q=80&w=800'] 
             },
-            'classic20': {
-                title: '20 lb Tailgate Classic',
+            'audible': {
+                title: 'The Audible Box',
                 price: '$250',
                 tag: 'The Parking Lot Champion',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=20+lb+Tailgate+Classic&price=250.00&weight=20',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside:</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ground Beef</li><li>6 lb Tri‑Tip / Sirloin flap</li><li>4 lb Skirt/Flank</li><li>Chuck roll portions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Polish</li><li>Beef Hot Italian</li><li>Pork Italian</li></ul>',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Audible+Box&price=250.00&weight=20',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ground Beef</li><li>6 lb Tri‑Tip / Sirloin flap</li><li>4 lb Skirt/Flank</li><li>Chuck roll portions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Polish</li><li>Beef Hot Italian</li><li>Pork Italian</li></ul>',
                 images: ['https://images.unsplash.com/photo-1607623814075-e51df1bd6b51?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800']
             },
-            'prime20': {
-                title: '20 lb Tailgate Prime',
+            'tailgate': {
+                title: 'The Tailgate Box',
                 price: '$344',
                 tag: "Coach's Pick",
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=20+lb+Tailgate+Prime&price=344.00&weight=20',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside:</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ribeye/Strip mix</li><li>6 lb Top Sirloin / Tenderloin tips</li><li>Premium medallions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Cheddar</li><li>Beef Mango & Habanero</li><li>Beef Reuben</li></ul>',
-                images: ['https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?auto=format&fit=crop&q=80&w=800']
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Tailgate+Box&price=344.00&weight=20',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ribeye/Strip mix</li><li>6 lb Top Sirloin / Tenderloin tips</li><li>Premium medallions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Cheddar</li><li>Beef Mango & Habanero</li><li>Beef Reuben</li></ul>',
+                images: ['https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?auto=format&fit=crop&q=80&w=800']
             },
-            'locker40': {
-                title: '40 lb Locker Fill',
+            'gridiron': {
+                title: 'The Gridiron Bulk',
                 price: '$391',
                 tag: 'Maximum Yield',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=40+lb+Locker+Fill&price=391.00&weight=40',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside:</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>20–24 lb Ground Beef</li><li>8–10 lb Chuck roasts</li><li>6–8 lb Short ribs</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Hot Italian</li><li>Pork Breakfast</li><li>Pork Beer</li></ul>',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Gridiron+Bulk&price=391.00&weight=40',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>20–24 lb Ground Beef</li><li>8–10 lb Chuck roasts</li><li>6–8 lb Short ribs</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Hot Italian</li><li>Pork Breakfast</li><li>Pork Beer</li></ul>',
                 images: ['https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800']
             },
-            'pro40': {
-                title: '40 lb Tailgate Pro',
+            'primetime': {
+                title: 'The Prime Time',
                 price: '$500',
                 tag: "Grill Master's Arsenal",
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=40+lb+Tailgate+Pro&price=500.00&weight=40',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside:</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10–12 lb Ground Beef</li><li>8–10 lb Tri‑Tip</li><li>8 lb Skirt/Flat Iron</li><li>6–8 lb Chuck roll steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Beer</li><li>Beef Italian</li><li>Beef Cheddar</li></ul>',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Prime+Time&price=500.00&weight=40',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10–12 lb Ground Beef</li><li>8–10 lb Tri‑Tip</li><li>8 lb Skirt/Flat Iron</li><li>6–8 lb Chuck roll steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Beer</li><li>Beef Italian</li><li>Beef Cheddar</li></ul>',
                 images: ['https://images.unsplash.com/photo-1628268909376-e8c44bb3153f?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1607623814075-e51df1bd6b51?auto=format&fit=crop&q=80&w=800']
             },
-            'prime40': {
-                title: '40 lb Prime Whole-Steer',
+            'halloffame': {
+                title: 'The Hall of Fame',
                 price: '$688',
                 tag: 'Ultra-Luxury Curation',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=40+lb+Prime+Whole-Steer&price=688.00&weight=40',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (No Roasts/No Ground):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>12–14 lb Ribeye & NY Strip</li><li>8–10 lb Tenderloin & Top Sirloin</li><li>8–10 lb Tri‑Tip & Flank Steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben</li><li>Beef Pineapple</li><li>Beef Mango & Habanero</li><li>Queso Brat</li></ul>',
-                images: ['https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&q=80&w=800']
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Hall+of+Fame&price=688.00&weight=40',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs / No Roasts / No Ground):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>12–14 lb Ribeye & NY Strip</li><li>8–10 lb Tenderloin & Top Sirloin</li><li>8–10 lb Tri‑Tip & Flank Steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben</li><li>Beef Pineapple</li><li>Beef Mango & Habanero</li><li>Queso Brat</li></ul>',
+                images: ['https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&q=80&w=800']
             },
-            'brat10': {
-                title: '10 lb Brat Blitz',
+            'redzone': {
+                title: 'The Redzone Brats',
                 price: '$75',
                 tag: 'Craft Sausage Sampler',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=10+lb+Brat+Blitz&price=75.00&weight=10',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Redzone+Brats&price=75.00&weight=10',
                 desc: '<p class="text-neutral-400 mb-4">10 full pounds of our legendary Midwest craft sausages. Includes 2-3 standard varieties plus 1 highly sought-after specialty item.</p><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Possible Variations:</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Beef Hot Italian</li><li>German Potato Sausage (Specialty)</li><li>Queso Brat (Specialty)</li></ul>',
-                images: ['https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&q=80&w=800']
+                images: ['https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&q=80&w=800']
             },
-            'brat20': {
-                title: '20 lb Brat Battalion',
+            'trench': {
+                title: 'The Trench Battalion',
                 price: '$150',
                 tag: 'Premium Sausage Volume',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=20+lb+Brat+Battalion&price=150.00&weight=20',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Trench+Battalion&price=150.00&weight=20',
                 desc: '<p class="text-neutral-400 mb-4">A massive 20-pound shipment designed for a serious cookout. Includes 3-5 distinct varieties across both our Pork and Premium Beef lineups.</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Apple & Pork Hawaiian</li><li>Beef Polish & Beef Cheddar</li><li>Beef Mango & Habanero</li></ul>',
-                images: ['https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&q=80&w=800']
+                images: ['https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&q=80&w=800']
             },
-            'brat40': {
-                title: '40 lb Brat War Chest',
+            'warchest': {
+                title: 'The Playbook War Chest',
                 price: '$300',
                 tag: 'The Ultimate Assortment',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=40+lb+Brat+War+Chest&price=300.00&weight=40',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Playbook+War+Chest&price=300.00&weight=40',
                 desc: '<p class="text-neutral-400 mb-4">For the ultimate tailgate king. A 40-pound arsenal featuring our complete assortment of craft sausages, breakfast meats, and exclusive specialty items.</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben & Beef Pineapple</li><li>Pork Beer Cheddar & Pork Hatch Green Pepper</li><li>Maple Blueberry Pork Breakfast</li><li>Beef Chorizo & Beef Andouille</li></ul>',
                 images: ['https://images.unsplash.com/photo-1625938146369-adc83368bda7?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800']
             }
