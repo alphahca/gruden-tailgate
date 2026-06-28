@@ -17,13 +17,14 @@
         .border-gold { border-color: #D4AF37; }
         .bg-gold { background-color: #D4AF37; }
         
-        /* Modal & Chat Transitions */
-        #chat-window, #product-modal { transition: all 0.3s ease-in-out; }
+        /* Modal Transitions */
+        #product-modal { transition: all 0.3s ease-in-out; }
         .hidden-el { opacity: 0; pointer-events: none; transform: scale(0.95); }
         .visible-el { opacity: 1; pointer-events: auto; transform: scale(1); }
         #modal-overlay { transition: opacity 0.3s; }
         
         /* Chat Specific Classes */
+        #chat-window { transition: all 0.3s ease-in-out; transform-origin: bottom right; }
         .hidden-chat { opacity: 0; transform: scale(0.9) translateY(20px); pointer-events: none; }
         .visible-chat { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
         
@@ -68,6 +69,7 @@
             
             <div class="md:col-span-7 relative">
                 <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-yellow-600 rounded-xl blur opacity-20"></div>
+                <!-- RESTORED ORIGINAL GRUDEN IMAGE - Exact original code -->
                 <img src="PHOTO-2026-06-03-10-39-16.jpg" alt="Jon Gruden's Tailgate in a Box" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full object-cover">
             </div>
         </div>
@@ -95,7 +97,7 @@
             <!-- Box 1 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('rookie')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800" alt="Ground Beef and Chuck Roast" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/raw%20hamburger%20patties%20and%20chuck%20roast?width=800&height=600&nologo=true" alt="Ground Beef and Chuck Roast" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Rookie Box</h3>
@@ -108,8 +110,7 @@
             <!-- Box 2 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('audible')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <!-- USING VERIFIED LINK -->
-                    <img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800" alt="Raw Tri-Tip and Skirt Steak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/raw%20tri-tip%20and%20skirt%20steaks?width=800&height=600&nologo=true" alt="Raw Tri-Tip and Skirt Steak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Audible Box</h3>
@@ -121,10 +122,9 @@
 
             <!-- Box 3 -->
             <div class="bg-neutral-950 border-2 border-red-800 rounded-xl p-6 flex flex-col h-full shadow-xl shadow-red-950/20 transform scale-105 z-10 cursor-pointer group relative" onclick="openProductModal('tailgate')">
-                <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500">Coach's Pick</span>
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500 z-10">Coach's Pick</span>
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-red-900/50">
-                    <!-- USING VERIFIED LINK -->
-                    <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800" alt="Premium Raw Ribeye and Strip Steaks" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/premium%20raw%20ribeye%20and%20strip%20steaks?width=800&height=600&nologo=true" alt="Premium Raw Ribeye Steaks" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-red-500 group-hover:text-red-400 transition">The Tailgate Box</h3>
@@ -137,8 +137,7 @@
             <!-- Box 4 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('gridiron')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <!-- USING VERIFIED LINK -->
-                    <img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800" alt="Chest Freezer of Beef" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/large%20raw%20beef%20chuck%20roasts%20and%20short%20ribs?width=800&height=600&nologo=true" alt="Large Beef Roasts" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Gridiron Bulk</h3>
@@ -151,8 +150,7 @@
             <!-- Box 5 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('primetime')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <!-- USING VERIFIED LINK -->
-                    <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800" alt="Raw Steaks and Filets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/thick%20raw%20steaks%20on%20a%20wooden%20cutting%20board?width=800&height=600&nologo=true" alt="Raw Steaks and Filets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Prime Time</h3>
@@ -165,8 +163,7 @@
             <!-- Box 6 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('halloffame')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <!-- USING VERIFIED LINK -->
-                    <img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800" alt="Steaks on Cutting Board" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/luxury%20raw%20filet%20mignon%20steaks?width=800&height=600&nologo=true" alt="Steaks on Cutting Board" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Hall of Fame</h3>
@@ -178,7 +175,7 @@
         </div>
     </section>
 
-    <!-- 2. BRAT-ONLY BOXES -->
+    <!-- 2. BRAT-ONLY BOXES (RESTORED EXACT BRAT IMAGES) -->
     <section id="brats" class="max-w-7xl mx-auto px-6 py-16 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-12">
             <h2 class="text-4xl font-black tracking-tight uppercase">Specialty Brat Boxes</h2>
@@ -188,8 +185,7 @@
         <div class="grid md:grid-cols-3 gap-6">
             <!-- 10 lb -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('redzone')">
-                <!-- USING VERIFIED LINK -->
-                <img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&q=80&w=800" alt="Bratwurst on Grill" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <img src="https://image.pollinations.ai/prompt/bratwurst%20sausages%20cooking%20on%20a%20grill?width=800&height=600&nologo=true" alt="Bratwurst on Grill" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
                 <h3 class="text-xl font-black uppercase text-gold">The Redzone Brats</h3>
                 <div class="text-3xl font-black my-2">$75 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
@@ -197,7 +193,7 @@
 
             <!-- 20 lb -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('trench')">
-                <img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800" alt="Grilled Sausages" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <img src="https://image.pollinations.ai/prompt/thick%20craft%20sausages%20on%20a%20grill?width=800&height=600&nologo=true" alt="Grilled Sausages" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
                 <h3 class="text-xl font-black uppercase text-gold">The Trench Battalion</h3>
                 <div class="text-3xl font-black my-2">$150 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
@@ -205,8 +201,7 @@
 
             <!-- 40 lb -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('warchest')">
-                <!-- USING VERIFIED LINK -->
-                <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800" alt="Bulk Sausages on Grill" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <img src="https://image.pollinations.ai/prompt/pile%20of%20bratwurst%20and%20sausages%20on%20bbq%20grill?width=800&height=600&nologo=true" alt="Bulk Sausages on Grill" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
                 <h3 class="text-xl font-black uppercase text-gold">The Playbook War Chest</h3>
                 <div class="text-3xl font-black my-2">$300 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
@@ -214,7 +209,7 @@
         </div>
     </section>
 
-    <!-- 3. ZK RANCHES MODEL: BULK SHARES (UPDATED YIELD MATH) -->
+    <!-- 3. ZK RANCHES MODEL: BULK SHARES (SAFE PROMPTS / NO FILTER TRIGGERS) -->
     <section id="bulk" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl font-black tracking-tight uppercase">Bulk Beef Shares (Farm-to-Freezer)</h2>
@@ -226,8 +221,7 @@
             <!-- 1/8 Steer -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulk18')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <!-- USING VERIFIED LINK -->
-                    <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800" alt="1/8 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/premium%20cuts%20of%20raw%20beef%20on%20a%20butcher%20block?width=800&height=600&nologo=true" alt="1/8 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">1/8 Steer Share</h3>
@@ -241,8 +235,7 @@
             <!-- 1/4 Steer -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between shadow-lg cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulk14')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <!-- USING VERIFIED LINK -->
-                    <img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800" alt="1/4 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/large%20chest%20freezer%20filled%20with%20frozen%20packaged%20beef?width=800&height=600&nologo=true" alt="1/4 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">1/4 Steer Share</h3>
@@ -257,8 +250,7 @@
             <div class="bg-neutral-950 border-2 border-red-900 rounded-xl p-6 flex flex-col justify-between shadow-xl shadow-red-900/10 transform lg:-translate-y-2 relative cursor-pointer group transition hover:border-red-500" onclick="openProductModal('bulk12')">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500 z-10">Fully Custom Cuts</span>
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-red-900/50">
-                    <!-- USING VERIFIED LINK -->
-                    <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800" alt="1/2 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/clean%20butcher%20cold%20room%20with%20beef?width=800&height=600&nologo=true" alt="1/2 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-red-500 group-hover:text-red-400 transition">1/2 Steer Share</h3>
@@ -272,8 +264,7 @@
             <!-- Whole Steer (Custom) -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulkwhole')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <!-- USING VERIFIED LINK -->
-                    <img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800" alt="Whole Steer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://image.pollinations.ai/prompt/massive%20collection%20of%20premium%20raw%20steaks%20and%20beef%20cuts?width=800&height=600&nologo=true" alt="Whole Steer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">Whole Steer</h3>
@@ -287,7 +278,7 @@
     </section>
 
     <!-- PRODUCT DETAIL MODAL (Hidden by default) -->
-    <div id="modal-overlay" class="fixed inset-0 bg-black/80 z-50 opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4" onclick="closeProductModal(event)">
+    <div id="modal-overlay" class="fixed inset-0 bg-black/80 z-[9000] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4" onclick="closeProductModal(event)">
         <div id="product-modal" class="bg-neutral-950 border border-neutral-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto hidden-el flex flex-col md:flex-row relative">
             
             <button onclick="forceCloseModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-white transition text-3xl font-black z-10">&times;</button>
@@ -316,8 +307,8 @@
         </div>
     </div>
 
-    <!-- FLOATING AI ASSISTANT OVERLAY (RESTORED EXACTLY) -->
-    <div id="ai-trigger" class="fixed bottom-6 right-6 z-50">
+    <!-- FLOATING AI ASSISTANT OVERLAY (Elevated Z-Index to strictly prevent hiding) -->
+    <div id="ai-trigger" class="fixed bottom-6 right-6 z-[9999]">
         <button onclick="toggleChat()" class="crimson-gradient text-white px-6 py-4 rounded-full font-black uppercase tracking-wider shadow-2xl shadow-red-900/50 hover:scale-105 transition-transform flex items-center gap-3 border border-red-700">
             <span class="relative flex h-3 w-3">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -327,8 +318,8 @@
         </button>
     </div>
 
-    <!-- THE CHAT WINDOW (RESTORED EXACTLY, Hidden by default) -->
-    <div id="chat-window" class="fixed bottom-24 right-6 w-80 md:w-96 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl z-50 hidden-chat flex flex-col h-[400px]">
+    <!-- THE CHAT WINDOW -->
+    <div id="chat-window" class="fixed bottom-24 right-6 w-80 md:w-96 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl z-[9999] hidden-chat flex flex-col h-[400px]">
         <div class="bg-neutral-950 p-4 rounded-t-xl border-b border-neutral-800 flex items-center justify-between">
             <div class="flex items-center space-y-0.5">
                 <div class="w-2.5 h-2.5 rounded-full bg-green-500 mr-2 animate-pulse"></div>
@@ -350,7 +341,7 @@
 
     <!-- JAVASCRIPT FUNCTIONS -->
     <script>
-        // --- COMPLETE PRODUCT ROSTER DATA (RECYCLED VERIFIED IMAGES ONLY) ---
+        // --- COMPLETE PRODUCT ROSTER DATA (RECYCLED & SANITIZED AI PROMPTS) ---
         const productData = {
             'rookie': {
                 title: 'The Rookie Box',
@@ -359,7 +350,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Rookie+Box&price=196.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10 lb Ground beef (80/20)</li><li>6 lb Chuck roast</li><li>4 lb Short ribs or round flats</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-3 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Pork Polish</li></ul>',
-                images: ['https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800'] 
+                images: ['https://image.pollinations.ai/prompt/raw%20hamburger%20patties%20and%20chuck%20roast?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/bratwurst%20sausages%20cooking%20on%20a%20grill?width=800&height=600&nologo=true'] 
             },
             'audible': {
                 title: 'The Audible Box',
@@ -368,7 +359,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Audible+Box&price=250.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ground Beef</li><li>6 lb Tri‑Tip / Sirloin flap</li><li>4 lb Skirt/Flank</li><li>Chuck roll portions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Polish</li><li>Beef Hot Italian</li><li>Pork Italian</li></ul>',
-                images: ['https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/raw%20tri-tip%20and%20skirt%20steaks?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/thick%20craft%20sausages%20on%20a%20grill?width=800&height=600&nologo=true']
             },
             'tailgate': {
                 title: 'The Tailgate Box',
@@ -377,7 +368,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Tailgate+Box&price=344.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ribeye/Strip mix</li><li>6 lb Top Sirloin / Tenderloin tips</li><li>Premium medallions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Cheddar</li><li>Beef Mango & Habanero</li><li>Beef Reuben</li></ul>',
-                images: ['https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/premium%20raw%20ribeye%20and%20strip%20steaks?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/pile%20of%20bratwurst%20and%20sausages%20on%20bbq%20grill?width=800&height=600&nologo=true']
             },
             'gridiron': {
                 title: 'The Gridiron Bulk',
@@ -386,7 +377,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Gridiron+Bulk&price=391.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>20–24 lb Ground Beef</li><li>8–10 lb Chuck roasts</li><li>6–8 lb Short ribs</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Hot Italian</li><li>Pork Breakfast</li><li>Pork Beer</li></ul>',
-                images: ['https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/large%20raw%20beef%20chuck%20roasts%20and%20short%20ribs?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/bratwurst%20sausages%20cooking%20on%20a%20grill?width=800&height=600&nologo=true']
             },
             'primetime': {
                 title: 'The Prime Time',
@@ -395,7 +386,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Prime+Time&price=500.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10–12 lb Ground Beef</li><li>8–10 lb Tri‑Tip</li><li>8 lb Skirt/Flat Iron</li><li>6–8 lb Chuck roll steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Beer</li><li>Beef Italian</li><li>Beef Cheddar</li></ul>',
-                images: ['https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/thick%20raw%20steaks%20on%20a%20wooden%20cutting%20board?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/thick%20craft%20sausages%20on%20a%20grill?width=800&height=600&nologo=true']
             },
             'halloffame': {
                 title: 'The Hall of Fame',
@@ -404,7 +395,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Hall+of+Fame&price=688.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs / No Roasts / No Ground):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>12–14 lb Ribeye & NY Strip</li><li>8–10 lb Tenderloin & Top Sirloin</li><li>8–10 lb Tri‑Tip & Flank Steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben</li><li>Beef Pineapple</li><li>Beef Mango & Habanero</li><li>Queso Brat</li></ul>',
-                images: ['https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/luxury%20raw%20filet%20mignon%20steaks?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/pile%20of%20bratwurst%20and%20sausages%20on%20bbq%20grill?width=800&height=600&nologo=true']
             },
             'redzone': {
                 title: 'The Redzone Brats',
@@ -413,7 +404,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Redzone+Brats&price=75.00&weight=10',
                 btnText: 'Add to Cooler',
                 desc: '<p class="text-neutral-400 mb-4">10 full pounds of our legendary Midwest craft sausages. Includes 2-3 standard varieties plus 1 highly sought-after specialty item.</p><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Possible Variations:</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Beef Hot Italian</li><li>German Potato Sausage (Specialty)</li><li>Queso Brat (Specialty)</li></ul>',
-                images: ['https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/bratwurst%20sausages%20cooking%20on%20a%20grill?width=800&height=600&nologo=true']
             },
             'trench': {
                 title: 'The Trench Battalion',
@@ -422,7 +413,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Trench+Battalion&price=150.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="text-neutral-400 mb-4">A massive 20-pound shipment designed for a serious cookout. Includes 3-5 distinct varieties across both our Pork and Premium Beef lineups.</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Apple & Pork Hawaiian</li><li>Beef Polish & Beef Cheddar</li><li>Beef Mango & Habanero</li></ul>',
-                images: ['https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/thick%20craft%20sausages%20on%20a%20grill?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/bratwurst%20sausages%20cooking%20on%20a%20grill?width=800&height=600&nologo=true']
             },
             'warchest': {
                 title: 'The Playbook War Chest',
@@ -431,9 +422,9 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Playbook+War+Chest&price=300.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="text-neutral-400 mb-4">For the ultimate tailgate king. A 40-pound arsenal featuring our complete assortment of craft sausages, breakfast meats, and exclusive specialty items.</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben & Beef Pineapple</li><li>Pork Beer Cheddar & Pork Hatch Green Pepper</li><li>Maple Blueberry Pork Breakfast</li><li>Beef Chorizo & Beef Andouille</li></ul>',
-                images: ['https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/pile%20of%20bratwurst%20and%20sausages%20on%20bbq%20grill?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/thick%20craft%20sausages%20on%20a%20grill?width=800&height=600&nologo=true']
             },
-            /* BULK SHARE MODAL DATA (YIELDS UPDATED TO 585 BASE) */
+            /* BULK SHARE MODAL DATA */
             'bulk18': {
                 title: '1/8 Steer Share',
                 price: '$150 Deposit',
@@ -441,7 +432,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/8+Steer+Deposit&price=150.00',
                 btnText: 'Secure Deposit',
                 desc: '<p class="text-neutral-400 mb-4">The perfect starter share. Requires a standard fridge-freezer. Pay your deposit today to secure your harvest date, and pay the final balance right before your boxed beef ships.</p><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Standard Farm Cut Sheet (~73 lbs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Premium Steaks</li><li>Roasts & Ribs</li><li>Premium Ground Beef</li></ul>',
-                images: ['https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/premium%20cuts%20of%20raw%20beef%20on%20a%20butcher%20block?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/large%20chest%20freezer%20filled%20with%20frozen%20packaged%20beef?width=800&height=600&nologo=true']
             },
             'bulk14': {
                 title: '1/4 Steer Share',
@@ -450,7 +441,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/4+Steer+Deposit&price=300.00',
                 btnText: 'Secure Deposit',
                 desc: '<p class="text-neutral-400 mb-4">The Family Share. Requires a small chest freezer (3-4 cu ft). Pay your deposit today to secure your harvest date, and pay the final balance right before your boxed beef ships.</p><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Standard Farm Cut Sheet (~146 lbs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Premium Steaks</li><li>Roasts, Brisket, Ribs</li><li>Premium Ground Beef</li></ul>',
-                images: ['https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/large%20chest%20freezer%20filled%20with%20frozen%20packaged%20beef?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/premium%20cuts%20of%20raw%20beef%20on%20a%20butcher%20block?width=800&height=600&nologo=true']
             },
             'bulk12': {
                 title: '1/2 Steer Share',
@@ -459,7 +450,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/2+Steer+Deposit&price=500.00',
                 btnText: 'Secure Deposit',
                 desc: '<p class="text-neutral-400 mb-4">The VIP Experience. You dictate the playbook. After your deposit, we will contact you to fill out a custom cut sheet for steak thickness and roast sizes.</p><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Custom Cut Sheet (~292 lbs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Steaks (Your Specs)</li><li>Roasts, Brisket (Your Specs)</li><li>Ground Beef (1 lb or 2 lb packs)</li></ul>',
-                images: ['https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/clean%20butcher%20cold%20room%20with%20beef?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/massive%20collection%20of%20premium%20raw%20steaks%20and%20beef%20cuts?width=800&height=600&nologo=true']
             },
             'bulkwhole': {
                 title: 'Whole Steer',
@@ -468,7 +459,7 @@
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=Whole+Steer+Deposit&price=1000.00',
                 btnText: 'Secure Deposit',
                 desc: '<p class="text-neutral-400 mb-4">The Ultimate Roster. Keep a massive deep freezer stocked for a year. Complete control over every cut of the animal with our master butcher consultation.</p><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Full Custom Cut Sheet (~585 lbs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Full Customization on all Steaks and Roasts</li><li>Keep all offal/bones (optional)</li><li>Shipped in multiple heavy-duty dry-ice coolers</li></ul>',
-                images: ['https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&q=80&w=800', 'https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80&w=800']
+                images: ['https://image.pollinations.ai/prompt/massive%20collection%20of%20premium%20raw%20steaks%20and%20beef%20cuts?width=800&height=600&nologo=true', 'https://image.pollinations.ai/prompt/clean%20butcher%20cold%20room%20with%20beef?width=800&height=600&nologo=true']
             }
         };
 
@@ -479,21 +470,17 @@
         function openProductModal(productId) {
             const data = productData[productId];
             
-            // Populate Text
             document.getElementById('modal-title').innerText = data.title;
             document.getElementById('modal-price').innerText = data.price;
             document.getElementById('modal-tag').innerText = data.tag;
             document.getElementById('modal-desc').innerHTML = data.desc;
             
-            // Set Link and Button Text dynamically
             const foxyLink = document.getElementById('modal-foxy-link');
             foxyLink.href = data.foxy;
             foxyLink.innerText = data.btnText || 'Add to Cooler';
             
-            // Set Main Image
             document.getElementById('active-image').src = data.images[0];
             
-            // Generate Thumbnails
             const thumbContainer = document.getElementById('modal-thumbnails');
             thumbContainer.innerHTML = '';
             data.images.forEach(imgSrc => {
@@ -504,7 +491,6 @@
                 `;
             });
 
-            // Show Modal
             overlay.classList.remove('opacity-0', 'pointer-events-none');
             modal.classList.remove('hidden-el');
             modal.classList.add('visible-el');
@@ -520,7 +506,7 @@
             modal.classList.add('hidden-el');
         }
 
-        // --- CHAT LOGIC (RESTORED EXACTLY) ---
+        // --- CHAT LOGIC ---
         let chatOpen = false;
         function toggleChat() {
             const chatWindow = document.getElementById('chat-window');
@@ -536,9 +522,7 @@
         }
 
         function handleKeyPress(e) {
-            if (e.key === 'Enter') {
-                askAI();
-            }
+            if (e.key === 'Enter') { askAI(); }
         }
 
         async function askAI() {
@@ -569,9 +553,7 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: userText })
                 });
-
                 const data = await response.json();
-
                 document.getElementById(loadingId).remove();
                 chatBox.innerHTML += `
                     <div class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%] flex items-start gap-3">
