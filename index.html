@@ -6,7 +6,6 @@
     <title>Gruden's Tailgate in a Box | Premium Midwest Beef</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- FOXY LOADER SCRIPT -->
     <script data-cfasync="false" src="https://cdn.foxycart.com/gridiron-beef/loader.js" async defer></script>
     
     <style>
@@ -18,10 +17,10 @@
         .bg-gold { background-color: #D4AF37; }
         
         /* Modal Transitions */
-        #product-modal { transition: all 0.3s ease-in-out; }
+        #product-modal, #chart-modal { transition: all 0.3s ease-in-out; }
         .hidden-el { opacity: 0; pointer-events: none; transform: scale(0.95); }
         .visible-el { opacity: 1; pointer-events: auto; transform: scale(1); }
-        #modal-overlay { transition: opacity 0.3s; }
+        #modal-overlay, #chart-overlay { transition: opacity 0.3s; }
         
         /* Chat Specific Classes */
         #chat-window { transition: all 0.3s ease-in-out; transform-origin: bottom right; }
@@ -34,7 +33,6 @@
 </head>
 <body class="bg-[#050505] text-white font-sans selection:bg-red-800 selection:text-white">
 
-    <!-- NAVIGATION BAR -->
     <nav class="border-b border-neutral-800 bg-[#050505]/95 sticky top-0 z-50 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="text-2xl font-black tracking-wider text-gold">GRUDEN'S TAILGATE IN A BOX</div>
@@ -52,7 +50,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section id="home" class="relative bg-neutral-950 py-16 md:py-24 overflow-hidden border-b border-neutral-900">
         <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-5 space-y-6">
@@ -75,7 +72,6 @@
         </div>
     </section>
 
-    <!-- TRUST BAR -->
     <section class="bg-neutral-900 border-b border-neutral-800 py-6 text-center">
         <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-xs font-bold uppercase tracking-widest text-neutral-400">
             <span>🇺🇸 100% American Beef</span>
@@ -85,7 +81,6 @@
         </div>
     </section>
 
-    <!-- 1. BEEF BOX LINEUP (6 Boxes) -->
     <section id="boxes" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl font-black tracking-tight uppercase">Draft Your Roster</h2>
@@ -168,7 +163,6 @@
         </div>
     </section>
 
-    <!-- 2. BRAT-ONLY BOXES -->
     <section id="brats" class="max-w-7xl mx-auto px-6 py-16 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-12">
             <h2 class="text-4xl font-black tracking-tight uppercase">Specialty Brat Boxes</h2>
@@ -199,7 +193,6 @@
         </div>
     </section>
 
-    <!-- 3. ZK RANCHES MODEL: BULK SHARES (UPDATED WITH DETAILED BREAKDOWNS) -->
     <section id="bulk" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl font-black tracking-tight uppercase">Bulk Beef Shares (Farm-to-Freezer)</h2>
@@ -208,10 +201,9 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             
-            <!-- 1/8 Steer -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulk18')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="share-eighth.jpg" alt="1/8 Steer Hanging Beef" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="share-eighth.jpg" alt="1/8 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">1/8 Steer Share</h3>
@@ -222,10 +214,9 @@
                 <button class="w-full bg-neutral-900 group-hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition block text-center mt-4">View Details</button>
             </div>
 
-            <!-- 1/4 Steer -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between shadow-lg cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulk14')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="share-quarter.jpg" alt="1/4 Steer Hanging Beef" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="share-quarter.jpg" alt="1/4 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">1/4 Steer Share</h3>
@@ -236,11 +227,10 @@
                 <button class="w-full bg-neutral-900 group-hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition block text-center mt-4">View Details</button>
             </div>
 
-            <!-- 1/2 Steer (Custom) -->
             <div class="bg-neutral-950 border-2 border-red-900 rounded-xl p-6 flex flex-col justify-between shadow-xl shadow-red-900/10 transform lg:-translate-y-2 relative cursor-pointer group transition hover:border-red-500" onclick="openProductModal('bulk12')">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500 z-10">Fully Custom Cuts</span>
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-red-900/50">
-                    <img src="share-half.jpg" alt="1/2 Steer Hanging Beef" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="share-half.jpg" alt="1/2 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-red-500 group-hover:text-red-400 transition">1/2 Steer Share</h3>
@@ -251,10 +241,9 @@
                 <button class="w-full crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider border border-red-900 hover:brightness-110 transition block text-center mt-4">View Details</button>
             </div>
 
-            <!-- Whole Steer (Custom) -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulkwhole')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="share-whole.jpg" alt="Whole Steer Hanging Beef" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="share-whole.jpg" alt="Whole Steer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div>
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">Whole Steer</h3>
@@ -267,20 +256,52 @@
         </div>
     </section>
 
-    <!-- PRODUCT DETAIL MODAL (Hidden by default) -->
+    <section id="story" class="bg-neutral-950 py-24 border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="bg-neutral-900 h-[400px] rounded-xl border border-neutral-800 flex items-center justify-center p-8 text-center text-sm text-neutral-400 uppercase tracking-widest relative overflow-hidden shadow-2xl">
+                 <div class="absolute inset-0 bg-gradient-to-tr from-red-900/20 to-black z-10"></div>
+                 <div class="relative z-20 space-y-4">
+                     <span class="text-gold text-5xl">🇺🇸</span>
+                     <h3 class="text-2xl font-black text-white">American Quality Protein</h3>
+                     <p class="text-xs leading-relaxed max-w-xs mx-auto">Direct Routing from Frontend Store to Jason Birt's Iowa Processing Floor. No corporate meatpackers. No delays.</p>
+                 </div>
+            </div>
+            <div class="space-y-6">
+                <span class="text-xs font-bold tracking-widest text-red-500 uppercase">The Gruden Philosophy</span>
+                <h2 class="text-4xl font-black uppercase tracking-tight">Football is won in the trenches. <br>Great meals are won at the source.</h2>
+                <p class="text-neutral-400 leading-relaxed text-lg">
+                    I've spent my life studying the tape, looking for an edge. When you look at the corporate meatpacking industry today, it's a busted play. Huge advertising budgets, external logistics centers, and layers of middlemen—all of them taking a cut, slowing down delivery, and compromising quality. 
+                </p>
+                <p class="text-neutral-400 leading-relaxed text-lg">
+                    That's why we threw the old playbook out. I partnered with Jason Birt right in the heartland of Iowa to build **American Quality Protein**. 
+                </p>
+                <div class="border-l-2 border-gold pl-6 space-y-2 mt-6">
+                    <p class="font-bold text-white text-xl">The Zero-Latency Supply Chain</p>
+                    <p class="text-neutral-400">When you draft a box on this site, your order bypasses the corporate bureaucracy and transmits directly to Jason's fulfillment floor in Iowa. He cuts it, packs it in dry ice, and ships it directly to your family. It's elite fuel, delivered the right way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <h2 class="text-3xl font-black tracking-tight uppercase mb-4">Know Your Playbook</h2>
+        <p class="text-neutral-400 mb-8 max-w-2xl mx-auto text-lg">Not sure where the Tri-Tip or Skirt Steak comes from on the steer? Review our Master Beef Cut Chart to understand exactly what you are drafting for your cooler.</p>
+        <button onclick="openChartModal()" class="border border-gold text-gold px-8 py-4 rounded text-sm font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition shadow-lg shadow-yellow-900/20">
+            View Master Beef Chart
+        </button>
+    </section>
+
     <div id="modal-overlay" class="fixed inset-0 bg-black/80 z-[9000] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4" onclick="closeProductModal(event)">
         <div id="product-modal" class="bg-neutral-950 border border-neutral-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto hidden-el flex flex-col md:flex-row relative">
             
             <button onclick="forceCloseModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-white transition text-3xl font-black z-10">&times;</button>
             
-            <!-- Modal Images Column -->
             <div class="w-full md:w-1/2 bg-black p-6 border-b md:border-b-0 md:border-r border-neutral-800">
                 <div class="aspect-square bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 mb-4" id="modal-main-img">
                     <img src="" id="active-image" class="w-full h-full object-cover">
                 </div>
             </div>
             
-            <!-- Modal Details Column -->
             <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
                 <span id="modal-tag" class="text-xs font-bold tracking-widest text-red-500 uppercase mb-2 block"></span>
                 <h2 id="modal-title" class="text-4xl font-black uppercase mb-2"></h2>
@@ -292,7 +313,14 @@
         </div>
     </div>
 
-    <!-- FLOATING AI ASSISTANT OVERLAY -->
+    <div id="chart-overlay" class="fixed inset-0 bg-black/90 z-[9500] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeChartModal(event)">
+        <div id="chart-modal" class="bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto hidden-el relative p-4 flex flex-col items-center">
+            <button onclick="forceCloseChartModal()" class="absolute top-4 right-4 text-white transition text-4xl font-black z-10 bg-black/60 hover:bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">&times;</button>
+            <h2 class="text-2xl font-black uppercase text-gold mb-4 mt-2">Master Beef Cut Chart</h2>
+            <img src="beef-chart.png" alt="Beef Cut Chart" class="w-full h-auto object-contain rounded">
+        </div>
+    </div>
+
     <div id="ai-trigger" class="fixed bottom-6 right-6 z-[9999]">
         <button onclick="toggleChat()" class="crimson-gradient text-white px-6 py-4 rounded-full font-black uppercase tracking-wider shadow-2xl shadow-red-900/50 hover:scale-105 transition-transform flex items-center gap-3 border border-red-700">
             <span class="relative flex h-3 w-3">
@@ -303,7 +331,6 @@
         </button>
     </div>
 
-    <!-- THE CHAT WINDOW -->
     <div id="chat-window" class="fixed bottom-24 right-6 w-80 md:w-96 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl z-[9999] hidden-chat flex flex-col h-[400px]">
         <div class="bg-neutral-950 p-4 rounded-t-xl border-b border-neutral-800 flex items-center justify-between">
             <div class="flex items-center space-y-0.5">
@@ -324,7 +351,6 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT FUNCTIONS -->
     <script>
         // --- COMPLETE PRODUCT ROSTER DATA ---
         const productData = {
@@ -447,7 +473,7 @@
             }
         };
 
-        // --- MODAL LOGIC ---
+        // --- PRODUCT MODAL LOGIC ---
         const overlay = document.getElementById('modal-overlay');
         const modal = document.getElementById('product-modal');
 
@@ -478,6 +504,26 @@
             overlay.classList.add('opacity-0', 'pointer-events-none');
             modal.classList.remove('visible-el');
             modal.classList.add('hidden-el');
+        }
+
+        // --- BEEF CHART MODAL LOGIC ---
+        const chartOverlay = document.getElementById('chart-overlay');
+        const chartModal = document.getElementById('chart-modal');
+
+        function openChartModal() {
+            chartOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            chartModal.classList.remove('hidden-el');
+            chartModal.classList.add('visible-el');
+        }
+
+        function closeChartModal(event) {
+            if (event.target === chartOverlay) { forceCloseChartModal(); }
+        }
+
+        function forceCloseChartModal() {
+            chartOverlay.classList.add('opacity-0', 'pointer-events-none');
+            chartModal.classList.remove('visible-el');
+            chartModal.classList.add('hidden-el');
         }
 
         // --- CHAT LOGIC ---
