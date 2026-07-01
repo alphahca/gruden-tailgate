@@ -85,83 +85,131 @@
         </div>
     </section>
 
-    <!-- 1. BEEF BOX LINEUP -->
+    <!-- 1. BEEF BOX LINEUP (9 Boxes) -->
     <section id="boxes" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl font-black tracking-tight uppercase">Draft Your Roster</h2>
-            <p class="text-neutral-400 max-w-xl mx-auto">Select your curation level. Click any box to view the full list of premium cuts and specialty brats inside.</p>
+            <p class="text-neutral-400 max-w-xl mx-auto">Select your curation level across our 10 lb, 20 lb, and 40 lb tiers. Click any box to view the full list of premium cuts inside.</p>
+            <!-- SHIPPING DISCLAIMER -->
+            <p class="text-red-500 font-black uppercase text-sm tracking-widest mt-4 pt-4 border-t border-neutral-800 inline-block">* THE PRICES BELOW DO NOT INCLUDE SHIPPING WHICH IS CALCULATED AT CHECKOUT.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Box 1: Free Agent (10 lbs) -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('freeagent')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-freeagent.png" alt="Everyday Value Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Free Agent Box</h3>
+                    <div class="text-3xl font-black my-2">$90 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">A fast, high-quality 10 lb everyday value package. Built on a foundation of ground beef with premium Sirloin steaks for the grill.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <!-- Box 2: Second Round Draft (10 lbs) -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('secondround')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-secondround.png" alt="Backyard Variety Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Second Round Draft</h3>
+                    <div class="text-3xl font-black my-2">$125 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">Our 10 lb backyard variety option. A perfectly balanced mix of NY Strip steaks, slow-cooking Chuck Roast, and our signature Ground Beef.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <!-- Box 3: First Round Draft (10 lbs) -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('firstround')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-firstround.png" alt="Elite Steakhouse Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The First Round Draft</h3>
+                    <div class="text-3xl font-black my-2">$195 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">The elite 10 lb steakhouse box. We skip the roasts entirely and pack this with Boneless Ribeyes and pure Filet Mignon.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <!-- Box 4: Rookie Box (20 lbs) -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('rookie')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-rookie.png" alt="Fresh Hamburger Patties" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-rookie.png" alt="Stock-Up Value Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Rookie Box</h3>
-                    <div class="text-3xl font-black my-2">$196 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
-                    <p class="text-neutral-400 text-sm line-clamp-3">A rock-solid 20 lb foundation. Features premium 80/20 ground beef, slow-cooking chuck roasts, savory short ribs, and craft pork brats.</p>
+                    <div class="text-3xl font-black my-2">$189 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">A rock-solid 20 lb foundation designed to stock the freezer. Features heavy volumes of premium ground beef and assorted savory roasts.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
+            <!-- Box 5: Audible Box (20 lbs) -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('audible')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-audible.png" alt="Raw Beef Skewers" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-audible.png" alt="Classic Variety Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Audible Box</h3>
-                    <div class="text-3xl font-black my-2">$250 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
-                    <p class="text-neutral-400 text-sm line-clamp-3">The parking lot champion. Steps up to premium grilling cuts like Tri-Tip, Skirt Steak, and Chuck Roll steaks, paired with beef and pork polish brats.</p>
+                    <div class="text-3xl font-black my-2">$240 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">Our classic 20 lb variety package. Provides the perfect weekly rotation of ground beef, slow-cooking chuck roasts, and mixed steaks.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
+            <!-- Box 6: Tailgate Box (20 lbs) -->
             <div class="bg-neutral-950 border-2 border-red-800 rounded-xl p-6 flex flex-col h-full shadow-xl shadow-red-950/20 transform scale-105 z-10 cursor-pointer group relative" onclick="openProductModal('tailgate')">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500 z-10">Coach's Pick</span>
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-red-900/50">
-                    <img src="box-tailgate.png" alt="Premium Filet Mignon" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-tailgate.png" alt="Premier Griller Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-red-500 group-hover:text-red-400 transition">The Tailgate Box</h3>
-                    <div class="text-3xl font-black text-red-500 my-2">$344 <span class="text-sm font-normal text-neutral-400">20 lbs</span></div>
-                    <p class="text-neutral-400 text-sm line-clamp-3">True steakhouse experience. Built around a massive core of highly marbled Ribeye, NY Strip, and Tenderloin tips. Includes specialty beef brats.</p>
+                    <div class="text-3xl font-black text-red-500 my-2">$355 <span class="text-sm font-normal text-neutral-400">20 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">The premier 20 lb griller. Loaded with top-tier cuts including Filet Mignon, Sirloins, and premium mixed steaks for the ultimate parking lot experience.</p>
                 </div>
                 <button class="w-full mt-6 crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider hover:brightness-110 transition border border-red-900 text-white">View Details</button>
             </div>
 
+            <!-- Box 7: Gridiron Bulk (40 lbs) -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('gridiron')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-gridiron.png" alt="Bulk Hamburger Patties" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-gridiron.png" alt="Deep-Freeze Value Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Gridiron Bulk</h3>
-                    <div class="text-3xl font-black my-2">$391 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
-                    <p class="text-neutral-400 text-sm line-clamp-3">A heavy-duty 40 lb volume play to stock the chest freezer. Features 20+ lbs of ground beef, massive chuck roasts, short ribs, and breakfast/beer brats.</p>
+                    <div class="text-3xl font-black my-2">$340 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">A heavy-duty 40 lb volume play. Dominate the trenches and fill your deep-freezer with 28 lbs of ground beef and 12 lbs of roasts.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
+            <!-- Box 8: Prime Time (40 lbs) -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('primetime')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-primetime.png" alt="Premium Beef Skewers" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-primetime.png" alt="Ultimate Variety Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Prime Time</h3>
-                    <div class="text-3xl font-black my-2">$500 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
-                    <p class="text-neutral-400 text-sm line-clamp-3">The master griller's arsenal. 40 lbs loaded with Tri-Tip, Skirt Steaks, Chuck Roll steaks, and premium Ground. Features exclusively Beef Brats.</p>
+                    <div class="text-3xl font-black my-2">$470 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">The ultimate 40 lb variety. An arsenal of mixed grilling steaks, massive beef roasts, and premium ground beef to keep a family fed all season.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
+            <!-- Box 9: Hall of Fame (40 lbs) -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('halloffame')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
-                    <img src="box-halloffame.png" alt="Multiple Filets" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="box-halloffame.png" alt="Luxury Connoisseur Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">The Hall of Fame</h3>
-                    <div class="text-3xl font-black my-2">$688 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
-                    <p class="text-neutral-400 text-sm line-clamp-3">The pinnacle box. A massive 40 lb collection built exclusively from Ribeye, NY Strip, Tenderloin, and Tri-Tip. No roasts. No ground beef. Just steaks and elite brats.</p>
+                    <div class="text-3xl font-black my-2">$740 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">The 40 lb luxury connoisseur collection. The absolute pinnacle of our operation, featuring 16 lbs of Ribeyes, Filet Mignon, and NY Strips.</p>
                 </div>
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
@@ -207,7 +255,6 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulk18')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="share-eighth.png" alt="1/8 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -368,87 +415,114 @@
 
     <!-- JAVASCRIPT FUNCTIONS -->
     <script>
-        // --- COMPLETE PRODUCT ROSTER DATA ---
+        // --- COMPLETE PRODUCT ROSTER DATA (UPDATED TO 9 BOXES) ---
         const productData = {
+            'freeagent': {
+                title: 'The Free Agent Box',
+                price: '$90.00',
+                tag: 'Everyday Value',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Free+Agent+Box&price=90.00&weight=10',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (10 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>8 lbs Ground Beef</li><li>2 lbs Sirloin Steaks</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-freeagent.png'
+            },
+            'secondround': {
+                title: 'The Second Round Draft',
+                price: '$125.00',
+                tag: 'Backyard Variety',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Second+Round+Draft+Box&price=125.00&weight=10',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (10 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>4 lbs Ground Beef</li><li>3 lbs Chuck Roast</li><li>3 lbs NY Strip Steaks</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-secondround.png'
+            },
+            'firstround': {
+                title: 'The First Round Draft',
+                price: '$195.00',
+                tag: 'Elite Steakhouse',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+First+Round+Draft+Box&price=195.00&weight=10',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (10 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>4 lbs Ground Beef</li><li>4 lbs Boneless Ribeyes</li><li>2 lbs Filet Mignon</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-firstround.png'
+            },
             'rookie': {
                 title: 'The Rookie Box',
-                price: '$196',
-                tag: 'High-Volume Essentials',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Rookie+Box&price=196.00&weight=20',
+                price: '$189.00',
+                tag: 'Stock-Up Value',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Rookie+Box&price=189.00&weight=20',
                 btnText: 'Add to Cooler',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10 lb Ground beef (80/20)</li><li>6 lb Chuck roast</li><li>4 lb Short ribs or round flats</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-3 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Pork Polish</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>14 lbs Ground Beef</li><li>6 lbs Assorted Roasts</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-rookie.png'
             },
             'audible': {
                 title: 'The Audible Box',
-                price: '$250',
-                tag: 'The Parking Lot Champion',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Audible+Box&price=250.00&weight=20',
+                price: '$240.00',
+                tag: 'Classic Variety',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Audible+Box&price=240.00&weight=20',
                 btnText: 'Add to Cooler',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ground Beef</li><li>6 lb Tri‑Tip / Sirloin flap</li><li>4 lb Skirt/Flank</li><li>Chuck roll portions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Polish</li><li>Beef Hot Italian</li><li>Pork Italian</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10 lbs Ground Beef</li><li>6 lbs Chuck Roasts</li><li>4 lbs Mixed Steaks</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-audible.png'
             },
             'tailgate': {
                 title: 'The Tailgate Box',
-                price: '$344',
-                tag: "Coach's Pick",
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Tailgate+Box&price=344.00&weight=20',
+                price: '$355.00',
+                tag: "Premier Griller",
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Tailgate+Box&price=355.00&weight=20',
                 btnText: 'Add to Cooler',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>6–8 lb Ribeye/Strip mix</li><li>6 lb Top Sirloin / Tenderloin tips</li><li>Premium medallions</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Cheddar</li><li>Beef Mango & Habanero</li><li>Beef Reuben</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>5 lbs Ground Beef</li><li>8 lbs Premium Steaks</li><li>4 lbs Filet Mignon</li><li>3 lbs Sirloin Steaks</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-tailgate.png'
             },
             'gridiron': {
-                title: 'The Gridiron Bulk',
-                price: '$391',
-                tag: 'Maximum Yield',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Gridiron+Bulk&price=391.00&weight=40',
+                title: 'The Gridiron Bulk Box',
+                price: '$340.00',
+                tag: 'Deep-Freeze Value',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Gridiron+Bulk+Box&price=340.00&weight=40',
                 btnText: 'Add to Cooler',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>20–24 lb Ground Beef</li><li>8–10 lb Chuck roasts</li><li>6–8 lb Short ribs</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (2-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Hot Italian</li><li>Pork Breakfast</li><li>Pork Beer</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>28 lbs Ground Beef</li><li>12 lbs Assorted Roasts</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-gridiron.png'
             },
             'primetime': {
-                title: 'The Prime Time',
-                price: '$500',
-                tag: "Grill Master's Arsenal",
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Prime+Time&price=500.00&weight=40',
+                title: 'The Prime Time Box',
+                price: '$470.00',
+                tag: "Ultimate Variety",
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Prime+Time+Box&price=470.00&weight=40',
                 btnText: 'Add to Cooler',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10–12 lb Ground Beef</li><li>8–10 lb Tri‑Tip</li><li>8 lb Skirt/Flat Iron</li><li>6–8 lb Chuck roll steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (3-4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Beer</li><li>Beef Italian</li><li>Beef Cheddar</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>20 lbs Ground Beef</li><li>12 lbs Beef Roasts</li><li>8 lbs Mixed Steaks (Skirt/Flat Iron etc)</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-primetime.png'
             },
             'halloffame': {
-                title: 'The Hall of Fame',
-                price: '$688',
-                tag: 'Ultra-Luxury Curation',
-                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Hall+of+Fame&price=688.00&weight=40',
+                title: 'The Hall of Fame Box',
+                price: '$740.00',
+                tag: 'Luxury Connoisseur',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Hall+of+Fame+Box&price=740.00&weight=40',
                 btnText: 'Add to Cooler',
-                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs / No Roasts / No Ground):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>12–14 lb Ribeye & NY Strip</li><li>8–10 lb Tenderloin & Top Sirloin</li><li>8–10 lb Tri‑Tip & Flank Steaks</li></ul><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Specialty Brats (4 Packs):</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben</li><li>Beef Pineapple</li><li>Beef Mango & Habanero</li><li>Queso Brat</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
+                desc: '<p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>12 lbs Ground Beef</li><li>16 lbs Premium Ribeyes</li><li>6 lbs Filet Mignon</li><li>6 lbs NY Strip Steaks</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-halloffame.png'
             },
             'redzone': {
                 title: 'The Redzone Brats',
-                price: '$75',
+                price: '$75.00',
                 tag: 'Craft Sausage Sampler',
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Redzone+Brats&price=75.00&weight=10',
                 btnText: 'Add to Cooler',
-                desc: '<p class="text-neutral-400 mb-4">10 full pounds of our legendary Midwest craft sausages. Includes 2-3 standard varieties plus 1 highly sought-after specialty item.</p><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Possible Variations:</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Beef Hot Italian</li><li>German Potato Sausage (Specialty)</li><li>Queso Brat (Specialty)</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
+                desc: '<p class="text-neutral-400 mb-4">10 full pounds of our legendary Midwest craft sausages. Includes 2-3 standard varieties plus 1 highly sought-after specialty item.</p><p class="font-bold text-white border-b border-neutral-800 pb-2 mb-2">Possible Variations:</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Beef Hot Italian</li><li>German Potato Sausage (Specialty)</li><li>Queso Brat (Specialty)</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'brats-redzone.png'
             },
             'trench': {
                 title: 'The Trench Battalion',
-                price: '$150',
+                price: '$150.00',
                 tag: 'Premium Sausage Volume',
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Trench+Battalion&price=150.00&weight=20',
                 btnText: 'Add to Cooler',
-                desc: '<p class="text-neutral-400 mb-4">A massive 20-pound shipment designed for a serious cookout. Includes 3-5 distinct varieties across both our Pork and Premium Beef lineups.</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Apple & Pork Hawaiian</li><li>Beef Polish & Beef Cheddar</li><li>Beef Mango & Habanero</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
+                desc: '<p class="text-neutral-400 mb-4">A massive 20-pound shipment designed for a serious cookout. Includes 3-5 distinct varieties across both our Pork and Premium Beef lineups.</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Apple & Pork Hawaiian</li><li>Beef Polish & Beef Cheddar</li><li>Beef Mango & Habanero</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'brats-trench.png'
             },
             'warchest': {
                 title: 'The Playbook War Chest',
-                price: '$300',
+                price: '$300.00',
                 tag: 'The Ultimate Assortment',
                 foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Playbook+War+Chest&price=300.00&weight=40',
                 btnText: 'Add to Cooler',
-                desc: '<p class="text-neutral-400 mb-4">For the ultimate tailgate king. A 40-pound arsenal featuring our complete assortment of craft sausages, breakfast meats, and exclusive specialty items.</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben & Beef Pineapple</li><li>Pork Beer Cheddar & Pork Hatch Green Pepper</li><li>Maple Blueberry Pork Breakfast</li><li>Beef Chorizo & Beef Andouille</li></ul><p class="text-xs text-neutral-600 mt-4 italic">Ships express on dry ice directly from our Midwest facility.</p>',
+                desc: '<p class="text-neutral-400 mb-4">For the ultimate tailgate king. A 40-pound arsenal featuring our complete assortment of craft sausages, breakfast meats, and exclusive specialty items.</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben & Beef Pineapple</li><li>Pork Beer Cheddar & Pork Hatch Green Pepper</li><li>Maple Blueberry Pork Breakfast</li><li>Beef Chorizo & Beef Andouille</li></ul><p class="text-xs text-red-500 font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'brats-warchest.png'
             },
             'bulk18': {
@@ -505,6 +579,7 @@
             foxyLink.href = data.foxy;
             foxyLink.innerText = data.btnText || 'Add to Cooler';
             
+            // Set single image for Modal
             document.getElementById('active-image').src = data.image;
 
             overlay.classList.remove('opacity-0', 'pointer-events-none');
