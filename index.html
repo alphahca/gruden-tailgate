@@ -18,10 +18,10 @@
         .bg-gold { background-color: #D4AF37; }
         
         /* Modal Transitions */
-        #product-modal, #chart-modal { transition: all 0.3s ease-in-out; }
+        #product-modal, #chart-modal, #freezer-modal { transition: all 0.3s ease-in-out; }
         .hidden-el { opacity: 0; pointer-events: none; transform: scale(0.95); }
         .visible-el { opacity: 1; pointer-events: auto; transform: scale(1); }
-        #modal-overlay, #chart-overlay { transition: opacity 0.3s; }
+        #modal-overlay, #chart-overlay, #freezer-overlay { transition: opacity 0.3s; }
         
         /* Chat Specific Classes */
         #chat-window { transition: all 0.3s ease-in-out; transform-origin: bottom right; }
@@ -70,7 +70,6 @@
             
             <div class="md:col-span-7 relative">
                 <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-yellow-600 rounded-xl blur opacity-20"></div>
-                <!-- MAIN HERO IMAGE CHANGED TO MATCH EXACT CAPITALIZATION -->
                 <img src="Grudenmain.png" alt="Jon Gruden's Tailgate in a Box" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full object-cover">
             </div>
         </div>
@@ -91,13 +90,12 @@
         <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl font-black tracking-tight uppercase">Draft Your Roster</h2>
             <p class="text-neutral-400 max-w-xl mx-auto">Select your curation level across our 10 lb, 20 lb, and 40 lb tiers. Click any box to view the full list of premium cuts inside.</p>
-            <!-- SHIPPING DISCLAIMER -->
             <p class="text-red-500 font-black uppercase text-sm tracking-widest mt-4 pt-4 border-t border-neutral-800 inline-block">* THE PRICES BELOW DO NOT INCLUDE SHIPPING WHICH IS CALCULATED AT CHECKOUT.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Box 1: Free Agent (10 lbs) -->
+            <!-- Box 1 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('freeagent')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="box-freeagent.jpg" alt="Everyday Value Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -110,7 +108,7 @@
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 2: Second Round Draft (10 lbs) -->
+            <!-- Box 2 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('secondround')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="box-secondround.jpg" alt="Backyard Variety Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -123,7 +121,7 @@
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 3: First Round Draft (10 lbs) -->
+            <!-- Box 3 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('firstround')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="box-firstround.jpg" alt="Elite Steakhouse Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -136,7 +134,7 @@
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 4: Rookie Box (20 lbs) -->
+            <!-- Box 4 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('rookie')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="box-rookie.jpg" alt="Stock-Up Value Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -149,7 +147,7 @@
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 5: Audible Box (20 lbs) -->
+            <!-- Box 5 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('audible')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="box-audible.jpg" alt="Classic Variety Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -162,7 +160,7 @@
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 6: Tailgate Box (20 lbs) -->
+            <!-- Box 6 -->
             <div class="bg-neutral-950 border-2 border-red-800 rounded-xl p-6 flex flex-col h-full shadow-xl shadow-red-950/20 transform scale-105 z-10 cursor-pointer group relative" onclick="openProductModal('tailgate')">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500 z-10">Coach's Pick</span>
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-red-900/50">
@@ -176,7 +174,7 @@
                 <button class="w-full mt-6 crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider hover:brightness-110 transition border border-red-900 text-white">View Details</button>
             </div>
 
-            <!-- Box 7: Gridiron Bulk (40 lbs) -->
+            <!-- Box 7 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('gridiron')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="box-gridiron.jpg" alt="Deep-Freeze Value Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -189,7 +187,7 @@
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 8: Prime Time (40 lbs) -->
+            <!-- Box 8 -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('primetime')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="box-primetime.jpg" alt="Ultimate Variety Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -202,7 +200,7 @@
                 <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
             </div>
 
-            <!-- Box 9: Hall of Fame (40 lbs) -->
+            <!-- Box 9: Hall of Fame (PNG) -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('halloffame')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="box-halloffame.png" alt="Luxury Connoisseur Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -250,13 +248,21 @@
 
     <!-- 3. ZK RANCHES MODEL: BULK SHARES -->
     <section id="bulk" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
-        <div class="text-center space-y-4 mb-16">
+        <div class="text-center space-y-4 mb-10">
             <h2 class="text-4xl font-black tracking-tight uppercase">Bulk Beef Shares (Farm-to-Freezer)</h2>
             <p class="text-neutral-400 max-w-3xl mx-auto">Reserve a massive share of our premium Midwest cattle. Pay a deposit today to secure your harvest date, and pay the final balance right before your custom-packed beef ships express on dry ice.</p>
+        </div>
+        
+        <!-- NEW FREEZER GUIDE BUTTON -->
+        <div class="flex justify-center mb-12">
+            <button onclick="openFreezerModal()" class="border border-neutral-600 text-neutral-300 px-6 py-2 rounded text-xs font-bold uppercase tracking-widest hover:border-gold hover:text-gold transition flex items-center gap-2">
+                ❄️ View Freezer Size Guide
+            </button>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             
+            <!-- 1/8 Steer -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulk18')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="share-eighth.png" alt="1/8 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -270,6 +276,7 @@
                 <button class="w-full bg-neutral-900 group-hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition block text-center mt-4">View Details</button>
             </div>
 
+            <!-- 1/4 Steer -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between shadow-lg cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulk14')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="share-quarter.png" alt="1/4 Steer Share" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -278,11 +285,12 @@
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-white transition">1/4 Steer Share</h3>
                     <div class="text-3xl font-black my-2">$1,132.50 <span class="text-sm text-neutral-500 font-normal">Est. Total</span></div>
                     <p class="text-white font-bold mb-2 border-b border-neutral-800 pb-2">~80 lbs Boxed Beef</p>
-                    <p class="text-neutral-400 text-xs mb-4">The Family Share. Requires a small chest freezer (3-4 cu ft). Click to view exact cut breakdown.</p>
+                    <p class="text-neutral-400 text-xs mb-4">The Family Share. Requires a small chest freezer. Click to view exact cut breakdown.</p>
                 </div>
                 <button class="w-full bg-neutral-900 group-hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition block text-center mt-4">View Details</button>
             </div>
 
+            <!-- 1/2 Steer -->
             <div class="bg-neutral-950 border-2 border-red-900 rounded-xl p-6 flex flex-col justify-between shadow-xl shadow-red-900/10 transform lg:-translate-y-2 relative cursor-pointer group transition hover:border-red-500" onclick="openProductModal('bulk12')">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-red-500 z-10">Fully Custom Cuts</span>
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-red-900/50">
@@ -297,6 +305,7 @@
                 <button class="w-full crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider border border-red-900 hover:brightness-110 transition block text-center mt-4">View Details</button>
             </div>
 
+            <!-- Whole Steer -->
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col justify-between cursor-pointer group transition hover:border-gold" onclick="openProductModal('bulkwhole')">
                 <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
                     <img src="share-whole.png" alt="Whole Steer Hanging Beef" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -309,6 +318,14 @@
                 </div>
                 <button class="w-full bg-neutral-900 group-hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition block text-center mt-4">View Details</button>
             </div>
+        </div>
+
+        <!-- NEW WHOLESALER BANNER -->
+        <div class="max-w-7xl mx-auto mt-16 bg-neutral-950 border border-gold/40 rounded-xl p-8 md:p-12 text-center relative overflow-hidden group shadow-2xl">
+            <div class="absolute inset-0 bg-gradient-to-r from-yellow-900/10 via-transparent to-yellow-900/10"></div>
+            <h3 class="text-2xl md:text-3xl font-black uppercase text-gold relative z-10 tracking-tight">Large Bulk Orders Available for Wholesalers</h3>
+            <p class="text-neutral-400 mt-3 relative z-10 max-w-2xl mx-auto">Running a restaurant, butcher shop, or planning a massive corporate tailgate? We bypass the middlemen so you can too. Contact our front office for custom wholesale pricing and direct freight logistics.</p>
+            <button class="mt-8 border border-gold text-gold px-8 py-3 rounded text-sm font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition relative z-10 shadow-lg shadow-yellow-900/20">Contact Sales Team</button>
         </div>
     </section>
 
@@ -374,7 +391,34 @@
         </div>
     </div>
 
-    <!-- CHART MODAL (Hidden by default) -->
+    <!-- NEW FREEZER GUIDE MODAL -->
+    <div id="freezer-overlay" class="fixed inset-0 bg-black/90 z-[9500] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeFreezerModal(event)">
+        <div id="freezer-modal" class="bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto hidden-el relative p-8">
+            <button onclick="forceCloseFreezerModal()" class="absolute top-4 right-4 text-white transition text-4xl font-black z-10 bg-black/60 hover:bg-red-600 rounded-full w-10 h-10 flex items-center justify-center">&times;</button>
+            <h2 class="text-2xl font-black uppercase text-gold mb-6 border-b border-neutral-800 pb-4">Freezer Size Guide</h2>
+            <div class="space-y-6 text-neutral-300">
+                <div>
+                    <h3 class="text-lg font-bold text-white uppercase">1/8 Steer (~40 lbs Boxed)</h3>
+                    <p class="text-sm mt-1">Easily fits in a standard home refrigerator-freezer combo compartment. Requires roughly 1.5 to 2.0 cubic feet of space.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white uppercase">1/4 Steer (~80 lbs Boxed)</h3>
+                    <p class="text-sm mt-1">Requires a small standalone chest or upright freezer. Will take up approximately 3.5 to 5.0 cubic feet of space.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white uppercase">1/2 Steer (~160 lbs Boxed)</h3>
+                    <p class="text-sm mt-1">Requires a dedicated medium-sized chest freezer. Expect to use roughly 7.0 to 10.0 cubic feet of space.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white uppercase">Whole Steer (~320 lbs Boxed)</h3>
+                    <p class="text-sm mt-1">Requires a large, heavy-duty chest freezer. You will need a minimum of 14.0 to 21.0 cubic feet to comfortably store the entire yield.</p>
+                </div>
+            </div>
+            <button onclick="forceCloseFreezerModal()" class="w-full mt-8 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">Close Guide</button>
+        </div>
+    </div>
+
+    <!-- CHART MODAL -->
     <div id="chart-overlay" class="fixed inset-0 bg-black/90 z-[9500] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeChartModal(event)">
         <div id="chart-modal" class="bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto hidden-el relative p-4 flex flex-col items-center">
             <button onclick="forceCloseChartModal()" class="absolute top-4 right-4 text-white transition text-4xl font-black z-10 bg-black/60 hover:bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">&times;</button>
@@ -597,6 +641,26 @@
             overlay.classList.add('opacity-0', 'pointer-events-none');
             modal.classList.remove('visible-el');
             modal.classList.add('hidden-el');
+        }
+
+        // --- FREEZER GUIDE MODAL LOGIC ---
+        const freezerOverlay = document.getElementById('freezer-overlay');
+        const freezerModal = document.getElementById('freezer-modal');
+
+        function openFreezerModal() {
+            freezerOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            freezerModal.classList.remove('hidden-el');
+            freezerModal.classList.add('visible-el');
+        }
+
+        function closeFreezerModal(event) {
+            if (event.target === freezerOverlay) { forceCloseFreezerModal(); }
+        }
+
+        function forceCloseFreezerModal() {
+            freezerOverlay.classList.add('opacity-0', 'pointer-events-none');
+            freezerModal.classList.remove('visible-el');
+            freezerModal.classList.add('hidden-el');
         }
 
         // --- BEEF CHART MODAL LOGIC ---
