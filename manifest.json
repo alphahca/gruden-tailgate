@@ -1,0 +1,16 @@
+{
+  "short_name": "GridironBeef",
+  "name": "Gridiron Beef - Gruden's Tailgate",
+  "icons": [
+    {
+      "src": "Grudenmain.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#0B0B0B",
+  "theme_color": "#0B0B0B",
+  "display": "standalone",
+  "orientation": "portrait"
+}
