@@ -6,7 +6,7 @@
     <title>Gruden's Tailgate in a Box | Premium Midwest Beef</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <script data-cfasync="false" src="https://cdn.foxycart.com/gridironbeef/loader.js" async defer></script>
+    <script data-cfasync="false" src="https://cdn.foxycart.com/gridiron-beef/loader.js" async defer></script>
     
     <style>
         /* BRANDING: Fonts Integration */
@@ -64,7 +64,7 @@
                 <a href="#story" class="hover:text-gold transition">OUR STORY</a>
             </div>
             
-            <a href="https://gridironbeef.foxycart.com/cart?cart=view" class="border border-gold text-gold px-5 py-2 rounded text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition flex items-center gap-1">
+            <a href="https://gridiron-beef.foxycart.com/cart?cart=view" class="border border-gold text-gold px-5 py-2 rounded text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition flex items-center gap-1">
                 My Cooler (<span data-fc-id="minicart-quantity">0</span>)
             </a>
         </div>
@@ -232,21 +232,21 @@
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('redzone')">
                 <img src="brats-redzone.png" alt="Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
                 <h3 class="text-xl font-black uppercase text-gold">The Redzone Brats</h3>
-                <div class="text-3xl font-black my-2">$75 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
+                <div class="text-3xl font-black my-2" id="grid-price-redzone">$82.50 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
             </div>
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('trench')">
                 <img src="brats-trench.png" alt="Thick Craft Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
                 <h3 class="text-xl font-black uppercase text-gold">The Trench Battalion</h3>
-                <div class="text-3xl font-black my-2">$150 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
+                <div class="text-3xl font-black my-2" id="grid-price-trench">$165.00 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
             </div>
 
             <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('warchest')">
                 <img src="brats-warchest.png" alt="Pile of Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
                 <h3 class="text-xl font-black uppercase text-gold">The Playbook War Chest</h3>
-                <div class="text-3xl font-black my-2">$300 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
+                <div class="text-3xl font-black my-2" id="grid-price-warchest">$330.00 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
                 <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
             </div>
         </div>
@@ -484,14 +484,26 @@
     </div>
 
     <script>
+        // --- PRICING CONFIGURATION ---
+        // COACH: Update this price per pound and the script will automatically
+        // calculate the exact prices for the 10lb, 20lb, and 40lb brat boxes.
+        const BRAT_PRICE_PER_LB = 8.25; 
+
+        // Update the display prices on the front grid automatically
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("grid-price-redzone").innerHTML = '$' + (BRAT_PRICE_PER_LB * 10).toFixed(2) + ' <span class="text-sm font-normal text-neutral-500">10 lbs</span>';
+            document.getElementById("grid-price-trench").innerHTML = '$' + (BRAT_PRICE_PER_LB * 20).toFixed(2) + ' <span class="text-sm font-normal text-neutral-500">20 lbs</span>';
+            document.getElementById("grid-price-warchest").innerHTML = '$' + (BRAT_PRICE_PER_LB * 40).toFixed(2) + ' <span class="text-sm font-normal text-neutral-500">40 lbs</span>';
+        });
+
         // --- COMPLETE PRODUCT ROSTER DATA ---
-        // URLs now point to gridironbeef.foxycart.com
+        // URLs now point to gridiron-beef.foxycart.com
         const productData = {
             'freeagent': {
                 title: 'The Free Agent Box',
                 price: '$90.00',
                 tag: 'Everyday Value',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Free+Agent+Box&price=90.00&weight=10',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Free+Agent+Box&price=90.00&weight=10',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (10 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>8 lbs Ground Beef</li><li>2 lbs Sirloin Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-freeagent.png'
@@ -500,7 +512,7 @@
                 title: 'The Second Round Draft',
                 price: '$125.00',
                 tag: 'Backyard Variety',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Second+Round+Draft+Box&price=125.00&weight=10',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Second+Round+Draft+Box&price=125.00&weight=10',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (10 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>4 lbs Ground Beef</li><li>3 lbs Chuck Roast</li><li>3 lbs NY Strip Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-secondround.png'
@@ -509,7 +521,7 @@
                 title: 'The First Round Draft',
                 price: '$195.00',
                 tag: 'Elite Steakhouse',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+First+Round+Draft+Box&price=195.00&weight=10',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+First+Round+Draft+Box&price=195.00&weight=10',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (10 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>4 lbs Ground Beef</li><li>4 lbs Boneless Ribeyes</li><li>2 lbs Filet Mignon</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-firstround.png'
@@ -518,7 +530,7 @@
                 title: 'The Rookie Box',
                 price: '$189.00',
                 tag: 'Stock-Up Value',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Rookie+Box&price=189.00&weight=20',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Rookie+Box&price=189.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>14 lbs Ground Beef</li><li>6 lbs Assorted Roasts</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-rookie.png'
@@ -527,7 +539,7 @@
                 title: 'The Audible Box',
                 price: '$240.00',
                 tag: 'Classic Variety',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Audible+Box&price=240.00&weight=20',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Audible+Box&price=240.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10 lbs Ground Beef</li><li>6 lbs Chuck Roasts</li><li>4 lbs Mixed Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-audible.png'
@@ -536,7 +548,7 @@
                 title: 'The Tailgate Box',
                 price: '$355.00',
                 tag: "Premier Griller",
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Tailgate+Box&price=355.00&weight=20',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Tailgate+Box&price=355.00&weight=20',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>5 lbs Ground Beef</li><li>8 lbs Premium Steaks</li><li>4 lbs Filet Mignon</li><li>3 lbs Sirloin Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-tailgate.png'
@@ -545,7 +557,7 @@
                 title: 'The Gridiron Bulk Box',
                 price: '$340.00',
                 tag: 'Deep-Freeze Value',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Gridiron+Bulk+Box&price=340.00&weight=40',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Gridiron+Bulk+Box&price=340.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>28 lbs Ground Beef</li><li>12 lbs Assorted Roasts</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-gridiron.png'
@@ -554,7 +566,7 @@
                 title: 'The Prime Time Box',
                 price: '$470.00',
                 tag: "Ultimate Variety",
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Prime+Time+Box&price=470.00&weight=40',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Prime+Time+Box&price=470.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>20 lbs Ground Beef</li><li>12 lbs Beef Roasts</li><li>8 lbs Mixed Steaks (Skirt/Flat Iron etc)</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-primetime.png'
@@ -563,43 +575,43 @@
                 title: 'The Hall of Fame Box',
                 price: '$740.00',
                 tag: 'Luxury Connoisseur',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Hall+of+Fame+Box&price=740.00&weight=40',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Hall+of+Fame+Box&price=740.00&weight=40',
                 btnText: 'Add to Cooler',
                 desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>12 lbs Ground Beef</li><li>16 lbs Premium Ribeyes</li><li>6 lbs Filet Mignon</li><li>6 lbs NY Strip Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'box-halloffame.png'
             },
             'redzone': {
                 title: 'The Redzone Brats',
-                price: '$75.00',
+                price: '$' + (BRAT_PRICE_PER_LB * 10).toFixed(2),
                 tag: 'Craft Sausage Sampler',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Redzone+Brats&price=75.00&weight=10',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Redzone+Brats&price=' + (BRAT_PRICE_PER_LB * 10).toFixed(2) + '&weight=10',
                 btnText: 'Add to Cooler',
-                desc: '<p class="text-neutral-400 mb-4">10 full pounds of our legendary Midwest craft sausages. Includes 2-3 standard varieties plus 1 highly sought-after specialty item.</p><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Possible Variations:</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Bratwurst</li><li>Beef Hot Italian</li><li>German Potato Sausage (Specialty)</li><li>Queso Brat (Specialty)</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                desc: '<p class="text-neutral-400 mb-4">Approximately 10 lbs (16 - 20 brats).</p><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Bratwurst Variations Include:</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Cheddar Brats</li><li>Pork Jalapeno Cheddar Brats</li><li>Beef Mango & Habanero Brats</li><li>Pork Brats</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'brats-redzone.png'
             },
             'trench': {
                 title: 'The Trench Battalion',
-                price: '$150.00',
+                price: '$' + (BRAT_PRICE_PER_LB * 20).toFixed(2),
                 tag: 'Premium Sausage Volume',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Trench+Battalion&price=150.00&weight=20',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Trench+Battalion&price=' + (BRAT_PRICE_PER_LB * 20).toFixed(2) + '&weight=20',
                 btnText: 'Add to Cooler',
-                desc: '<p class="text-neutral-400 mb-4">A massive 20-pound shipment designed for a serious cookout. Includes 3-5 distinct varieties across both our Pork and Premium Beef lineups.</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Apple & Pork Hawaiian</li><li>Beef Polish & Beef Cheddar</li><li>Beef Mango & Habanero</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                desc: '<p class="text-neutral-400 mb-4">Approximately 20 lbs (32 - 40 brats).</p><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Bratwurst Variations Include:</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Brats</li><li>Pork Beer Cheddar Brats</li><li>Pork Jalapeno Cheddar Brats</li><li>Beef Mango & Habanero Brats</li><li>Pork Brats</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'brats-trench.png'
             },
             'warchest': {
                 title: 'The Playbook War Chest',
-                price: '$300.00',
+                price: '$' + (BRAT_PRICE_PER_LB * 40).toFixed(2),
                 tag: 'The Ultimate Assortment',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=The+Playbook+War+Chest&price=300.00&weight=40',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Playbook+War+Chest&price=' + (BRAT_PRICE_PER_LB * 40).toFixed(2) + '&weight=40',
                 btnText: 'Add to Cooler',
-                desc: '<p class="text-neutral-400 mb-4">For the ultimate tailgate king. A 40-pound arsenal featuring our complete assortment of craft sausages, breakfast meats, and exclusive specialty items.</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Reuben & Beef Pineapple</li><li>Pork Beer Cheddar & Pork Hatch Green Pepper</li><li>Maple Blueberry Pork Breakfast</li><li>Beef Chorizo & Beef Andouille</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                desc: '<p class="text-neutral-400 mb-4">Approximately 40 lbs (64 - 80 brats).</p><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Bratwurst Variations Include:</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Green Hatch Chile Brats</li><li>Beef Brats</li><li>Pork Beer Cheddar Brats</li><li>Pork Jalapeno Cheddar Brats</li><li>Beef Mango & Habanero Brats</li><li>Pork Brats</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
                 image: 'brats-warchest.png'
             },
             'bulk18': {
                 title: '1/8 Steer Share',
                 price: '$150 Deposit',
                 tag: 'Est. Total: $650.00',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=1/8+Steer+Deposit&price=150.00',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/8+Steer+Deposit&price=150.00',
                 btnText: 'Secure Deposit',
                 desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Exact quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">40 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 2</li><li>Boneless Chuck Roast - 2</li><li>Sirloin Tip Roast - 1</li><li>Sirloin Steak - 2</li><li>NY Strip - 4</li><li>Filet - 2</li><li>Ground Beef - 25 lbs</li></ul>',
                 image: 'share-eighth.jpg'
@@ -608,7 +620,7 @@
                 title: '1/4 Steer Share',
                 price: '$300 Deposit',
                 tag: 'Est. Total: $1,132.50',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=1/4+Steer+Deposit&price=300.00',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/4+Steer+Deposit&price=300.00',
                 btnText: 'Secure Deposit',
                 desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Exact quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">80 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 4</li><li>Boneless Chuck Roast - 4</li><li>Sirloin Tip Roast - 2</li><li>Sirloin Steak - 4</li><li>NY Strip - 8</li><li>Filet - 4</li><li>Brisket - 1 quarter</li><li>Ground Beef - 50 lbs</li></ul>',
                 image: 'share-quarter.jpg'
@@ -617,7 +629,7 @@
                 title: '1/2 Steer Share',
                 price: '$500 Deposit',
                 tag: 'Est. Total: $1,960.00',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=1/2+Steer+Deposit&price=500.00',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/2+Steer+Deposit&price=500.00',
                 btnText: 'Secure Deposit',
                 desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Exact quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">160 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 8</li><li>Boneless Chuck Roast - 6</li><li>Sirloin Tip Roast - 3</li><li>Sirloin Steak - 5</li><li>NY Strip - 12</li><li>Filet - 6</li><li>Brisket - 2 quarters or 1 half</li><li>Ground Beef - 110 lbs</li></ul>',
                 image: 'share-half.jpg'
@@ -626,7 +638,7 @@
                 title: 'Whole Steer',
                 price: '$1,000 Deposit',
                 tag: 'Est. Total: $3,920.00',
-                foxy: 'https://gridironbeef.foxycart.com/cart?name=Whole+Steer+Deposit&price=1000.00',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=Whole+Steer+Deposit&price=1000.00',
                 btnText: 'Secure Deposit',
                 desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Exact quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">320 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 16</li><li>Boneless Chuck Roast - 12</li><li>Sirloin Tip Roast - 6</li><li>Sirloin Steak - 10</li><li>NY Strip - 24</li><li>Filet - 12</li><li>Brisket - 4 quarters or 2 halves</li><li>Ground Beef - 220 lbs</li></ul>',
                 image: 'share-whole.jpg'
