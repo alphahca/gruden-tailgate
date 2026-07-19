@@ -1,4 +1,258 @@
-<section id="bulk" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruden's Tailgate in a Box | Premium Midwest Beef</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script data-cfasync="false" src="https://cdn.foxycart.com/gridiron-beef/loader.js" async defer></script>
+    
+    <style>
+        /* BRANDING: Fonts Integration */
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Inter:wght@400;600;700&display=swap');
+        
+        /* BRANDING: Font Application */
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, button, a.crimson-gradient, .text-2xl.text-gold { 
+            font-family: 'Barlow Condensed', sans-serif; 
+            font-weight: 900; 
+        }
+
+        html { scroll-behavior: smooth; }
+        
+        /* BRANDING: Colors Integration */
+        .gold-glow:hover { box-shadow: 0 0 15px rgba(206, 177, 79, 0.4); } /* Championship Gold #CEB14F */
+        .crimson-gradient { background: #D71920; } /* Gridiron Red #D71920 */
+        .text-gold { color: #CEB14F; }
+        .border-gold { border-color: #CEB14F; }
+        .bg-gold { background-color: #CEB14F; }
+        
+        /* Modal Transitions */
+        #product-modal, #chart-modal, #freezer-modal { transition: all 0.3s ease-in-out; }
+        .hidden-el { opacity: 0; pointer-events: none; transform: scale(0.95); }
+        .visible-el { opacity: 1; pointer-events: auto; transform: scale(1); }
+        #modal-overlay, #chart-overlay, #freezer-overlay { transition: opacity 0.3s; }
+        
+        /* Chat Specific Classes */
+        #chat-window { transition: all 0.3s ease-in-out; transform-origin: bottom right; }
+        .hidden-chat { opacity: 0; transform: scale(0.9) translateY(20px); pointer-events: none; }
+        .visible-chat { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
+        
+        /* Line clamp for descriptions */
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+
+    <!-- PWA App Links -->
+    <link rel="manifest" href="manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+      }
+    </script>
+</head>
+<body class="bg-[#0B0B0B] text-[#F4F0E8] selection:bg-[#D71920] selection:text-[#F4F0E8]">
+
+    <nav class="border-b border-neutral-800 bg-[#0B0B0B]/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black tracking-wider text-gold">GRUDEN'S TAILGATE IN A BOX</div>
+            <div class="hidden md:flex space-x-8 text-sm font-bold tracking-wide text-neutral-400">
+                <a href="#home" class="hover:text-gold transition">HOME</a>
+                <a href="#boxes" class="hover:text-gold transition">SHOP BOXES</a>
+                <a href="#brats" class="hover:text-gold transition">BRAT BOXES</a>
+                <a href="#bulk" class="hover:text-gold transition">BULK SHARES</a>
+                <a href="#story" class="hover:text-gold transition">OUR STORY</a>
+            </div>
+            
+            <a href="https://gridiron-beef.foxycart.com/cart?cart=view" class="border border-gold text-gold px-5 py-2 rounded text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition flex items-center gap-1">
+                My Cooler (<span data-fc-id="minicart-quantity">0</span>)
+            </a>
+        </div>
+    </nav>
+
+    <section id="home" class="relative bg-neutral-950 py-16 md:py-24 overflow-hidden border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 space-y-6">
+                <span class="text-xs font-bold tracking-widest text-gold uppercase bg-yellow-900/20 border border-yellow-700/30 px-3 py-1.5 rounded">Official Launch Curation</span>
+                <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-tight uppercase">
+                    THE ULTIMATE <br>TAILGATE. <span class="text-[#D71920]">IN A BOX.</span>
+                </h1>
+                <p class="text-neutral-400 text-lg max-w-md italic leading-relaxed">
+                    “I’m telling you, man—this is premium Midwest beef. Get your favorite people together, fire up the grill, open one of these boxes and enjoy! That’s what game days and backyard BBQs are all about. NICEY.”
+                    <span class="block mt-4 font-bold not-italic text-gold uppercase tracking-widest">— Jon Gruden</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="#boxes" class="crimson-gradient px-8 py-4 rounded text-center uppercase tracking-wider text-sm shadow-lg shadow-[#D71920]/40 hover:brightness-110 transition font-black">Claim Your Box</a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-7 relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#D71920] to-[#CEB14F] rounded-xl blur opacity-20"></div>
+                <img src="Grudenmain.png" alt="Jon Gruden's Tailgate in a Box" class="relative rounded-xl border border-neutral-800 shadow-2xl w-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-neutral-900 border-b border-neutral-800 py-6 text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-xs font-bold uppercase tracking-widest text-neutral-400">
+            <span>🇺🇸 100% American Beef</span>
+            <span>🌽 Midwest Sourced</span>
+            <span>🥩 Hand-cut USDA Beef</span>
+            <span>❄️ Heartland Direct</span>
+        </div>
+    </section>
+
+    <section id="boxes" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-4xl font-black tracking-tight uppercase">Draft Your Roster</h2>
+            <p class="text-neutral-400 max-w-xl mx-auto">Select your curation level across our 10 lb, 20 lb, and 40 lb tiers. Click any box to view the full list of premium cuts inside.</p>
+            <p class="text-[#D71920] font-black uppercase text-sm tracking-widest mt-4 pt-4 border-t border-neutral-800 inline-block">* THE PRICES BELOW DO NOT INCLUDE SHIPPING WHICH IS CALCULATED AT CHECKOUT.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('freeagent')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-freeagent.png" alt="Everyday Value Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">The Free Agent Box</h3>
+                    <div class="text-3xl font-black my-2">$90 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">A fast, high-quality 10 lb everyday value package. Built on a foundation of ground beef with premium Sirloin steaks for the grill.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('secondround')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-secondround.png" alt="Backyard Variety Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">The Second Round Draft</h3>
+                    <div class="text-3xl font-black my-2">$125 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">A perfectly balanced mix of NY Strip steaks, slow-cooking Chuck Roast, and our signature Ground Beef.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('firstround')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-firstround.png" alt="Elite Steakhouse Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">The First Round Draft</h3>
+                    <div class="text-3xl font-black my-2">$195 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">The elite 10 lb steakhouse box. We skip the roasts entirely and pack this with Boneless Ribeyes and pure Filet Mignon.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('rookie')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-rookie.png" alt="Stock-Up Value Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">The Rookie Box</h3>
+                    <div class="text-3xl font-black my-2">$189 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">A rock-solid 20 lb foundation designed to stock the freezer. Features heavy volumes of premium ground beef and assorted savory roasts.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('audible')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-audible.png" alt="Classic Variety Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">The Audible Box</h3>
+                    <div class="text-3xl font-black my-2">$240 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">Our classic 20 lb variety package. Provides the perfect weekly rotation of ground beef, slow-cooking chuck roasts, and mixed steaks.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <div class="bg-neutral-950 border-2 border-[#D71920] rounded-xl p-6 flex flex-col h-full shadow-xl shadow-[#D71920]/20 transform scale-105 z-10 cursor-pointer group relative" onclick="openProductModal('tailgate')">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 crimson-gradient text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-[#D71920] z-10 text-[#F4F0E8]">Coach's Pick</span>
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-[#D71920]/50">
+                    <img src="box-tailgate.png" alt="Premier Griller Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-[#D71920] group-hover:text-[#D71920] transition">The Tailgate Box</h3>
+                    <div class="text-3xl font-black text-[#D71920] my-2">$355 <span class="text-sm font-normal text-neutral-400">20 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">The premier 20 lb griller. Loaded with top-tier cuts including Filet Mignon, Sirloins, and premium mixed steaks for the ultimate parking lot experience.</p>
+                </div>
+                <button class="w-full mt-6 crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider hover:brightness-110 transition border border-[#D71920] text-[#F4F0E8]">View Details</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('gridiron')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-gridiron.png" alt="Deep-Freeze Value Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">The Gridiron Bulk</h3>
+                    <div class="text-3xl font-black my-2">$340 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">A heavy-duty 40 lb volume play. Dominate the trenches and fill your deep-freezer with 28 lbs of ground beef and 12 lbs of roasts.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('primetime')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-primetime.png" alt="Ultimate Variety Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">The Prime Time</h3>
+                    <div class="text-3xl font-black my-2">$470 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">The ultimate 40 lb variety. An arsenal of mixed grilling steaks, massive beef roasts, and premium ground beef to keep a family fed all season.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 flex flex-col h-full gold-glow transition duration-300 cursor-pointer group" onclick="openProductModal('halloffame')">
+                <div class="aspect-video bg-neutral-900 rounded-lg mb-4 overflow-hidden border border-neutral-800">
+                    <img src="box-halloffame.png" alt="Luxury Connoisseur Box" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">The Hall of Fame</h3>
+                    <div class="text-3xl font-black my-2">$740 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
+                    <p class="text-neutral-400 text-sm line-clamp-3">The 40 lb luxury connoisseur collection. The absolute pinnacle of our operation, featuring 16 lbs of Ribeyes, Filet Mignon, and NY Strips.</p>
+                </div>
+                <button class="w-full mt-6 bg-neutral-800 group-hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="brats" class="max-w-7xl mx-auto px-6 py-16 border-b border-neutral-900">
+        <div class="text-center space-y-4 mb-12">
+            <h2 class="text-4xl font-black tracking-tight uppercase">Specialty Brat Boxes</h2>
+            <p class="text-neutral-400 max-w-xl mx-auto">Skip the steaks and load up on our legendary Midwest craft sausages. Available in 10 lb, 20 lb, and 40 lb reinforcements.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('redzone')">
+                <img src="brats-redzone.png" alt="Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <h3 class="text-xl font-black uppercase text-gold">The Redzone Brats</h3>
+                <div class="text-3xl font-black my-2" id="grid-price-redzone">$82.50 <span class="text-sm font-normal text-neutral-500">10 lbs</span></div>
+                <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('trench')">
+                <img src="brats-trench.png" alt="Thick Craft Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <h3 class="text-xl font-black uppercase text-gold">The Trench Battalion</h3>
+                <div class="text-3xl font-black my-2" id="grid-price-trench">$165.00 <span class="text-sm font-normal text-neutral-500">20 lbs</span></div>
+                <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
+            </div>
+
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-6 cursor-pointer group" onclick="openProductModal('warchest')">
+                <img src="brats-warchest.png" alt="Pile of Bratwurst" class="w-full h-40 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition">
+                <h3 class="text-xl font-black uppercase text-gold">The Playbook War Chest</h3>
+                <div class="text-3xl font-black my-2" id="grid-price-warchest">$330.00 <span class="text-sm font-normal text-neutral-500">40 lbs</span></div>
+                <button class="w-full mt-4 bg-neutral-800 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider">View Box</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BULK SHARES SECTION (UPDATED PRICES & TEXT) -->
+    <section id="bulk" class="max-w-7xl mx-auto px-6 py-24 border-b border-neutral-900">
         <div class="text-center space-y-4 mb-10">
             <h2 class="text-4xl font-black tracking-tight uppercase">Heartland-to-Freezer Bulk Beef Shares</h2>
             <p class="text-neutral-400 max-w-3xl mx-auto">Reserve a family-sized, custom share of premium cattle, originated and processed in the Midwest heartland. Pay a simple deposit today to secure your harvest date and lock in your order. You will pay the final balance right before your custom-packed, Midwest-sourced and harvested beef ships express on dry ice.</p>
@@ -20,7 +274,7 @@
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">1/8 Steer Share</h3>
                     <div class="text-3xl font-black my-2">$460.00</div>
                     <p class="text-[#F4F0E8] font-bold mb-2 border-b border-neutral-800 pb-2">~40 lbs Boxed Beef</p>
-                    <p class="text-neutral-400 text-xs mb-4">The perfect starter share. Requires a standard fridge-freezer. Click to view exact cut breakdown.</p>
+                    <p class="text-neutral-400 text-xs mb-4">The perfect starter share. Requires a standard fridge-freezer. Click to view the cut breakdown.</p>
                 </div>
                 <button class="w-full bg-neutral-900 group-hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition block text-center mt-4">View Details</button>
             </div>
@@ -33,7 +287,7 @@
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">1/4 Steer Share</h3>
                     <div class="text-3xl font-black my-2">$778.00</div>
                     <p class="text-[#F4F0E8] font-bold mb-2 border-b border-neutral-800 pb-2">~80 lbs Boxed Beef</p>
-                    <p class="text-neutral-400 text-xs mb-4">The Family Share. Requires a small chest freezer. Click to view exact cut breakdown.</p>
+                    <p class="text-neutral-400 text-xs mb-4">The Family Share. Requires a small chest freezer. Click to view the cut breakdown.</p>
                 </div>
                 <button class="w-full bg-neutral-900 group-hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition block text-center mt-4">View Details</button>
             </div>
@@ -47,7 +301,7 @@
                     <h3 class="text-xl font-black uppercase text-[#D71920] group-hover:text-[#D71920] transition">1/2 Steer Share</h3>
                     <div class="text-3xl font-black text-[#D71920] my-2">$1,688.00</div>
                     <p class="text-[#F4F0E8] font-bold mb-2 border-b border-[#D71920]/50 pb-2">~160 lbs Boxed Beef</p>
-                    <p class="text-neutral-400 text-xs mb-4">The VIP Experience. You dictate the playbook. Click to view exact baseline cut breakdown.</p>
+                    <p class="text-neutral-400 text-xs mb-4">The VIP Experience. You dictate the playbook. Click to view the baseline cut breakdown.</p>
                 </div>
                 <button class="w-full crimson-gradient px-4 py-3 rounded text-xs font-bold uppercase tracking-wider border border-[#D71920] hover:brightness-110 transition block text-center mt-4 text-[#F4F0E8]">View Details</button>
             </div>
@@ -60,7 +314,7 @@
                     <h3 class="text-xl font-black uppercase text-gold group-hover:text-[#F4F0E8] transition">Whole Steer</h3>
                     <div class="text-3xl font-black my-2">$3,293.00</div>
                     <p class="text-[#F4F0E8] font-bold mb-2 border-b border-neutral-800 pb-2">~320 lbs Boxed Beef</p>
-                    <p class="text-neutral-400 text-xs mb-4">The Ultimate Roster. Keep a massive deep freezer stocked for a year. Click to view exact cut breakdown.</p>
+                    <p class="text-neutral-400 text-xs mb-4">The Ultimate Roster. Keep a massive deep freezer stocked for a year. Click to view the cut breakdown.</p>
                 </div>
                 <button class="w-full bg-neutral-900 group-hover:bg-neutral-800 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition block text-center mt-4">View Details</button>
             </div>
@@ -122,7 +376,7 @@
                     <h4 class="text-xl font-black text-[#F4F0E8] uppercase mb-2">&#128230; The Away Game (Direct Shipping)</h4>
                     <p class="text-neutral-400 text-sm mb-2"><strong class="text-gold">Cost:</strong> Calculated live at checkout</p>
                     <p class="text-neutral-400 text-sm mb-2"><strong class="text-gold">Location:</strong> Delivered straight to your doorstep</p>
-                    <p class="text-neutral-400 text-sm"><strong class="text-[#F4F0E8]">The Play:</strong> We do not pad our beef prices with flat-rate scams. You pay exactly what it costs to ship to your zip code.</p>
+                    <p class="text-neutral-400 text-sm"><strong class="text-[#F4F0E8]">The Play:</strong> We do not pad our beef prices with flat-rate scams. You pay exactly what it costs to ship to your zip code. Or if you would like to arrange your own shipping please let us know.</p>
                 </div>
             </div>
             
@@ -130,7 +384,475 @@
             <ul class="list-disc pl-6 space-y-2 text-neutral-400">
                 <li><strong class="text-[#F4F0E8]">Zero Padding:</strong> You only pay for the exact weight of your premium beef.</li>
                 <li><strong class="text-[#F4F0E8]">No Hidden Audibles:</strong> The price you see on the grid is the exact price of the meat.</li>
-                <li><strong class="text-[#F4F0E8]">Championship Quality:</strong> Premium beef packed to feed your team through the toughest winters.</li>
+                <li><strong class="text-[#F4F0E8]">Championship Quality:</strong> Premium beef packed to feed your team through any season.</li>
             </ul>
         </div>
     </section>
+
+    <section class="max-w-7xl mx-auto mt-16 px-6 bg-neutral-950 border border-gold/40 rounded-xl p-8 md:p-12 text-center relative overflow-hidden group shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-r from-yellow-900/10 via-transparent to-yellow-900/10"></div>
+        
+        <h3 class="text-2xl md:text-3xl font-black uppercase text-gold relative z-10 tracking-tight">COMMERCIAL & WHOLESALE BEEF, BUILT FOR VOLUME</h3>
+        
+        <div class="text-neutral-300 mt-6 relative z-10 max-w-4xl mx-auto text-left space-y-4">
+            <p>Source premium Midwest beef directly from our processing facility. We offer dependable supply, custom product specifications, volume pricing, and coordinated freight for high-volume buyers.</p>
+            
+            <ul class="list-disc pl-6 space-y-2">
+                <li><strong class="text-[#F4F0E8]">Collegiate & Professional Sports:</strong> Quality beef programs for training tables, athletic departments, team facilities, and hospitality operations.</li>
+                <li><strong class="text-[#F4F0E8]">Stadiums, Venues & Events:</strong> High-volume supply for concessions, concerts, tournaments, and game-day hospitality.</li>
+                <li><strong class="text-[#F4F0E8]">Food Manufacturers & Distributors:</strong> Consistent raw beef supply for further processors, fabricators, co-packers, wholesalers, and distributors.</li>
+                <li><strong class="text-[#F4F0E8]">Foodservice & Retail:</strong> Reliable supply programs for restaurant groups, grocery chains, independent butcher shops, and institutional buyers.</li>
+            </ul>
+            
+            <p class="text-center mt-6 text-gold font-bold">Need a dependable beef supply partner? Email us at <a href="mailto:coach@gridironbeef.com" class="text-[#F4F0E8] hover:text-[#D71920] transition underline">coach@gridironbeef.com</a> or call <a href="tel:18886732439" class="text-[#F4F0E8] hover:text-[#D71920] transition underline">1-888-673-2439</a> to discuss product specifications, availability, volume pricing, and freight.</p>
+        </div>
+        
+        <a href="mailto:coach@gridironbeef.com" class="inline-block mt-8 border border-gold text-gold px-8 py-3 rounded text-sm font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition relative z-10 shadow-lg shadow-yellow-900/20">REQUEST WHOLESALE PRICING</a>
+    </section>
+
+    <section id="story" class="bg-neutral-950 py-24 border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="bg-neutral-900 h-[400px] rounded-xl border border-neutral-800 flex items-center justify-center p-8 text-center text-sm text-neutral-400 uppercase tracking-widest relative overflow-hidden shadow-2xl">
+                 <div class="absolute inset-0 bg-gradient-to-tr from-[#D71920]/20 to-[#0B0B0B] z-10"></div>
+                 <div class="relative z-20 space-y-4">
+                     <img src="https://flagcdn.com/h60/us.png" height="48" alt="United States Flag" class="mx-auto rounded-sm shadow-sm">
+                     <h3 class="text-2xl font-black text-[#F4F0E8] leading-tight mt-4">American Quality Protein:<br>Premium Heartland - Harvested Quality</h3>
+                     <p class="text-xs leading-relaxed max-w-sm mx-auto mt-2 text-neutral-300">Seamlessly routed directly through your Heartland Direct Beef Connection. Skip the corporate brokers, meatpackers, and warehouse delays. Get elite, facility-direct sourcing delivered straight to your door or venue.</p>
+                 </div>
+            </div>
+            <div class="space-y-6">
+                <span class="text-xs font-bold tracking-widest text-[#D71920] uppercase">The Gruden Philosophy</span>
+                <h2 class="text-4xl font-black uppercase tracking-tight">Football is won in the trenches. <br>Great meals are won at the source.</h2>
+                <p class="text-neutral-400 leading-relaxed text-lg">
+                    I've spent my life studying the tape, looking for an edge. When you look at the corporate meatpacking industry today, it's a busted play. Huge advertising budgets, external logistics centers, and layers of middlemen—all of them taking a cut, slowing down delivery, and compromising quality. 
+                </p>
+                <p class="text-neutral-400 leading-relaxed text-lg">
+                    That's why we threw the old playbook out. I partnered with Jason Birt right in the heartland of Iowa to build **American Quality Protein dba GRIDIRONBEEF.COM**. 
+                </p>
+                <div class="border-l-2 border-gold pl-6 space-y-2 mt-6">
+                    <p class="font-bold text-[#F4F0E8] text-xl">The Spider 2 Y Banana Supply Chain</p>
+                    <p class="text-neutral-400">When you draft a box on gridironbeef.com, you are audible-ing right past the corporate suits. This order goes direct-snap to our draft war room in Iowa. No middleman. No backup players. Just seasoned league veterans with 25-plus years on the film room floor. They hand-cut beef, pack it in dry ice, and hit your family right in stride on the numbers. This isn't just steak, man. This is elite fuel, delivered the right way. Knock on wood if you're with me!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW APP QR CODE SECTION -->
+    <section class="max-w-7xl mx-auto px-6 py-12 text-center border-b border-neutral-900">
+        <div class="bg-neutral-950 border border-gold/40 rounded-xl p-8 max-w-2xl mx-auto shadow-2xl shadow-yellow-900/10">
+            <h2 class="text-3xl font-black uppercase text-gold mb-4">Take the Playbook on the Road</h2>
+            <p class="text-neutral-400 mb-6 text-sm">Scan this code with your phone's camera to install the Gridiron Beef app directly to your home screen. No app store required!</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gridironbeef.com&color=0B0B0B&bgcolor=F4F0E8" alt="Gridiron Beef QR Code" class="mx-auto rounded-lg border-4 border-[#F4F0E8] shadow-lg w-40 h-40">
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <h2 class="text-3xl font-black tracking-tight uppercase mb-4">Know Your Playbook</h2>
+        <p class="text-neutral-400 mb-8 max-w-2xl mx-auto text-lg">Not sure where the Tri-Tip or Skirt Steak comes from on the steer? Review our Master Beef Cut Chart to understand exactly what you are drafting for your cooler.</p>
+        <button onclick="openChartModal()" class="border border-gold text-gold px-8 py-4 rounded text-sm font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition shadow-lg shadow-yellow-900/20">
+            View Master Beef Chart
+        </button>
+    </section>
+    
+    <!-- BRAND FOOTER -->
+    <footer class="bg-[#0B0B0B] border-t border-neutral-900 py-12 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl font-black text-gold tracking-widest uppercase mb-4">GRIDIRONBEEF.COM</h2>
+            <p class="text-neutral-400 text-sm mb-2">Email: <a href="mailto:coach@gridironbeef.com" class="text-[#F4F0E8] hover:text-[#D71920] transition">coach@gridironbeef.com</a></p>
+            <p class="text-neutral-400 text-sm mb-6">Phone: <a href="tel:18886732439" class="text-[#F4F0E8] hover:text-[#D71920] transition">1-888-673-2439</a></p>
+            <p class="text-neutral-600 text-xs uppercase tracking-wider">&copy; 2026 American Quality Protein. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="modal-overlay" class="fixed inset-0 bg-[#0B0B0B]/80 z-[9000] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4" onclick="closeProductModal(event)">
+        <div id="product-modal" class="bg-neutral-950 border border-neutral-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto hidden-el flex flex-col md:flex-row relative">
+            
+            <button onclick="forceCloseModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-[#F4F0E8] transition text-3xl font-black z-10">&times;</button>
+            
+            <div class="w-full md:w-1/2 bg-[#0B0B0B] p-6 border-b md:border-b-0 md:border-r border-neutral-800">
+                <div class="aspect-square bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 mb-4" id="modal-main-img">
+                    <img src="" id="active-image" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
+                <span id="modal-tag" class="text-xs font-bold tracking-widest text-[#D71920] uppercase mb-2 block"></span>
+                <h2 id="modal-title" class="text-4xl font-black uppercase mb-2"></h2>
+                <div id="modal-price" class="text-3xl font-black text-gold mb-4"></div>
+                <div id="modal-desc" class="text-neutral-300 text-sm mb-8 leading-relaxed space-y-2"></div>
+                
+                <!-- ID preserved, href will be overwritten by JS but starts clean -->
+                <a href="#" id="modal-foxy-link" class="w-full crimson-gradient px-4 py-4 rounded font-black uppercase tracking-wider hover:brightness-110 transition border border-[#D71920] block text-center text-lg shadow-lg shadow-[#D71920]/20 text-[#F4F0E8]">Add to Cooler</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="freezer-overlay" class="fixed inset-0 bg-[#0B0B0B]/90 z-[9500] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeFreezerModal(event)">
+        <div id="freezer-modal" class="bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto hidden-el relative p-8">
+            <button onclick="forceCloseFreezerModal()" class="absolute top-4 right-4 text-[#F4F0E8] transition text-4xl font-black z-10 bg-[#0B0B0B]/60 hover:bg-[#D71920] rounded-full w-10 h-10 flex items-center justify-center">&times;</button>
+            <h2 class="text-2xl font-black uppercase text-gold mb-6 border-b border-neutral-800 pb-4">Freezer Size Guide</h2>
+            <div class="space-y-6 text-neutral-300">
+                <div>
+                    <h3 class="text-lg font-bold text-[#F4F0E8] uppercase">1/8 Steer (~40 lbs Boxed)</h3>
+                    <p class="text-sm mt-1">Easily fits in a standard home refrigerator-freezer combo compartment. Requires roughly 1.5 to 2.0 cubic feet of space.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-[#F4F0E8] uppercase">1/4 Steer (~80 lbs Boxed)</h3>
+                    <p class="text-sm mt-1">Requires a small standalone chest or upright freezer. Will take up approximately 3.5 to 5.0 cubic feet of space.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-[#F4F0E8] uppercase">1/2 Steer (~160 lbs Boxed)</h3>
+                    <p class="text-sm mt-1">Requires a dedicated medium-sized chest freezer. Expect to use roughly 7.0 to 10.0 cubic feet of space.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-[#F4F0E8] uppercase">Whole Steer (~320 lbs Boxed)</h3>
+                    <p class="text-sm mt-1">Requires a large, heavy-duty chest freezer. You will need a minimum of 14.0 to 21.0 cubic feet to comfortably store the entire yield.</p>
+                </div>
+            </div>
+            <button onclick="forceCloseFreezerModal()" class="w-full mt-8 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition">Close Guide</button>
+        </div>
+    </div>
+
+    <div id="chart-overlay" class="fixed inset-0 bg-[#0B0B0B]/90 z-[9500] opacity-0 pointer-events-none backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeChartModal(event)">
+        <div id="chart-modal" class="bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto hidden-el relative p-4 flex flex-col items-center">
+            <button onclick="forceCloseChartModal()" class="absolute top-4 right-4 text-[#F4F0E8] transition text-4xl font-black z-10 bg-[#0B0B0B]/60 hover:bg-[#D71920] rounded-full w-12 h-12 flex items-center justify-center">&times;</button>
+            <h2 class="text-2xl font-black uppercase text-gold mb-4 mt-2">Master Beef Cut Chart</h2>
+            <img src="beef-chart.png" alt="Beef Cut Chart" class="w-full h-auto object-contain rounded">
+        </div>
+    </div>
+
+    <div id="ai-trigger" class="fixed bottom-6 right-6 z-[9999]">
+        <button onclick="toggleChat()" class="crimson-gradient text-[#F4F0E8] px-6 py-4 rounded-full font-black uppercase tracking-wider shadow-2xl shadow-[#D71920]/50 hover:scale-105 transition-transform flex items-center gap-3 border border-[#D71920]">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D71920] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-[#D71920]"></span>
+            </span>
+            Coach Gruden AI
+        </button>
+    </div>
+
+    <div id="chat-window" class="fixed bottom-24 right-6 w-80 md:w-96 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl z-[9999] hidden-chat flex flex-col h-[400px]">
+        <div class="bg-neutral-950 p-4 rounded-t-xl border-b border-neutral-800 flex items-center justify-between">
+            <div class="flex items-center space-y-0.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500 mr-2 animate-pulse"></div>
+                <span class="text-sm font-bold uppercase tracking-wider text-gold">Coach Gruden Bot</span>
+            </div>
+            <button onclick="toggleChat()" class="text-neutral-500 hover:text-[#F4F0E8] transition text-xl font-bold">&times;</button>
+        </div>
+        <div class="p-4 flex-grow overflow-y-auto text-sm space-y-4 text-neutral-300" id="chat-box">
+            <div class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%] flex items-start gap-3">
+                <span class="text-gold font-bold mt-0.5">AI</span>
+                <span>Welcome to the roster! I'm Coach Gruden's AI assistant. Let's get your tailgate playbook ready. What do you need to know about our beef?</span>
+            </div>
+        </div>
+        <div class="p-3 border-t border-neutral-800 bg-neutral-950 rounded-b-xl flex gap-2">
+            <input type="text" id="chat-input" placeholder="Type a question..." class="bg-neutral-900 border border-neutral-800 rounded-lg px-3 py-2 text-sm w-full focus:outline-none focus:border-[#D71920] text-[#F4F0E8] placeholder-neutral-600" onkeypress="handleKeyPress(event)">
+            <button onclick="askAI()" class="crimson-gradient px-4 py-2 rounded-lg text-sm font-bold uppercase tracking-wider hover:brightness-110 transition border border-[#D71920] text-[#F4F0E8]">Ask</button>
+        </div>
+    </div>
+
+    <script>
+        // --- PRICING CONFIGURATION ---
+        // COACH: Update this price per pound and the script will automatically
+        // calculate the exact prices for the 10lb, 20lb, and 40lb brat boxes.
+        const BRAT_PRICE_PER_LB = 8.25; 
+
+        // Update the display prices on the front grid automatically
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("grid-price-redzone").innerHTML = '$' + (BRAT_PRICE_PER_LB * 10).toFixed(2) + ' <span class="text-sm font-normal text-neutral-500">10 lbs</span>';
+            document.getElementById("grid-price-trench").innerHTML = '$' + (BRAT_PRICE_PER_LB * 20).toFixed(2) + ' <span class="text-sm font-normal text-neutral-500">20 lbs</span>';
+            document.getElementById("grid-price-warchest").innerHTML = '$' + (BRAT_PRICE_PER_LB * 40).toFixed(2) + ' <span class="text-sm font-normal text-neutral-500">40 lbs</span>';
+        });
+
+        // --- COMPLETE PRODUCT ROSTER DATA ---
+        // URLs now point to gridiron-beef.foxycart.com
+        const productData = {
+            'freeagent': {
+                title: 'The Free Agent Box',
+                price: '$90.00',
+                tag: 'Everyday Value',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Free+Agent+Box&price=90.00&weight=10',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (10 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>8 lbs Ground Beef</li><li>2 lbs Sirloin Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-freeagent.png'
+            },
+            'secondround': {
+                title: 'The Second Round Draft',
+                price: '$125.00',
+                tag: 'Backyard Variety',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Second+Round+Draft+Box&price=125.00&weight=10',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (10 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>4 lbs Ground Beef</li><li>3 lbs Chuck Roast</li><li>3 lbs NY Strip Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-secondround.png'
+            },
+            'firstround': {
+                title: 'The First Round Draft',
+                price: '$195.00',
+                tag: 'Elite Steakhouse',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+First+Round+Draft+Box&price=195.00&weight=10',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (10 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>4 lbs Ground Beef</li><li>4 lbs Boneless Ribeyes</li><li>2 lbs Filet Mignon</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-firstround.png'
+            },
+            'rookie': {
+                title: 'The Rookie Box',
+                price: '$189.00',
+                tag: 'Stock-Up Value',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Rookie+Box&price=189.00&weight=20',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>14 lbs Ground Beef</li><li>6 lbs Assorted Roasts</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-rookie.png'
+            },
+            'audible': {
+                title: 'The Audible Box',
+                price: '$240.00',
+                tag: 'Classic Variety',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Audible+Box&price=240.00&weight=20',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>10 lbs Ground Beef</li><li>6 lbs Chuck Roasts</li><li>4 lbs Mixed Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-audible.png'
+            },
+            'tailgate': {
+                title: 'The Tailgate Box',
+                price: '$355.00',
+                tag: "Premier Griller",
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Tailgate+Box&price=355.00&weight=20',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (20 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>5 lbs Ground Beef</li><li>8 lbs Premium Steaks</li><li>4 lbs Filet Mignon</li><li>3 lbs Sirloin Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-tailgate.png'
+            },
+            'gridiron': {
+                title: 'The Gridiron Bulk Box',
+                price: '$340.00',
+                tag: 'Deep-Freeze Value',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Gridiron+Bulk+Box&price=340.00&weight=40',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>28 lbs Ground Beef</li><li>12 lbs Assorted Roasts</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-gridiron.png'
+            },
+            'primetime': {
+                title: 'The Prime Time Box',
+                price: '$470.00',
+                tag: "Ultimate Variety",
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Prime+Time+Box&price=470.00&weight=40',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>20 lbs Ground Beef</li><li>12 lbs Beef Roasts</li><li>8 lbs Mixed Steaks (Skirt/Flat Iron etc)</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-primetime.png'
+            },
+            'halloffame': {
+                title: 'The Hall of Fame Box',
+                price: '$740.00',
+                tag: 'Luxury Connoisseur',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Hall+of+Fame+Box&price=740.00&weight=40',
+                btnText: 'Add to Cooler',
+                desc: '<p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Beef Cuts Inside (40 lbs):</p><ul class="list-disc pl-5 mb-4 text-neutral-400"><li>12 lbs Ground Beef</li><li>16 lbs Premium Ribeyes</li><li>6 lbs Filet Mignon</li><li>6 lbs NY Strip Steaks</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'box-halloffame.png'
+            },
+            'redzone': {
+                title: 'The Redzone Brats',
+                price: '$' + (BRAT_PRICE_PER_LB * 10).toFixed(2),
+                tag: 'Craft Sausage Sampler',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Redzone+Brats&price=' + (BRAT_PRICE_PER_LB * 10).toFixed(2) + '&weight=10',
+                btnText: 'Add to Cooler',
+                desc: '<p class="text-neutral-400 mb-4">Approximately 10 lbs (16 - 20 brats).</p><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Bratwurst Variations Include:</p><ul class="list-disc pl-5 text-neutral-400"><li>Pork Beer Cheddar Brats</li><li>Pork Jalapeno Cheddar Brats</li><li>Beef Mango & Habanero Brats</li><li>Pork Brats</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'brats-redzone.png'
+            },
+            'trench': {
+                title: 'The Trench Battalion',
+                price: '$' + (BRAT_PRICE_PER_LB * 20).toFixed(2),
+                tag: 'Premium Sausage Volume',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Trench+Battalion&price=' + (BRAT_PRICE_PER_LB * 20).toFixed(2) + '&weight=20',
+                btnText: 'Add to Cooler',
+                desc: '<p class="text-neutral-400 mb-4">Approximately 20 lbs (32 - 40 brats).</p><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Bratwurst Variations Include:</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Brats</li><li>Pork Beer Cheddar Brats</li><li>Pork Jalapeno Cheddar Brats</li><li>Beef Mango & Habanero Brats</li><li>Pork Brats</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'brats-trench.png'
+            },
+            'warchest': {
+                title: 'The Playbook War Chest',
+                price: '$' + (BRAT_PRICE_PER_LB * 40).toFixed(2),
+                tag: 'The Ultimate Assortment',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=The+Playbook+War+Chest&price=' + (BRAT_PRICE_PER_LB * 40).toFixed(2) + '&weight=40',
+                btnText: 'Add to Cooler',
+                desc: '<p class="text-neutral-400 mb-4">Approximately 40 lbs (64 - 80 brats).</p><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">Bratwurst Variations Include:</p><ul class="list-disc pl-5 text-neutral-400"><li>Beef Green Hatch Chile Brats</li><li>Beef Brats</li><li>Pork Beer Cheddar Brats</li><li>Pork Jalapeno Cheddar Brats</li><li>Beef Mango & Habanero Brats</li><li>Pork Brats</li></ul><p class="text-xs text-[#D71920] font-bold mt-4">* Prices do not include shipping, which is calculated at checkout.</p>',
+                image: 'brats-warchest.png'
+            },
+            'bulk18': {
+                title: '1/8 Steer Share',
+                price: '$460.00',
+                tag: 'Est. Total: $460.00',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/8+Steer+Share&price=460.00&weight=40',
+                btnText: 'Add to Cooler',
+                desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">40 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 2</li><li>Boneless Chuck Roast - 2</li><li>Sirloin Tip Roast - 1</li><li>Sirloin Steak - 2</li><li>NY Strip - 4</li><li>Filet - 2</li><li>Ground Beef - 25 lbs</li></ul>',
+                image: 'share-eighth.jpg'
+            },
+            'bulk14': {
+                title: '1/4 Steer Share',
+                price: '$778.00',
+                tag: 'Est. Total: $778.00',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/4+Steer+Share&price=778.00&weight=80',
+                btnText: 'Add to Cooler',
+                desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">80 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 4</li><li>Boneless Chuck Roast - 4</li><li>Sirloin Tip Roast - 2</li><li>Sirloin Steak - 4</li><li>NY Strip - 8</li><li>Filet - 4</li><li>Brisket - 1 quarter</li><li>Ground Beef - 50 lbs</li></ul>',
+                image: 'share-quarter.jpg'
+            },
+            'bulk12': {
+                title: '1/2 Steer Share',
+                price: '$1,688.00',
+                tag: 'Est. Total: $1,688.00',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=1/2+Steer+Share&price=1688.00&weight=160',
+                btnText: 'Add to Cooler',
+                desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">160 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 8</li><li>Boneless Chuck Roast - 6</li><li>Sirloin Tip Roast - 3</li><li>Sirloin Steak - 5</li><li>NY Strip - 12</li><li>Filet - 6</li><li>Brisket - 2 quarters or 1 half</li><li>Ground Beef - 110 lbs</li></ul>',
+                image: 'share-half.jpg'
+            },
+            'bulkwhole': {
+                title: 'Whole Steer',
+                price: '$3,293.00',
+                tag: 'Est. Total: $3,293.00',
+                foxy: 'https://gridiron-beef.foxycart.com/cart?name=Whole+Steer+Share&price=3293.00&weight=320',
+                btnText: 'Add to Cooler',
+                desc: '<div class="text-xs text-neutral-400 mb-4 space-y-1"><p><strong>* Please allow 2-3 weeks for fulfillment.</strong></p><p><strong>* Pricing does not include shipping.</strong></p><p><strong>* Quantities may vary but total weight is guaranteed.</strong></p><p><strong>* For reference, pictured is a whole beef. See below for actual weights/quantities.</strong></p></div><p class="font-bold text-[#F4F0E8] border-b border-neutral-800 pb-2 mb-2">320 LBS Breakdown:</p><ul class="list-disc pl-5 text-neutral-400"><li>Boneless Ribeye - 16</li><li>Boneless Chuck Roast - 12</li><li>Sirloin Tip Roast - 6</li><li>Sirloin Steak - 10</li><li>NY Strip - 24</li><li>Filet - 12</li><li>Brisket - 4 quarters or 2 halves</li><li>Ground Beef - 220 lbs</li></ul>',
+                image: 'share-whole.jpg'
+            }
+        };
+
+        // --- PRODUCT MODAL LOGIC ---
+        const overlay = document.getElementById('modal-overlay');
+        const modal = document.getElementById('product-modal');
+
+        function openProductModal(productId) {
+            const data = productData[productId];
+            
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-price').innerText = data.price;
+            document.getElementById('modal-tag').innerText = data.tag;
+            document.getElementById('modal-desc').innerHTML = data.desc;
+            
+            const foxyLink = document.getElementById('modal-foxy-link');
+            foxyLink.href = data.foxy;
+            foxyLink.innerText = data.btnText || 'Add to Cooler';
+            
+            // Set single image for Modal
+            document.getElementById('active-image').src = data.image;
+
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.remove('hidden-el');
+            modal.classList.add('visible-el');
+        }
+
+        function closeProductModal(event) {
+            if (event.target === overlay) { forceCloseModal(); }
+        }
+
+        function forceCloseModal() {
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('visible-el');
+            modal.classList.add('hidden-el');
+        }
+
+        // --- FREEZER GUIDE MODAL LOGIC ---
+        const freezerOverlay = document.getElementById('freezer-overlay');
+        const freezerModal = document.getElementById('freezer-modal');
+
+        function openFreezerModal() {
+            freezerOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            freezerModal.classList.remove('hidden-el');
+            freezerModal.classList.add('visible-el');
+        }
+
+        function closeFreezerModal(event) {
+            if (event.target === freezerOverlay) { forceCloseFreezerModal(); }
+        }
+
+        function forceCloseFreezerModal() {
+            freezerOverlay.classList.add('opacity-0', 'pointer-events-none');
+            freezerModal.classList.remove('visible-el');
+            freezerModal.classList.add('hidden-el');
+        }
+
+        // --- BEEF CHART MODAL LOGIC ---
+        const chartOverlay = document.getElementById('chart-overlay');
+        const chartModal = document.getElementById('chart-modal');
+
+        function openChartModal() {
+            chartOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            chartModal.classList.remove('hidden-el');
+            chartModal.classList.add('visible-el');
+        }
+
+        function closeChartModal(event) {
+            if (event.target === chartOverlay) { forceCloseChartModal(); }
+        }
+
+        function forceCloseChartModal() {
+            chartOverlay.classList.add('opacity-0', 'pointer-events-none');
+            chartModal.classList.remove('visible-el');
+            chartModal.classList.add('hidden-el');
+        }
+
+        // --- CHAT LOGIC ---
+        let chatOpen = false;
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            if (chatOpen) {
+                chatWindow.classList.remove('visible-chat');
+                chatWindow.classList.add('hidden-chat');
+            } else {
+                chatWindow.classList.remove('hidden-chat');
+                chatWindow.classList.add('visible-chat');
+                document.getElementById('chat-input').focus();
+            }
+            chatOpen = !chatOpen;
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') { askAI(); }
+        }
+
+        async function askAI() {
+            const input = document.getElementById('chat-input');
+            const chatBox = document.getElementById('chat-box');
+            const userText = input.value.trim();
+            
+            if(!userText) return;
+
+            chatBox.innerHTML += `
+                <div class="bg-neutral-800 p-3 rounded-lg shadow-sm w-[90%] ml-auto text-right text-[#F4F0E8]">
+                    ${userText}
+                </div>`;
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            const loadingId = 'loading-' + Date.now();
+            chatBox.innerHTML += `
+                <div id="${loadingId}" class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%] flex items-start gap-3">
+                    <span class="text-gold font-bold mt-0.5">AI</span>
+                    <span class="animate-pulse text-neutral-500">Coach Gruden is reviewing the playbook...</span>
+                </div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                const response = await fetch('https://hook.us2.make.com/wmiksg1a9o19ifwewj4klq5t6g379raw', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: userText })
+                });
+                const data = await response.json();
+                document.getElementById(loadingId).remove();
+                chatBox.innerHTML += `
+                    <div class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%] flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5">AI</span>
+                        <span>${data.reply}</span>
+                    </div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+            } catch (error) {
+                document.getElementById(loadingId).remove();
+                chatBox.innerHTML += `
+                    <div class="bg-neutral-950 p-3 rounded-lg border border-[#D71920] shadow-sm w-[90%] flex items-start gap-3 text-[#D71920]">
+                        <span class="text-[#D71920] font-bold mt-0.5">Error</span>
+                        <span>Signal lost on the headset! (Make Webhook connection failed).</span>
+                    </div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
