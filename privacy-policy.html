@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Gridiron Beef</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; }
+        .text-gold { color: #CEB14F; }
+        .border-gold { border-color: #CEB14F; }
+        a.link { color: #CEB14F; text-decoration: underline; }
+        a.link:hover { color: #F4F0E8; }
+    </style>
+</head>
+<body class="bg-[#0B0B0B] text-[#F4F0E8]">
+    <nav class="border-b border-neutral-800 bg-[#0B0B0B]/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-black tracking-wider text-gold">GRIDIRON BEEF</a>
+            <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-gold transition">&larr; Back to Store</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        <h1 class="text-4xl font-black uppercase text-gold mb-2">Privacy Policy</h1>
+        <p class="text-neutral-500 text-sm mb-10">Last updated: <span id="today"></span></p>
+
+        <div class="space-y-8 text-neutral-300 leading-relaxed">
+            <p>American Quality Protein LLC, doing business as Gridiron Beef ("Gridiron Beef," "we," "us," or "our"), respects your privacy. This policy explains what information we collect when you visit gridironbeef.com or place an order, how we use it, and the choices you have.</p>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Information We Collect</h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong class="text-[#F4F0E8]">Order and contact information</strong> you provide at checkout: name, billing and shipping address, email address, and telephone number.</li>
+                    <li><strong class="text-[#F4F0E8]">Payment information:</strong> your card details are entered into and processed by our PCI-DSS-compliant payment processor. We do not receive or store full payment card numbers on our own systems.</li>
+                    <li><strong class="text-[#F4F0E8]">Communications:</strong> messages you send us by email, phone, or through the chat feature on our website.</li>
+                    <li><strong class="text-[#F4F0E8]">Automatically collected data:</strong> standard technical information such as IP address, browser type, and pages viewed, collected through cookies and similar technologies to operate and improve the site.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">How We Use Your Information</h2>
+                <p>We use your information to process and fulfill orders, arrange shipping of perishable products, communicate with you about your order, provide customer service, prevent fraud, comply with legal obligations, and, where permitted, send you promotional messages you may opt out of at any time.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">How We Share Your Information</h2>
+                <p>We share information only as needed to run the business: with our payment processor to complete transactions; with shipping and fulfillment providers to deliver your order; with service providers that help us operate the website and its features (including our order/checkout platform and the third-party service that powers our website chat feature, which receives messages you submit through it); and with authorities where required by law. We do not sell your personal information.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Data Security</h2>
+                <p>Payment card data is transmitted over encrypted (TLS) connections and handled by our PCI-DSS-compliant processor. We maintain reasonable administrative, technical, and physical safeguards to protect the information we hold. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Your Choices and Rights</h2>
+                <p>You may request access to, correction of, or deletion of your personal information, and you may opt out of marketing communications, by contacting us using the details below. Depending on where you live, you may have additional rights under applicable state privacy laws. We will respond consistent with those laws.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Cookies</h2>
+                <p>We use cookies and similar technologies to operate the site, remember your cart, and understand site usage. You can control cookies through your browser settings; disabling them may affect how the site functions.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Children</h2>
+                <p>Our site and products are intended for adults. We do not knowingly collect personal information from children under 13.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Changes to This Policy</h2>
+                <p>We may update this policy from time to time. Material changes will be posted on this page with an updated date.</p>
+            </div>
+
+            <div class="bg-neutral-950 border border-gold/40 rounded-xl p-6 mt-8">
+                <h2 class="text-2xl text-gold uppercase mb-3">Contact Us</h2>
+                <p>American Quality Protein LLC dba Gridiron Beef<br>
+                1902 7th Ave, Camanche, IA 52730, United States<br>
+                Email: <a href="mailto:coach@gridironbeef.com" class="link">coach@gridironbeef.com</a><br>
+                Phone: <a href="tel:18886732439" class="link">1-888-673-2439</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-neutral-900 py-8 text-center text-neutral-600 text-xs uppercase tracking-wider">
+        &copy; <span id="year"></span> American Quality Protein LLC. All Rights Reserved.
+    </footer>
+    <script>
+        document.getElementById('today').textContent = new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Policy | Gridiron Beef</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; }
+        .text-gold { color: #CEB14F; }
+        a.link { color: #CEB14F; text-decoration: underline; }
+        a.link:hover { color: #F4F0E8; }
+    </style>
+</head>
+<body class="bg-[#0B0B0B] text-[#F4F0E8]">
+    <nav class="border-b border-neutral-800 bg-[#0B0B0B]/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-black tracking-wider text-gold">GRIDIRON BEEF</a>
+            <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-gold transition">&larr; Back to Store</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        <h1 class="text-4xl font-black uppercase text-gold mb-2">Delivery Policy</h1>
+        <p class="text-neutral-500 text-sm mb-10">Last updated: <span id="today"></span></p>
+
+        <div class="space-y-8 text-neutral-300 leading-relaxed">
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Where We Ship</h2>
+                <p>Gridiron Beef ships to destinations within the continental United States. We do not currently ship internationally or to addresses outside the contiguous U.S. If you have a question about a specific destination, contact us before ordering.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">How Your Order Ships</h2>
+                <p>Our products are perishable. Boxed beef is hand-cut, packed in insulated packaging with dry ice or gel coolant to maintain temperature in transit, and shipped to your door. Larger commercial and wholesale orders may ship via refrigerated (reefer) freight. Because dry ice sublimates over time, shipping methods and timing are selected to keep your product safe on arrival.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Shipping Options, Cost, and Timing</h2>
+                <p>Shipping cost is calculated at checkout based on the weight of your order and your destination. We offer Ground and Air options where available; Ground service is limited to regions we can reach within the transit window that keeps perishable product safe, and Air is available to further destinations. Estimated delivery timeframes are shown or described at checkout. To protect product quality, orders may be scheduled to ship early in the week to avoid weekend transit holds.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Cattle Shares and Pre-Orders</h2>
+                <p>Bulk cattle shares and certain pre-order items are custom-processed. For these orders, please allow the fulfillment window noted on the product (typically 2&ndash;4 weeks), and note that shipping for bulk shares may be calculated and billed once final processed weight is determined. Any deposit and balance terms are shown on the applicable product.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Delivery Issues and Perishable Product</h2>
+                <p>Someone should be available to receive and promptly refrigerate or freeze your order upon delivery. If your order arrives damaged, thawed, or otherwise compromised, contact us within 24 hours of delivery at the information below so we can make it right. Please see our <a href="refund-policy.html" class="link">Refund &amp; Return Policy</a> for how we handle these situations.</p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl text-gold uppercase mb-3">Local Pickup</h2>
+                <p>Where offered, local pickup is available at our Iowa facility at no shipping charge. Pickup availability and instructions are provided at or after checkout for eligible orders.</p>
+            </div>
+
+            <div class="bg-neutral-950 border border-gold/40 rounded-xl p-6 mt-8">
+                <h2 class="text-2xl text-gold uppercase mb-3">Questions</h2>
+                <p>American Quality Protein LLC dba Gridiron Beef<br>
+                1902 7th Ave, Camanche, IA 52730, United States<br>
+                Email: <a href="mailto:coach@gridironbeef.com" class="link">coach@gridironbeef.com</a><br>
+                Phone: <a href="tel:18886732439" class="link">1-888-673-2439</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-neutral-900 py-8 text-center text-neutral-600 text-xs uppercase tracking-wider">
+        &copy; <span id="year"></span> American Quality Protein LLC. All Rights Reserved.
+    </footer>
+    <script>
+        document.getElementById('today').textContent = new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
