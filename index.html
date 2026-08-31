@@ -1084,6 +1084,13 @@
             if (e.key === 'Enter') { askAI(); }
         }
 
+        // --- SECURITY: escape any user- or webhook-supplied text before it touches the page ---
+        function escapeHtml(str){
+            return String(str == null ? '' : str).replace(/[&<>"']/g, function(c){
+                return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+            });
+        }
+
         async function askAI() {
             const input = document.getElementById('chat-input');
             const chatBox = document.getElementById('chat-box');
@@ -1093,7 +1100,7 @@
 
             chatBox.innerHTML += `
                 <div class="bg-neutral-800 p-3 rounded-lg shadow-sm w-[90%] ml-auto text-right text-[#F4F0E8]">
-                    ${userText}
+                    ${escapeHtml(userText)}
                 </div>`;
             input.value = '';
             chatBox.scrollTop = chatBox.scrollHeight;
@@ -1117,7 +1124,7 @@
                 chatBox.innerHTML += `
                     <div class="bg-neutral-950 p-3 rounded-lg border border-neutral-800 shadow-sm w-[90%] flex items-start gap-3">
                         <span class="text-gold font-bold mt-0.5">AI</span>
-                        <span>${data.reply}</span>
+                        <span>${escapeHtml(data.reply)}</span>
                     </div>`;
                 chatBox.scrollTop = chatBox.scrollHeight;
 
