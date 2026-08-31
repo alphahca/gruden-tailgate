@@ -433,20 +433,6 @@
         </div>
     </section>
 
-    <!-- COACH'S BONUS UPSELL: Free Agent Box 10% off on orders over $600 -->
-    <section class="max-w-4xl mx-auto mt-16 px-6">
-        <div class="bg-gradient-to-r from-[#1a1a1a] to-neutral-900 border-2 border-gold rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-2xl">
-            <img src="box-freeagent.jpg" alt="Free Agent Box" class="w-32 h-32 object-cover rounded-lg border border-neutral-700 flex-shrink-0">
-            <div class="flex-1 text-center md:text-left">
-                <span class="text-xs font-black tracking-widest text-[#D71920] uppercase">Coach's Bonus &mdash; Orders Over $600</span>
-                <h3 class="text-2xl font-black uppercase text-gold mt-1">Add a Free Agent Box for 10% Off</h3>
-                <p class="text-neutral-400 text-sm mt-2">Ordering a share or a big haul? Toss in a Free Agent Box (8 lbs ground + 2 lbs sirloin) at <span class="line-through text-neutral-500">$93.60</span> <strong class="text-[#F4F0E8]">$84.24</strong> &mdash; 10% off, one click.</p>
-            </div>
-            <a href="https://gridiron-beef.foxycart.com/cart?name=Free+Agent+Box+(Bonus+10%25+Off)&price=84.24&weight=10" class="crimson-gradient px-8 py-4 rounded font-black uppercase tracking-wider text-sm border border-[#D71920] hover:brightness-110 transition text-[#F4F0E8] whitespace-nowrap flex-shrink-0">Add for $84.24</a>
-        </div>
-        <p class="text-center text-neutral-600 text-xs mt-3">Bonus pricing intended for orders over $600 &bull; Shipping calculated at checkout</p>
-    </section>
-
     <section class="max-w-7xl mx-auto mt-16 px-6 bg-neutral-950 border border-gold/40 rounded-xl p-8 md:p-12 text-center relative overflow-hidden group shadow-2xl">
         <div class="absolute inset-0 bg-gradient-to-r from-yellow-900/10 via-transparent to-yellow-900/10"></div>
         
@@ -462,7 +448,7 @@
                 <li><strong class="text-[#F4F0E8]">Foodservice & Retail:</strong> Reliable supply programs for restaurant groups, grocery chains, independent butcher shops, and institutional buyers.</li>
             </ul>
             
-            <p class="text-center mt-6 text-gold font-bold">Need a dependable beef supply partner? Email us at <a href="mailto:coach@gridironbeef.com" class="text-[#F4F0E8] hover:text-[#D71920] transition underline">coach@gridironbeef.com</a> or call <a href="tel:18886732439" class="text-[#F4F0E8] hover:text-[#D71920] transition underline">1-888-673-2439</a> to discuss product specifications, availability, volume pricing, and freight.</p>
+            <p class="text-center mt-6 text-gold font-bold">Need a dependable beef supply partner? Email us at <a href="mailto:coach@gridironbeef.com" class="text-[#F4F0E8] hover:text-[#D71920] transition underline">coach@gridironbeef.com</a> or call <a href="tel:18334743666" class="text-[#F4F0E8] hover:text-[#D71920] transition underline">(833) 474-3666</a> to discuss product specifications, availability, volume pricing, and freight.</p>
         </div>
         
         <button onclick="openContactModal()" class="inline-block mt-8 border border-gold text-gold px-8 py-3 rounded text-sm font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition relative z-10 shadow-lg shadow-yellow-900/20">REQUEST WHOLESALE PRICING</button>
@@ -619,7 +605,7 @@
             </div>
 
             <p class="text-neutral-400 text-sm mb-2">Email: <a href="mailto:coach@gridironbeef.com" class="text-[#F4F0E8] hover:text-[#D71920] transition">coach@gridironbeef.com</a></p>
-            <p class="text-neutral-400 text-sm mb-2">Phone: <a href="tel:18886732439" class="text-[#F4F0E8] hover:text-[#D71920] transition">1-888-673-2439</a></p>
+            <p class="text-neutral-400 text-sm mb-2">Phone: <a href="tel:18334743666" class="text-[#F4F0E8] hover:text-[#D71920] transition">(833) 474-3666</a></p>
             <p class="text-neutral-400 text-sm mb-2">American Quality Protein LLC dba Gridiron Beef &middot; 1902 7th Ave, Camanche, IA 52730, USA</p>
             <p class="text-neutral-500 text-xs mb-6">All transactions processed in U.S. dollars (USD). We ship within the continental United States only. Card payments are encrypted (TLS) and processed by our PCI-DSS-compliant provider.</p>
 
@@ -926,9 +912,9 @@
         const overlay = document.getElementById('modal-overlay');
         const modal = document.getElementById('product-modal');
 
-        // --- REFERRAL CAPTURE (Option 2): tag orders with ?ref= ---
-        (function(){ try { var r=new URLSearchParams(location.search).get('ref'); if(r){ localStorage.setItem('gib_ref', r.replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40)); } } catch(e){} })();
-        function getReferral(){ try { return localStorage.getItem('gib_ref') || ''; } catch(e){ return ''; } }
+        // --- REFERRAL CAPTURE (Option 2): tag orders with ?ref=, auto-expires after 45 days ---
+        (function(){ try { var r=new URLSearchParams(location.search).get('ref'); if(r){ localStorage.setItem('gib_ref', JSON.stringify({v:r.replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40), t:Date.now()})); } } catch(e){} })();
+        function getReferral(){ try { var raw=localStorage.getItem('gib_ref'); if(!raw) return ''; var o=JSON.parse(raw); if(!o||!o.v||(Date.now()-o.t)>3888000000){ localStorage.removeItem('gib_ref'); return ''; } return o.v; } catch(e){ localStorage.removeItem('gib_ref'); return ''; } }
         function appendReferral(url){ var r=getReferral(); if(!r) return url; return url + (url.indexOf('?')>-1?'&':'?') + 'Referral=' + encodeURIComponent(r); }
 
         function openProductModal(productId) {
