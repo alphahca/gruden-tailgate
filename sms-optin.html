@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Sign-Up &amp; Contact | Gridiron Beef</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; }
+        .crimson-gradient { background: linear-gradient(135deg,#D71920,#a5121b); }
+        .text-gold { color: #CEB14F; }
+        .border-gold { border-color: #CEB14F; }
+    </style>
+</head>
+<body class="bg-[#0B0B0B] text-[#F4F0E8] min-h-screen">
+
+    <div class="max-w-xl mx-auto px-6 py-12">
+
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="text-3xl font-black tracking-widest text-gold uppercase">Gridiron Beef</div>
+            <p class="text-xs font-bold tracking-widest text-neutral-400 uppercase mt-1">Text Sign-Up &amp; Contact</p>
+        </div>
+
+        <div class="bg-neutral-950 border border-gold/40 rounded-xl p-8 shadow-2xl">
+            <span class="text-xs font-bold tracking-widest text-[#D71920] uppercase">Get in the Huddle</span>
+            <h2 class="text-2xl font-black uppercase text-gold mt-1 mb-1">Contact Us &amp; Opt In to Texts</h2>
+            <p class="text-neutral-400 text-sm mb-6">Send us a message, and if you'd like, opt in to receive customer care texts from us.</p>
+
+            <!-- Form -->
+            <div id="optin-form">
+                <label class="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-1">Name</label>
+                <input id="f-name" type="text" placeholder="Your name" class="w-full mb-4 bg-neutral-900 border border-neutral-700 rounded px-3 py-2.5 text-[#F4F0E8] text-sm focus:border-gold outline-none">
+
+                <label class="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-1">Email</label>
+                <input id="f-email" type="email" placeholder="Your email" class="w-full mb-4 bg-neutral-900 border border-neutral-700 rounded px-3 py-2.5 text-[#F4F0E8] text-sm focus:border-gold outline-none">
+
+                <label class="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-1">Mobile Phone Number</label>
+                <input id="f-phone" type="tel" placeholder="(555) 555-5555" class="w-full mb-4 bg-neutral-900 border border-neutral-700 rounded px-3 py-2.5 text-[#F4F0E8] text-sm focus:border-gold outline-none">
+
+                <label class="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-1">Message</label>
+                <textarea id="f-msg" rows="3" placeholder="How can we help?" class="w-full mb-5 bg-neutral-900 border border-neutral-700 rounded px-3 py-2.5 text-[#F4F0E8] text-sm focus:border-gold outline-none resize-none"></textarea>
+
+                <!-- Consent checkboxes (NOT pre-checked; user may decline all texts) -->
+                <div class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 mb-5 space-y-3">
+                    <label class="flex items-start gap-3 cursor-pointer text-sm text-[#F4F0E8]">
+                        <input type="checkbox" id="sms-yes" class="mt-1 accent-[#D71920] w-4 h-4 flex-shrink-0">
+                        <span>Yes, I consent to receive customer care messages from David Alessi MD.</span>
+                    </label>
+                    <label class="flex items-start gap-3 cursor-pointer text-sm text-neutral-300">
+                        <input type="checkbox" id="sms-no" class="mt-1 accent-neutral-500 w-4 h-4 flex-shrink-0">
+                        <span>No, I do not want to receive any text messages from David Alessi MD.</span>
+                    </label>
+                </div>
+
+                <button id="f-send" onclick="submitOptin()" class="w-full crimson-gradient text-[#F4F0E8] px-6 py-3 rounded text-sm font-black uppercase tracking-widest border border-[#D71920] hover:brightness-110 transition">Submit</button>
+                <p id="f-status" class="text-sm mt-3 text-center"></p>
+            </div>
+
+            <!-- Required carrier disclosure (must appear right below the form) -->
+            <div class="mt-6 pt-5 border-t border-neutral-800">
+                <p class="text-[11px] leading-relaxed text-neutral-500">
+                    David Alessi MD (doing business as David Alessi MD) would like your consent to send customer care text message communications from (833) 474-3666 to your mobile number listed above, in response to your questions or to provide information relevant to your relationship with us. Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply &lsquo;STOP&rsquo; to unsubscribe at any time. Reply &lsquo;HELP&rsquo; for assistance or more information. We do not share your mobile opt-in information with anyone. Our combined Privacy Policy and Messaging Terms and Conditions are available at <a href="https://gridironbeef.com/privacy-policy.html" class="text-gold underline">https://gridironbeef.com/privacy-policy.html</a>.
+                </p>
+            </div>
+        </div>
+
+        <p class="text-center mt-6"><a href="https://gridironbeef.com" class="text-gold text-xs uppercase tracking-wider hover:brightness-110">&larr; Back to Gridiron Beef</a></p>
+    </div>
+
+    <script>
+        // --- SET THIS: paste the same make.com webhook URL you use for your contact form ---
+        const CONTACT_WEBHOOK_URL = "https://hook.us2.make.com/q4j10p12ji92eua41ynnedrsvd7hepsr";
+
+        // Consent checkboxes are mutually exclusive; neither is pre-checked.
+        var yes = document.getElementById('sms-yes');
+        var no  = document.getElementById('sms-no');
+        yes.addEventListener('change', function(){ if(yes.checked) no.checked = false; });
+        no.addEventListener('change', function(){ if(no.checked) yes.checked = false; });
+
+        async function submitOptin(){
+            var name  = document.getElementById('f-name').value.trim();
+            var email = document.getElementById('f-email').value.trim();
+            var phone = document.getElementById('f-phone').value.trim();
+            var msg   = document.getElementById('f-msg').value.trim();
+            var status = document.getElementById('f-status');
+            var btn = document.getElementById('f-send');
+
+            if(!name || !phone){ status.style.color='#D71920'; status.textContent='Please add your name and mobile phone number.'; return; }
+            if(!yes.checked && !no.checked){ status.style.color='#D71920'; status.textContent='Please choose whether you want to receive texts (Yes or No).'; return; }
+
+            var consent = yes.checked ? 'YES' : 'NO';
+            btn.disabled = true; status.style.color='#9ca3af'; status.textContent='Sending\u2026';
+            try{
+                var res = await fetch(CONTACT_WEBHOOK_URL, {
+                    method:'POST',
+                    headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({ name:name, email:email, phone:phone, message:msg, sms_consent:consent, source:'gridironbeef.com SMS opt-in page' })
+                });
+                if(!res.ok) throw new Error();
+                status.style.color='#22c55e';
+                status.textContent = consent==='YES'
+                    ? "Thanks! You're signed up. Reply STOP anytime to opt out."
+                    : "Message sent. You will NOT receive text messages.";
+                document.getElementById('f-name').value='';document.getElementById('f-email').value='';document.getElementById('f-phone').value='';document.getElementById('f-msg').value='';
+                yes.checked=false; no.checked=false;
+            }catch(err){
+                status.style.color='#D71920'; status.textContent='Could not send \u2014 please email coach@gridironbeef.com.';
+            }finally{ btn.disabled=false; }
+        }
+    </script>
+</body>
+</html>
