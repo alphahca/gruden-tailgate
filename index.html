@@ -1150,5 +1150,57 @@
             }
         }
     </script>
+<style>
+  #pwa-banner{position:fixed;left:0;right:0;bottom:0;z-index:9998;display:none;align-items:center;gap:12px;background:#0B0B0B;border-top:2px solid #CEB14F;padding:12px 14px;font-family:'Inter',sans-serif;box-shadow:0 -6px 20px rgba(0,0,0,.5);}
+  #pwa-banner .pwa-txt{flex:1;color:#F4F0E8;font-size:14px;font-weight:700;}
+  #pwa-banner .pwa-btn{background:linear-gradient(135deg,#D71920,#a5121b);color:#fff;border:1px solid #D71920;border-radius:6px;padding:10px 16px;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;white-space:nowrap;}
+  #pwa-banner .pwa-close{background:none;border:none;color:#8a857c;font-size:22px;line-height:1;cursor:pointer;padding:0 4px;}
+  #ios-guide{position:fixed;inset:0;z-index:9999;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.6);}
+  #ios-guide .ios-card{background:#141414;border:1px solid #CEB14F;border-radius:14px 14px 0 0;padding:22px 22px 30px;max-width:420px;width:100%;text-align:center;color:#F4F0E8;font-family:'Inter',sans-serif;}
+  #ios-guide .ios-card p{margin:8px 0;font-size:15px;line-height:1.5;}
+  #ios-guide .ios-card strong{color:#CEB14F;}
+  #ios-guide .pwa-btn{margin-top:14px;background:linear-gradient(135deg,#D71920,#a5121b);color:#fff;border:none;border-radius:6px;padding:11px 22px;font-weight:900;text-transform:uppercase;cursor:pointer;}
+  #ios-guide .ios-arrow{font-size:34px;margin-top:14px;animation:iosbounce 1s infinite;}
+  @keyframes iosbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+</style>
+<div id="pwa-banner">
+  <span class="pwa-txt">&#128242; Install the Gridiron Beef App</span>
+  <button id="pwa-install" class="pwa-btn">Tap Here</button>
+  <button id="pwa-close" class="pwa-close" aria-label="Dismiss">&times;</button>
+</div>
+<div id="ios-guide">
+  <div class="ios-card">
+    <p style="font-weight:900;font-size:17px;color:#CEB14F;text-transform:uppercase;">Add Gridiron Beef to your Home Screen</p>
+    <p>1. Tap the <strong>Share</strong> button at the bottom of Safari</p>
+    <p>2. Scroll down and tap <strong>&ldquo;Add to Home Screen&rdquo;</strong></p>
+    <button id="ios-close" class="pwa-btn">Got it</button>
+    <div class="ios-arrow">&#128071;</div>
+  </div>
+</div>
+<script>
+(function(){
+  var banner=document.getElementById('pwa-banner'), installBtn=document.getElementById('pwa-install'), closeBtn=document.getElementById('pwa-close'), iosGuide=document.getElementById('ios-guide'), iosClose=document.getElementById('ios-close'), deferred=null;
+  function isStandalone(){ return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true; }
+  function dismissed(){ try{ return localStorage.getItem('gib_pwa_dismiss')==='1'; }catch(e){ return false; } }
+  function remember(){ try{ localStorage.setItem('gib_pwa_dismiss','1'); }catch(e){} }
+  function hide(){ banner.style.display='none'; }
+  if(isStandalone() || dismissed()) return;
+  var ua=navigator.userAgent||'';
+  var isIOS=/iphone|ipad|ipod/i.test(ua);
+  var isSafari=/safari/i.test(ua) && !/crios|fxios|android|chrome/i.test(ua);
+  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred=e; banner.style.display='flex'; });
+  window.addEventListener('appinstalled', function(){ hide(); remember(); });
+  installBtn.addEventListener('click', function(){
+    if(deferred){ deferred.prompt(); deferred.userChoice.then(function(){ deferred=null; hide(); remember(); }); }
+    else if(isIOS){ iosGuide.style.display='flex'; }
+    else { hide(); }
+  });
+  closeBtn.addEventListener('click', function(){ hide(); remember(); });
+  if(iosClose){ iosClose.addEventListener('click', function(){ iosGuide.style.display='none'; hide(); remember(); }); }
+  if(isIOS && isSafari){ setTimeout(function(){ if(!isStandalone() && !dismissed()) banner.style.display='flex'; }, 2500); }
+})();
+</script>
+<!-- ===================== END INSTALL APP BANNER ===================== -->
+
 </body>
 </html>
