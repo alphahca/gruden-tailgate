@@ -618,12 +618,12 @@
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-2xl font-black text-gold tracking-widest uppercase mb-4">GRIDIRONBEEF.COM</h2>
 
-            <!-- Card acceptance marks: replace cards/*.svg with the official full-color logo files -->
-            <div class="flex justify-center items-center gap-3 mb-6">
-                <img src="cards/visa.svg" alt="Visa" class="h-7">
-                <img src="cards/mastercard.svg" alt="Mastercard" class="h-7">
-                <img src="cards/amex.svg" alt="American Express" class="h-7">
-                <img src="cards/discover.svg" alt="Discover" class="h-7">
+            <!-- Accepted card badges (pure CSS, no external files) -->
+            <div class="flex justify-center items-center flex-wrap gap-2 mb-6">
+                <span style="background:#F4F0E8;color:#1A1F71;font-weight:900;font-size:11px;letter-spacing:1px;padding:5px 11px;border-radius:5px;font-family:Arial,Helvetica,sans-serif;">VISA</span>
+                <span style="background:#F4F0E8;color:#EB001B;font-weight:900;font-size:11px;letter-spacing:1px;padding:5px 11px;border-radius:5px;font-family:Arial,Helvetica,sans-serif;">MASTERCARD</span>
+                <span style="background:#F4F0E8;color:#006FCF;font-weight:900;font-size:11px;letter-spacing:1px;padding:5px 11px;border-radius:5px;font-family:Arial,Helvetica,sans-serif;">AMEX</span>
+                <span style="background:#F4F0E8;color:#E86100;font-weight:900;font-size:11px;letter-spacing:1px;padding:5px 11px;border-radius:5px;font-family:Arial,Helvetica,sans-serif;">DISCOVER</span>
             </div>
 
             <p class="text-neutral-400 text-sm mb-2">Email: <a href="mailto:coach@gridironbeef.com" class="text-[#F4F0E8] hover:text-[#D71920] transition">coach@gridironbeef.com</a></p>
@@ -1151,56 +1151,86 @@
         }
     </script>
 <style>
-  #pwa-banner{position:fixed;left:0;right:0;bottom:0;z-index:9998;display:none;align-items:center;gap:12px;background:#0B0B0B;border-top:2px solid #CEB14F;padding:12px 14px;font-family:'Inter',sans-serif;box-shadow:0 -6px 20px rgba(0,0,0,.5);}
+  #pwa-banner{position:fixed;left:0;right:0;bottom:0;z-index:10000;display:none;align-items:center;gap:12px;background:#0B0B0B;border-top:2px solid #CEB14F;padding:12px 14px;font-family:'Inter',sans-serif;box-shadow:0 -6px 20px rgba(0,0,0,.5);}
   #pwa-banner .pwa-txt{flex:1;color:#F4F0E8;font-size:14px;font-weight:700;}
   #pwa-banner .pwa-btn{background:linear-gradient(135deg,#D71920,#a5121b);color:#fff;border:1px solid #D71920;border-radius:6px;padding:10px 16px;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;white-space:nowrap;}
   #pwa-banner .pwa-close{background:none;border:none;color:#8a857c;font-size:22px;line-height:1;cursor:pointer;padding:0 4px;}
-  #ios-guide{position:fixed;inset:0;z-index:9999;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.6);}
-  #ios-guide .ios-card{background:#141414;border:1px solid #CEB14F;border-radius:14px 14px 0 0;padding:22px 22px 30px;max-width:420px;width:100%;text-align:center;color:#F4F0E8;font-family:'Inter',sans-serif;}
-  #ios-guide .ios-card p{margin:8px 0;font-size:15px;line-height:1.5;}
-  #ios-guide .ios-card strong{color:#CEB14F;}
-  #ios-guide .pwa-btn{margin-top:14px;background:linear-gradient(135deg,#D71920,#a5121b);color:#fff;border:none;border-radius:6px;padding:11px 22px;font-weight:900;text-transform:uppercase;cursor:pointer;}
-  #ios-guide .ios-arrow{font-size:34px;margin-top:14px;animation:iosbounce 1s infinite;}
-  @keyframes iosbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+  .pwa-guide{position:fixed;inset:0;z-index:10001;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.6);}
+  .pwa-guide .pwa-card{background:#141414;border:1px solid #CEB14F;border-radius:14px 14px 0 0;padding:22px 22px 30px;max-width:420px;width:100%;text-align:center;color:#F4F0E8;font-family:'Inter',sans-serif;}
+  .pwa-guide .pwa-card p{margin:8px 0;font-size:15px;line-height:1.5;}
+  .pwa-guide .pwa-card strong{color:#CEB14F;}
+  .pwa-guide .pwa-card .pwa-btn{margin-top:14px;background:linear-gradient(135deg,#D71920,#a5121b);color:#fff;border:none;border-radius:6px;padding:11px 22px;font-weight:900;text-transform:uppercase;cursor:pointer;}
+  .pwa-guide .pwa-arrow{font-size:34px;margin-top:14px;animation:pwabounce 1s infinite;}
+  @keyframes pwabounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 </style>
 <div id="pwa-banner">
   <span class="pwa-txt">&#128242; Install the Gridiron Beef App</span>
   <button id="pwa-install" class="pwa-btn">Tap Here</button>
   <button id="pwa-close" class="pwa-close" aria-label="Dismiss">&times;</button>
 </div>
-<div id="ios-guide">
-  <div class="ios-card">
+<div id="ios-guide" class="pwa-guide">
+  <div class="pwa-card">
     <p style="font-weight:900;font-size:17px;color:#CEB14F;text-transform:uppercase;">Add Gridiron Beef to your Home Screen</p>
     <p>1. Tap the <strong>Share</strong> button at the bottom of Safari</p>
     <p>2. Scroll down and tap <strong>&ldquo;Add to Home Screen&rdquo;</strong></p>
-    <button id="ios-close" class="pwa-btn">Got it</button>
-    <div class="ios-arrow">&#128071;</div>
+    <button class="pwa-btn" data-close="ios">Got it</button>
+    <div class="pwa-arrow">&#128071;</div>
+  </div>
+</div>
+<div id="android-guide" class="pwa-guide">
+  <div class="pwa-card">
+    <div class="pwa-arrow" style="animation:none;">&#128070;</div>
+    <p style="font-weight:900;font-size:17px;color:#CEB14F;text-transform:uppercase;">Install Gridiron Beef</p>
+    <p>1. Tap your browser <strong>menu</strong> (&#8942; top-right, or the &#8801; icon)</p>
+    <p>2. Tap <strong>&ldquo;Add to Home screen&rdquo;</strong> or <strong>&ldquo;Install app&rdquo;</strong></p>
+    <button class="pwa-btn" data-close="android">Got it</button>
   </div>
 </div>
 <script>
 (function(){
-  var banner=document.getElementById('pwa-banner'), installBtn=document.getElementById('pwa-install'), closeBtn=document.getElementById('pwa-close'), iosGuide=document.getElementById('ios-guide'), iosClose=document.getElementById('ios-close'), deferred=null;
+  var banner=document.getElementById('pwa-banner'),
+      installBtn=document.getElementById('pwa-install'),
+      closeBtn=document.getElementById('pwa-close'),
+      iosGuide=document.getElementById('ios-guide'),
+      androidGuide=document.getElementById('android-guide'),
+      fab=document.getElementById('ai-trigger'),
+      deferred=null;
   function isStandalone(){ return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true; }
   function dismissed(){ try{ return localStorage.getItem('gib_pwa_dismiss')==='1'; }catch(e){ return false; } }
   function remember(){ try{ localStorage.setItem('gib_pwa_dismiss','1'); }catch(e){} }
-  function hide(){ banner.style.display='none'; }
+  function showBanner(){
+    if(banner.style.display==='flex') return;
+    banner.style.display='flex';
+    var h=banner.offsetHeight||56;
+    document.body.style.paddingBottom=(h+8)+'px';
+    if(fab){ fab.style.bottom=(h+16)+'px'; }
+  }
+  function hide(){
+    banner.style.display='none';
+    document.body.style.paddingBottom='';
+    if(fab){ fab.style.bottom=''; }
+  }
   if(isStandalone() || dismissed()) return;
   var ua=navigator.userAgent||'';
   var isIOS=/iphone|ipad|ipod/i.test(ua);
-  var isSafari=/safari/i.test(ua) && !/crios|fxios|android|chrome/i.test(ua);
-  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred=e; banner.style.display='flex'; });
+  var isAndroid=/android/i.test(ua);
+  var isMobile=isIOS||isAndroid;
+  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred=e; showBanner(); });
   window.addEventListener('appinstalled', function(){ hide(); remember(); });
   installBtn.addEventListener('click', function(){
     if(deferred){ deferred.prompt(); deferred.userChoice.then(function(){ deferred=null; hide(); remember(); }); }
     else if(isIOS){ iosGuide.style.display='flex'; }
+    else if(isAndroid){ androidGuide.style.display='flex'; }
     else { hide(); }
   });
   closeBtn.addEventListener('click', function(){ hide(); remember(); });
-  if(iosClose){ iosClose.addEventListener('click', function(){ iosGuide.style.display='none'; hide(); remember(); }); }
-  if(isIOS && isSafari){ setTimeout(function(){ if(!isStandalone() && !dismissed()) banner.style.display='flex'; }, 2500); }
+  document.querySelectorAll('.pwa-guide .pwa-btn[data-close]').forEach(function(b){
+    b.addEventListener('click', function(){ iosGuide.style.display='none'; androidGuide.style.display='none'; hide(); remember(); });
+  });
+  // Always surface the bar on mobile, even if Chrome hasn't fired its auto-prompt yet (fixes Samsung)
+  if(isMobile){ setTimeout(function(){ if(!isStandalone() && !dismissed()) showBanner(); }, 2000); }
 })();
 </script>
 <!-- ===================== END INSTALL APP BANNER ===================== -->
-
 </body>
 </html>
